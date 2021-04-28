@@ -1,0 +1,7 @@
+Space Engineers Community:
+Big thanks to the whole Weaponcore team for the excellent API, commenting, and references.
+Want to thank MrEvan312 and Razortron for inspiring me to make this.
+I borrowed the muzzle effects from MWI and based my missile trail effects off his so I want to thank Mexpex as well.
+
+Bungie/343/Microsoft:
+Of course, I need to thank the creators of Halo and for allowing me to use sound assets from the games.
