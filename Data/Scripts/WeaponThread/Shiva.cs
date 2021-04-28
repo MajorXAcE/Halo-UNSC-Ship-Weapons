@@ -156,6 +156,7 @@ namespace WeaponThread {
             },
             Ammos = new [] {
                 MXA_Shiva_Ammo,
+				MXA_Shiva_EMPStage,
 				MXA_Shiva_AmmoE,
 				//MXA_Shiva_Explosion,
 				//MXA_Shiva_EWAR,

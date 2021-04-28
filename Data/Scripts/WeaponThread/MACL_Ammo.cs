@@ -476,7 +476,7 @@ namespace WeaponThread
                 },
                 Explosions = new ExplosionDef
                 {
-                    NoVisuals = false,
+                    NoVisuals = true,
                     NoSound = true,
                     NoShrapnel = false,
                     NoDeformation = false,
@@ -614,7 +614,7 @@ namespace WeaponThread
                     WidthVariance = Random(start: 0f, end: 0.25f), // adds random value to default width (negatives shrinks width)
                     Tracer = new TracerBaseDef
                     {
-                        Enable = true,
+                        Enable = false,
                         Length = 1f,
                         Width = 0.1f,
                         Color = Color(red: 3, green: 0, blue: 0, alpha: 1),

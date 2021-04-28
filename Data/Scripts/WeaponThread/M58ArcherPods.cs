@@ -185,6 +185,7 @@ namespace WeaponThread {
             },
             Ammos = new [] {
                 MXA_M58ArcherPods_Ammo,
+				MXA_M58ArcherPods_AccelStage,
 				MXA_M58ArcherPods_Stage,
 				MXA_M58ArcherPods_Shrapnel,
             },
