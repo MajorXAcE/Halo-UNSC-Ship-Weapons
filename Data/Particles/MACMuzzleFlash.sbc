@@ -7,9 +7,9 @@
 			<Length>1</Length>
 			<Preload>0</Preload>
 			<LowRes>false</LowRes>
-			<Loop>true</Loop>
+			<Loop>false</Loop>
 			<DurationMin>.975</DurationMin>
-			<DurationMax>.975</DurationMax>
+			<DurationMax>0</DurationMax>
 			<Version>0</Version>
 			<ParticleGenerations>				
 				<ParticleGeneration Name="Smoke" Version="0">

@@ -57,7 +57,7 @@ namespace WeaponThread
                 Ammos = new[] {
                     "Prox",
                 },
-                Enable = true,
+                Enable = false,
                 TriggerChance = 0.33f,
                 Random = false,
                 RandomMin = 1,
@@ -87,7 +87,7 @@ namespace WeaponThread
                 Armor = new ArmorDef
                 {
                     Armor = -1f,
-                    Light = -1f,
+                    Light = .5f,
                     Heavy = -1f,
                     NonArmor = -1f,
                 },

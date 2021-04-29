@@ -7,9 +7,9 @@
 			<Length>1</Length>
 			<Preload>0</Preload>
 			<LowRes>false</LowRes>
-			<Loop>true</Loop>
+			<Loop>false</Loop>
 			<DurationMin>0.25</DurationMin>
-			<DurationMax>0.25</DurationMax>
+			<DurationMax>0</DurationMax>
 			<Version>0</Version>
 			<ParticleGenerations>								
 				<ParticleGeneration Name="Flash" Version="2">
@@ -255,7 +255,7 @@
 					  <ValueBool>true</ValueBool>
 					</Property>
 					<Property Name="VolumetricLight" Type="Bool" AnimationType="Const">
-					  <ValueBool>true</ValueBool>
+					  <ValueBool>false</ValueBool>
 					</Property>
 					<Property Name="Target coverage" Type="Float" AnimationType="Const">
 					  <ValueFloat>1</ValueFloat>
