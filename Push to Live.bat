@@ -1,0 +1,4 @@
+robocopy "C:\Users\Major\AppData\Roaming\SpaceEngineers\Mods\Halo UNSC Ship Weapons - Development\Audio" "C:\Users\Major\AppData\Roaming\SpaceEngineers\Mods\Halo UNSC Ship Weapons\Audio" /COPYALL /MIR
+robocopy "C:\Users\Major\AppData\Roaming\SpaceEngineers\Mods\Halo UNSC Ship Weapons - Development\Data" "C:\Users\Major\AppData\Roaming\SpaceEngineers\Mods\Halo UNSC Ship Weapons\Data" /COPYALL /MIR
+robocopy "C:\Users\Major\AppData\Roaming\SpaceEngineers\Mods\Halo UNSC Ship Weapons - Development\Models" "C:\Users\Major\AppData\Roaming\SpaceEngineers\Mods\Halo UNSC Ship Weapons\Models" /COPYALL /MIR
+robocopy "C:\Users\Major\AppData\Roaming\SpaceEngineers\Mods\Halo UNSC Ship Weapons - Development\Textures" "C:\Users\Major\AppData\Roaming\SpaceEngineers\Mods\Halo UNSC Ship Weapons\Textures" /COPYALL /MIR
