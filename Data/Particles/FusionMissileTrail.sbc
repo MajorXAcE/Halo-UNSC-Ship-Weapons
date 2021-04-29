@@ -213,19 +213,19 @@
                     <Keys>
                       <Key>
                         <Time>0</Time>
-                        <ValueFloat>1.5</ValueFloat>
+                        <ValueFloat>5</ValueFloat>
                       </Key>
                       <Key>
                         <Time>0.1</Time>
-                        <ValueFloat>2.5</ValueFloat>
+                        <ValueFloat>3</ValueFloat>
                       </Key>
                       <Key>
                         <Time>0.5</Time>
-                        <ValueFloat>4.0</ValueFloat>
+                        <ValueFloat>4</ValueFloat>
                       </Key>
                       <Key>
                         <Time>1</Time>
-                        <ValueFloat>5</ValueFloat>
+                        <ValueFloat>2.5</ValueFloat>
                       </Key>
                     </Keys>
                   </Value2D>
@@ -233,13 +233,13 @@
               </Keys>
             </Property>
             <Property Name="Life" Type="Float" AnimationType="Const">
-              <ValueFloat>0.5</ValueFloat>
+              <ValueFloat>2</ValueFloat>
             </Property>
             <Property Name="Soft particle distance scale" Type="Float" AnimationType="Const">
               <ValueFloat>2</ValueFloat>
             </Property>
             <Property Name="Streak multiplier" Type="Float" AnimationType="Const">
-              <ValueFloat>0</ValueFloat>
+              <ValueFloat>2</ValueFloat>
             </Property>
             <Property Name="Animation frame time" Type="Float" AnimationType="Const">
               <ValueFloat>0.05</ValueFloat>
@@ -251,46 +251,10 @@
               <Keys>
                 <Key>
                   <Time>0</Time>
-                  <ValueFloat>500</ValueFloat>
+                  <ValueFloat>300</ValueFloat>
                 </Key>
                 <Key>
-                  <Time>0.4013822</Time>
-                  <ValueFloat>500</ValueFloat>
-                </Key>
-                <Key>
-                  <Time>0.7628921</Time>
-                  <ValueFloat>1000</ValueFloat>
-                </Key>
-                <Key>
-                  <Time>1.079213</Time>
-                  <ValueFloat>2000</ValueFloat>
-                </Key>
-                <Key>
-                  <Time>1.321106</Time>
-                  <ValueFloat>2000</ValueFloat>
-                </Key>
-                <Key>
-                  <Time>1.624136</Time>
-                  <ValueFloat>2000</ValueFloat>
-                </Key>
-                <Key>
-                  <Time>2.038809</Time>
-                  <ValueFloat>2000</ValueFloat>
-                </Key>
-                <Key>
-                  <Time>2.538543</Time>
-                  <ValueFloat>2000</ValueFloat>
-                </Key>
-                <Key>
-                  <Time>3.102073</Time>
-                  <ValueFloat>2000</ValueFloat>
-                </Key>
-                <Key>
-                  <Time>3.753323</Time>
-                  <ValueFloat>100</ValueFloat>
-                </Key>
-                <Key>
-                  <Time>4.79798</Time>
+                  <Time>1</Time>
                   <ValueFloat>300</ValueFloat>
                 </Key>
               </Keys>
@@ -342,7 +306,7 @@
               <ValueFloat>0.2</ValueFloat>
             </Property>
             <Property Name="Streaks" Type="Bool" AnimationType="Const">
-              <ValueBool>false</ValueBool>
+              <ValueBool>true</ValueBool>
             </Property>
             <Property Name="Rotation reference" Type="Enum" AnimationType="Const">
               <ValueInt>0</ValueInt>

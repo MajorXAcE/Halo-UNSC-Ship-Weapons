@@ -283,7 +283,7 @@
 				  <ValueBool>true</ValueBool>
 				</Property>
 				<Property Name="VolumetricLight" Type="Bool" AnimationType="Const">
-				  <ValueBool>true</ValueBool>
+				  <ValueBool>false</ValueBool>
 				</Property>
 				<Property Name="Target coverage" Type="Float" AnimationType="Const">
 				  <ValueFloat>1</ValueFloat>

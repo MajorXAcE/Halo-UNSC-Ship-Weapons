@@ -149,7 +149,7 @@ namespace WeaponThread {
                             Restart = false,
                             MaxDistance = 300,
                             MaxDuration = 0,
-                            Scale = 4f,
+                            Scale = 1f,
                         },
                     },
                 },
