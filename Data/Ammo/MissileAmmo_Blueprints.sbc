@@ -71,9 +71,9 @@
 	<BlueprintClassEntries>
    
 	
-		<Entry Class="Components" BlueprintSubtypeId="MXA_ArcherPods_Ammo" />
-		<Entry Class="Components" BlueprintSubtypeId="MXA_M58ArcherPods_Ammo" />
-		<Entry Class="Components" BlueprintSubtypeId="MXA_Shiva_Ammo" />
+		<Entry Class="EliteConsumables" BlueprintSubtypeId="MXA_ArcherPods_Ammo" />
+		<Entry Class="EliteConsumables" BlueprintSubtypeId="MXA_M58ArcherPods_Ammo" />
+		<Entry Class="EliteConsumables" BlueprintSubtypeId="MXA_Shiva_Ammo" />
 
 		<Entry Class="Ammo" BlueprintSubtypeId="MXA_ArcherPods_Ammo" />	
 		<Entry Class="Ammo" BlueprintSubtypeId="MXA_M58ArcherPods_Ammo" />	

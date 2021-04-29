@@ -4,7 +4,7 @@
 	<Blueprint>
       <Id>
         <TypeId>BlueprintDefinition</TypeId>
-        <SubtypeId>MXA_Moray</SubtypeId>
+        <SubtypeId>MXA_Moray_Ammo</SubtypeId>
       </Id>
       <DisplayName>Moray Space Mine</DisplayName>
       <Icon>Textures\GUI\Icons\MXA_Moray_Mine.png</Icon>
@@ -25,7 +25,7 @@
   
 	<BlueprintClassEntries>
 	
-		<Entry Class="Components" BlueprintSubtypeId="MXA_Moray_Ammo" />
+		<Entry Class="EliteConsumables" BlueprintSubtypeId="MXA_Moray_Ammo" />
 
 		<Entry Class="Ammo" BlueprintSubtypeId="MXA_Moray_Ammo" />	
 	

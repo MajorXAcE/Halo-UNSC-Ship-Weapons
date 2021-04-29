@@ -290,20 +290,20 @@
     <BlueprintClassEntries>
    
 	
-		<Entry Class="Components" BlueprintSubtypeId="MXA_BreakWater_APAmmo" />	
-		<Entry Class="Components" BlueprintSubtypeId="MXA_BreakWater_HEAmmo" />
-		<Entry Class="Components" BlueprintSubtypeId="MXA_BreakWater_GAmmo" />
-		<Entry Class="Components" BlueprintSubtypeId="MXA_BreakWater_Conversion" />			
-		<Entry Class="Components" BlueprintSubtypeId="MXA_Coil305Ammo" />
-		<Entry Class="Components" BlueprintSubtypeId="MXA_Coil305HEAmmo" />
-		<Entry Class="Components" BlueprintSubtypeId="MXA_Coil305GAmmo" />			
-		<Entry Class="Components" BlueprintSubtypeId="MXA_Coil305_Conversion" />
-		<Entry Class="Components" BlueprintSubtypeId="MXA_Coil270Ammo" />	
-		<Entry Class="Components" BlueprintSubtypeId="MXA_Coil270HEAmmo" />		
-		<Entry Class="Components" BlueprintSubtypeId="MXA_Coil155Ammo" />	
-		<Entry Class="Components" BlueprintSubtypeId="MXA_Coil155HEAmmo" />	
-		<Entry Class="Components" BlueprintSubtypeId="MXA_CoilgunPD_Ammo" />
-		<Entry Class="Components" BlueprintSubtypeId="MXA_Sabre_Coilgun_Ammo" />
+		<Entry Class="EliteConsumables" BlueprintSubtypeId="MXA_BreakWater_APAmmo" />	
+		<Entry Class="EliteConsumables" BlueprintSubtypeId="MXA_BreakWater_HEAmmo" />
+		<Entry Class="EliteConsumables" BlueprintSubtypeId="MXA_BreakWater_GAmmo" />
+		<Entry Class="EliteConsumables" BlueprintSubtypeId="MXA_BreakWater_Conversion" />			
+		<Entry Class="EliteConsumables" BlueprintSubtypeId="MXA_Coil305Ammo" />
+		<Entry Class="EliteConsumables" BlueprintSubtypeId="MXA_Coil305HEAmmo" />
+		<Entry Class="EliteConsumables" BlueprintSubtypeId="MXA_Coil305GAmmo" />			
+		<Entry Class="EliteConsumables" BlueprintSubtypeId="MXA_Coil305_Conversion" />
+		<Entry Class="EliteConsumables" BlueprintSubtypeId="MXA_Coil270Ammo" />	
+		<Entry Class="EliteConsumables" BlueprintSubtypeId="MXA_Coil270HEAmmo" />		
+		<Entry Class="EliteConsumables" BlueprintSubtypeId="MXA_Coil155Ammo" />	
+		<Entry Class="EliteConsumables" BlueprintSubtypeId="MXA_Coil155HEAmmo" />	
+		<Entry Class="EliteConsumables" BlueprintSubtypeId="MXA_CoilgunPD_Ammo" />
+		<Entry Class="EliteConsumables" BlueprintSubtypeId="MXA_Sabre_Coilgun_Ammo" />
 
 		<Entry Class="Ammo" BlueprintSubtypeId="MXA_BreakWater_APAmmo" />	
 		<Entry Class="Ammo" BlueprintSubtypeId="MXA_BreakWater_HEAmmo" />
@@ -319,7 +319,7 @@
 		<Entry Class="Ammo" BlueprintSubtypeId="MXA_Coil155HEAmmo" />	
 		<Entry Class="Ammo" BlueprintSubtypeId="MXA_CoilgunPD_Ammo" />
 		<Entry Class="Ammo" BlueprintSubtypeId="MXA_Sabre_Coilgun_Ammo" />
-
 	
   </BlueprintClassEntries>
+  
 </Definitions>

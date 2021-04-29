@@ -62,9 +62,9 @@
   
   <BlueprintClassEntries>
    
-		<Entry Class="Components" BlueprintSubtypeId="MXA_MACL_S_Ammo" />	
-		<Entry Class="Components" BlueprintSubtypeId="MXA_MACL_Ammo" />	
-		<Entry Class="Components" BlueprintSubtypeId="MXA_SMAC_Ammo" />	
+		<Entry Class="EliteConsumables" BlueprintSubtypeId="MXA_MACL_S_Ammo" />	
+		<Entry Class="EliteConsumables" BlueprintSubtypeId="MXA_MACL_Ammo" />	
+		<Entry Class="EliteConsumables" BlueprintSubtypeId="MXA_SMAC_Ammo" />	
 		
 		<Entry Class="Ammo" BlueprintSubtypeId="MXA_MACL_S_Ammo" />
 		<Entry Class="Ammo" BlueprintSubtypeId="MXA_MACL_Ammo" />	
