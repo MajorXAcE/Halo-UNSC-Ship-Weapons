@@ -71,10 +71,8 @@
       <DynamicMusicAmount>3</DynamicMusicAmount>
       <Volume>1.0</Volume>
       <Waves>
-      <Wave Type="D3">
-          <!--<Start>Audio\WEP\Torp_Start.wav</Start>-->
+		<Wave Type="D3">
           <Loop>Audio\MXA\ArcherMissile_Travel.xwm</Loop>
-          <!--<End>Audio\WEP\Torp_End.wav</End>-->
         </Wave>
         
 
