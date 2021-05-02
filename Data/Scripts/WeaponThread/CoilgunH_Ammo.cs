@@ -122,7 +122,7 @@ namespace WeaponThread
                 Base = new AreaInfluence
                 {
                     Radius = 1.5f, // the sphere of influence of area effects
-                    EffectStrength = 450f, // For ewar it applies this amount per pulse/hit, non-ewar applies this as damage per tick per entity in area of influence. For radiant 0 == use spillover from BaseDamage, otherwise use this value.
+                    EffectStrength = 150f, // For ewar it applies this amount per pulse/hit, non-ewar applies this as damage per tick per entity in area of influence. For radiant 0 == use spillover from BaseDamage, otherwise use this value.
                 },
                 Pulse = new PulseDef // interval measured in game ticks (60 == 1 second), pulseChance chance (0 - 100) that an entity in field will be hit
                 {
@@ -319,17 +319,13 @@ namespace WeaponThread
                     },
                 },
             },
-            AmmoAudio = new AmmoAudioDef
+             AmmoAudio = new AmmoAudioDef
             {
                 TravelSound = "",
                 HitSound = "ArcWepExplSmall",
-                ShieldHitSound = "",
-                PlayerHitSound = "",
-                VoxelHitSound = "",
-                FloatingHitSound = "",
                 HitPlayChance = 1f,
                 HitPlayShield = true,
-            }, // Don't edit below this line
+            },
             Ejection = new AmmoEjectionDef
             {
                 Type = Particle, // Particle or Item (Inventory Component)
@@ -643,17 +639,13 @@ namespace WeaponThread
                     },
                 },
             },
-            AmmoAudio = new AmmoAudioDef
+             AmmoAudio = new AmmoAudioDef
             {
                 TravelSound = "",
                 HitSound = "ArcWepExplSmall",
-                ShieldHitSound = "",
-                PlayerHitSound = "",
-                VoxelHitSound = "",
-                FloatingHitSound = "",
                 HitPlayChance = 1f,
                 HitPlayShield = true,
-            }, // Don't edit below this line
+            },
             Ejection = new AmmoEjectionDef
             {
                 Type = Particle, // Particle or Item (Inventory Component)
@@ -674,7 +666,7 @@ namespace WeaponThread
             AmmoRound = "MXA_CoilgunH_Shrapnel",
             HybridRound = false, //AmmoMagazine based weapon with energy cost
             EnergyCost = 0f, //(((EnergyCost * DefaultDamage) * ShotsPerSecond) * BarrelsPerShot) * ShotsPerBarrel
-            BaseDamage = 500f, //100f
+            BaseDamage = 125f, //100f
             Mass = 0f, // in kilograms
             Health = 0, // 0 = disabled, otherwise how much damage it can take from other trajectiles before dying.
             BackKickForce = 0f,
@@ -735,8 +727,8 @@ namespace WeaponThread
                 },
                 Armor = new ArmorDef
                 {
-                    Armor = -1f,
-                    Light = 0.5f,
+                    Armor = .5f,
+                    Light = -1f,
                     Heavy = -1f,
                     NonArmor = 2f,
                 },
@@ -989,13 +981,9 @@ namespace WeaponThread
             {
                 TravelSound = "",
                 HitSound = "",
-                ShieldHitSound = "",
-                PlayerHitSound = "",
-                VoxelHitSound = "",
-                FloatingHitSound = "",
-                HitPlayChance = 0.5f,
+                HitPlayChance = 0f,
                 HitPlayShield = true,
-            }, // Don't edit below this line
+            },
             Ejection = new AmmoEjectionDef
             {
                 Type = Particle, // Particle or Item (Inventory Component)
@@ -1313,14 +1301,10 @@ namespace WeaponThread
             AmmoAudio = new AmmoAudioDef
             {
                 TravelSound = "",
-                HitSound = "",
-                ShieldHitSound = "",
-                PlayerHitSound = "",
-                VoxelHitSound = "",
-                FloatingHitSound = "",
-                HitPlayChance = 0f,
+                HitSound = "ArcWepExplSmall",
+                HitPlayChance = 1f,
                 HitPlayShield = true,
-            }, // Don't edit below this line
+            },
             Ejection = new AmmoEjectionDef
             {
                 Type = Particle, // Particle or Item (Inventory Component)
@@ -1638,7 +1622,7 @@ namespace WeaponThread
             AmmoAudio = new AmmoAudioDef
             {
                 TravelSound = "",
-                HitSound = "ArcWepExplSmall",
+                HitSound = "", //ArcWepExplSmall
                 ShieldHitSound = "",
                 PlayerHitSound = "",
                 VoxelHitSound = "",
@@ -1964,18 +1948,14 @@ namespace WeaponThread
             {
                 TravelSound = "",
                 HitSound = "ArcWepExplSmall",
-                ShieldHitSound = "",
-                PlayerHitSound = "",
-                VoxelHitSound = "",
-                FloatingHitSound = "",
                 HitPlayChance = 1f,
                 HitPlayShield = true,
-            }, // Don't edit below this line
+            },
             Ejection = new AmmoEjectionDef
             {
                 Type = Particle, // Particle or Item (Inventory Component)
                 Speed = 100f, // Speed inventory is ejected from in dummy direction
-                SpawnChance = 0.5f, // chance of triggering effect (0 - 1)
+                SpawnChance = 0f, // chance of triggering effect (0 - 1)
                 CompDef = new ComponentDef
                 {
                     ItemDefinition = "", //InventoryComponent name

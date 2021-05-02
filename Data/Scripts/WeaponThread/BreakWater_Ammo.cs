@@ -371,8 +371,8 @@ namespace WeaponThread
             Shrapnel = new ShrapnelDef
             {
                 AmmoRound = "MXA_BreakWater_Shrapnel",
-                Fragments = 70,
-                Degrees = 100,
+                Fragments = 50,
+                Degrees = 120,
                 Reverse = false,
                 RandomizeDir = false, // randomzie between forward and backward directions
             },
@@ -674,7 +674,7 @@ namespace WeaponThread
             AmmoRound = "MXA_BreakWater_Shrapnel",
             HybridRound = false, //AmmoMagazine based weapon with energy cost
             EnergyCost = 0.00000000001f, //(((EnergyCost * DefaultDamage) * ShotsPerSecond) * BarrelsPerShot) * ShotsPerBarrel
-            BaseDamage = 750f,
+            BaseDamage = 375f,
             Mass = 0f, // in kilograms
             Health = 0, // 0 = disabled, otherwise how much damage it can take from other trajectiles before dying.
             BackKickForce = 0f,
