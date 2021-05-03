@@ -1726,14 +1726,14 @@ namespace WeaponThread
                 },
                 Armor = new ArmorDef
                 {
-                    Armor = 1.25f,
-                    Light = -1f,
+                    Armor = -1f,
+                    Light = 0.5f,
                     Heavy = -1f,
                     NonArmor = 0.75f,
                 },
                 Shields = new ShieldDef
                 {
-                    Modifier = 1.5f,
+                    Modifier = 1.25f,
                     Type = Kinetic,
                     BypassModifier = -1f,
                 },
