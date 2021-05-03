@@ -729,9 +729,9 @@ namespace WeaponThread
                 Armor = new ArmorDef
                 {
                     Armor = -1f,
-                    Light = 0.75f,
-                    Heavy = 1.5f,
-                    NonArmor = -1f,
+                    Light = 0.5f,
+                    Heavy = -1f,
+                    NonArmor = 0.5f,
                 },
                 Shields = new ShieldDef
                 {
@@ -855,6 +855,8 @@ namespace WeaponThread
                     OverideTarget = true, // when set to true ammo picks its own target, does not use hardpoint's.
                     MaxTargets = 8, // Number of targets allowed before ending, 0 = unlimited
                     NoTargetExpire = false, // Expire without ever having a target at TargetLossTime
+					OffsetRatio = .50f, // The ratio to offset the random dir (0 to 1) 
+                    OffsetTime = 120, // how often to offset degree, measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                     Roam = false, // Roam current area after target loss
                 },
                 Mines = new MinesDef
