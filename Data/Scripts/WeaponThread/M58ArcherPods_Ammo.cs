@@ -191,8 +191,8 @@ namespace WeaponThread
             },
             Trajectory = new TrajectoryDef
             {
-                Guidance = None,
-                TargetLossDegree = 90,
+                Guidance = Smart,
+                TargetLossDegree = 0,
                 TargetLossTime = 600, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                 MaxLifeTime = 90, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                 AccelPerSec = 0f,
@@ -210,7 +210,7 @@ namespace WeaponThread
                     MaxLateralThrust = .49f, // controls how sharp the trajectile may turn
                     TrackingDelay = 20, // Measured in Shape diameter units traveled.
                     MaxChaseTime = 2400, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
-                    OverideTarget = true, // when set to true ammo picks its own target, does not use hardpoint's.
+                    OverideTarget = false, // when set to true ammo picks its own target, does not use hardpoint's.
                     MaxTargets = 8, // Number of targets allowed before ending, 0 = unlimited
                     NoTargetExpire = false, // Expire without ever having a target at TargetLossTime
                     Roam = false, // Roam current area after target loss
@@ -833,7 +833,7 @@ namespace WeaponThread
             Trajectory = new TrajectoryDef
             {
                 Guidance = Smart,
-                TargetLossDegree = 90,
+                TargetLossDegree = 89,
                 TargetLossTime = 600, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                 MaxLifeTime = 3600, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                 AccelPerSec = 30f,

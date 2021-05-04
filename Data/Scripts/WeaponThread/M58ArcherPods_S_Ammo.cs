@@ -834,7 +834,7 @@ namespace WeaponThread
             Trajectory = new TrajectoryDef
             {
                 Guidance = Smart,
-                TargetLossDegree = 90,
+                TargetLossDegree = 89,
                 TargetLossTime = 600, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                 MaxLifeTime = 3600, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                 AccelPerSec = 35f,
