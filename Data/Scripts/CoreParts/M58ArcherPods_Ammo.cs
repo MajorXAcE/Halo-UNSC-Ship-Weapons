@@ -1,21 +1,21 @@
-﻿using static Scripts.Structure.PartDefinition;
-using static Scripts.Structure.PartDefinition.AmmoDef;
-using static Scripts.Structure.PartDefinition.AmmoDef.EjectionDef;
-using static Scripts.Structure.PartDefinition.AmmoDef.EjectionDef.SpawnType;
-using static Scripts.Structure.PartDefinition.AmmoDef.ShapeDef.Shapes;
-using static Scripts.Structure.PartDefinition.AmmoDef.GraphicDef;
-using static Scripts.Structure.PartDefinition.AmmoDef.TrajectoryDef;
-using static Scripts.Structure.PartDefinition.AmmoDef.TrajectoryDef.GuidanceType;
-using static Scripts.Structure.PartDefinition.AmmoDef.DamageScaleDef;
-using static Scripts.Structure.PartDefinition.AmmoDef.DamageScaleDef.ShieldDef.ShieldType;
-using static Scripts.Structure.PartDefinition.AmmoDef.AreaDamageDef;
-using static Scripts.Structure.PartDefinition.AmmoDef.AreaDamageDef.AreaEffectType;
-using static Scripts.Structure.PartDefinition.AmmoDef.AreaDamageDef.EwarFieldsDef;
-using static Scripts.Structure.PartDefinition.AmmoDef.AreaDamageDef.EwarFieldsDef.PushPullDef.Force;
-using static Scripts.Structure.PartDefinition.AmmoDef.GraphicDef.LineDef;
-using static Scripts.Structure.PartDefinition.AmmoDef.GraphicDef.LineDef.TracerBaseDef;
-using static Scripts.Structure.PartDefinition.AmmoDef.GraphicDef.LineDef.Texture;
-using static Scripts.Structure.PartDefinition.AmmoDef.DamageScaleDef.DamageTypes.Damage;
+﻿using static Scripts.Structure.WeaponDefinition;
+using static Scripts.Structure.WeaponDefinition.AmmoDef;
+using static Scripts.Structure.WeaponDefinition.AmmoDef.EjectionDef;
+using static Scripts.Structure.WeaponDefinition.AmmoDef.EjectionDef.SpawnType;
+using static Scripts.Structure.WeaponDefinition.AmmoDef.ShapeDef.Shapes;
+using static Scripts.Structure.WeaponDefinition.AmmoDef.GraphicDef;
+using static Scripts.Structure.WeaponDefinition.AmmoDef.TrajectoryDef;
+using static Scripts.Structure.WeaponDefinition.AmmoDef.TrajectoryDef.GuidanceType;
+using static Scripts.Structure.WeaponDefinition.AmmoDef.DamageScaleDef;
+using static Scripts.Structure.WeaponDefinition.AmmoDef.DamageScaleDef.ShieldDef.ShieldType;
+using static Scripts.Structure.WeaponDefinition.AmmoDef.AreaDamageDef;
+using static Scripts.Structure.WeaponDefinition.AmmoDef.AreaDamageDef.AreaEffectType;
+using static Scripts.Structure.WeaponDefinition.AmmoDef.AreaDamageDef.EwarFieldsDef;
+using static Scripts.Structure.WeaponDefinition.AmmoDef.AreaDamageDef.EwarFieldsDef.PushPullDef.Force;
+using static Scripts.Structure.WeaponDefinition.AmmoDef.GraphicDef.LineDef;
+using static Scripts.Structure.WeaponDefinition.AmmoDef.GraphicDef.LineDef.TracerBaseDef;
+using static Scripts.Structure.WeaponDefinition.AmmoDef.GraphicDef.LineDef.Texture;
+using static Scripts.Structure.WeaponDefinition.AmmoDef.DamageScaleDef.DamageTypes.Damage;
 
 namespace Scripts
 { // Don't edit above this line
@@ -96,7 +96,7 @@ namespace Scripts
                 Shields = new ShieldDef
                 {
                     Modifier = -1f,
-                    Type = Kinetic,
+                    Type = Default,
                     BypassModifier = -1f,
                 },
                 // first true/false (ignoreOthers) will cause projectiles to pass through all blocks that do not match the custom subtypeIds.
@@ -117,6 +117,13 @@ namespace Scripts
                         },
                     },
                 },
+				DamageType = new DamageTypes
+                {
+                    Base = Kinetic,
+                    AreaEffect = Kinetic,
+					Detonation = Kinetic,
+					Shield = ShieldDefault,
+                }
             },
             AreaEffect = new AreaDamageDef
             {
@@ -435,7 +442,7 @@ namespace Scripts
                 Shields = new ShieldDef
                 {
                     Modifier = -1f,
-                    Type = Kinetic,
+                    Type = Default,
                     BypassModifier = -1f,
                 },
                 // first true/false (ignoreOthers) will cause projectiles to pass through all blocks that do not match the custom subtypeIds.
@@ -456,6 +463,13 @@ namespace Scripts
                         },
                     },
                 },
+				DamageType = new DamageTypes
+                {
+                    Base = Kinetic,
+                    AreaEffect = Kinetic,
+					Detonation = Kinetic,
+					Shield = ShieldDefault,
+                }
             },
             AreaEffect = new AreaDamageDef
             {
@@ -733,9 +747,9 @@ namespace Scripts
                 Reverse = false,
                 RandomizeDir = false, // randomize between forward and backward directions
             },
-            Pattern = new AmmoPatternDef
+            Pattern = new PatternDef
             {
-                Ammos = new[] {
+                Patterns = new[] {
                     "",
                 },
                 Enable = false,
@@ -775,7 +789,7 @@ namespace Scripts
                 Shields = new ShieldDef
                 {
                     Modifier = -1f,
-                    Type = Kinetic,
+                    Type = Default,
                     BypassModifier = -1f,
                 },
                 // first true/false (ignoreOthers) will cause projectiles to pass through all blocks that do not match the custom subtypeIds.
@@ -796,6 +810,13 @@ namespace Scripts
                         },
                     },
                 },
+				DamageType = new DamageTypes
+                {
+                    Base = Kinetic,
+                    AreaEffect = Kinetic,
+					Detonation = Energy,
+					Shield = ShieldDefault,
+                }
             },
             AreaEffect = new AreaDamageDef
             {
@@ -1075,9 +1096,9 @@ namespace Scripts
                 Reverse = false,
                 RandomizeDir = false, // randomize between forward and backward directions
             },
-            Pattern = new AmmoPatternDef
+            Pattern = new PatternDef
             {
-                Ammos = new[] {
+                Patterns = new[] {
                     "",
                 },
                 Enable = false,
@@ -1117,7 +1138,7 @@ namespace Scripts
                 Shields = new ShieldDef
                 {
                     Modifier = -1f,
-                    Type = Kinetic,
+                    Type = Default,
                     BypassModifier = -1f,
                 },
                 // first true/false (ignoreOthers) will cause projectiles to pass through all blocks that do not match the custom subtypeIds.
@@ -1138,6 +1159,13 @@ namespace Scripts
                         },
                     },
                 },
+				DamageType = new DamageTypes
+                {
+                    Base = Kinetic,
+                    AreaEffect = Kinetic,
+                    Detonation = Energy,
+                    Shield = ShieldDefault,
+                }
             },
             AreaEffect = new AreaDamageDef
             {
@@ -1236,8 +1264,8 @@ namespace Scripts
                     OverideTarget = false, // when set to true ammo picks its own target, does not use hardpoint's.
                     MaxTargets = 0, // Number of targets allowed before ending, 0 = unlimited
                     NoTargetExpire = false, // Expire without ever having a target at TargetLossTime
-					OffsetRatio = 0, // The ratio to offset the random dir (0 to 1) 
-                    OffsetTime = 0, // how often to offset degree, measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
+					//OffsetRatio = 0, // The ratio to offset the random dir (0 to 1) 
+                    //OffsetTime = 0, // how often to offset degree, measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                     Roam = false, // Roam current area after target loss
 					KeepAliveAfterTargetLoss = true, // Whether to stop early death of projectile on target loss
                 },

@@ -1,15 +1,15 @@
 ﻿using static Scripts.Structure;
-using static Scripts.Structure.PartDefinition;
-using static Scripts.Structure.PartDefinition.ModelAssignmentsDef;
-using static Scripts.Structure.PartDefinition.HardPointDef;
-using static Scripts.Structure.PartDefinition.HardPointDef.Prediction;
-using static Scripts.Structure.PartDefinition.TargetingDef.BlockTypes;
-using static Scripts.Structure.PartDefinition.TargetingDef.Threat;
-using static Scripts.Structure.PartDefinition.HardPointDef.HardwareDef.HardwareType;
+using static Scripts.Structure.WeaponDefinition;
+using static Scripts.Structure.WeaponDefinition.ModelAssignmentsDef;
+using static Scripts.Structure.WeaponDefinition.HardPointDef;
+using static Scripts.Structure.WeaponDefinition.HardPointDef.Prediction;
+using static Scripts.Structure.WeaponDefinition.TargetingDef.BlockTypes;
+using static Scripts.Structure.WeaponDefinition.TargetingDef.Threat;
+using static Scripts.Structure.WeaponDefinition.HardPointDef.HardwareDef.HardwareType;
 namespace Scripts {   
     partial class Parts {  // If you don't understand this file, Visit the discord.
         // Don't edit above this line
-        PartDefinition MXA_M58ArcherPods => new PartDefinition // Weapon Class ID Goes Here.
+        WeaponDefinition MXA_M58ArcherPods => new WeaponDefinition // Weapon Class ID Goes Here.
         {
 
             Assignments = new ModelAssignmentsDef
@@ -17,7 +17,7 @@ namespace Scripts {
                 MountPoints = new[] {
                     new MountPointDef {
                         SubtypeId = "MXA_M58ArcherPods",
-                        AimPartId = "None",
+                        SpinPartId = "None",
                         MuzzlePartId = "None",
                         AzimuthPartId = "None",
                         ElevationPartId = "None",
@@ -25,7 +25,7 @@ namespace Scripts {
                         IconName = ""
                     },
                   },
-                 Barrels = new [] {
+                 Muzzles = new [] {
 					"subpart_ArcherPod1_Missile_1", "subpart_ArcherPod2_Missile_1", "subpart_ArcherPod3_Missile_1", "subpart_ArcherPod4_Missile_1", "subpart_ArcherPod5_Missile_1", 
 					"subpart_ArcherPod1_Missile_2", "subpart_ArcherPod2_Missile_2", "subpart_ArcherPod3_Missile_2", "subpart_ArcherPod4_Missile_2", "subpart_ArcherPod5_Missile_2", 
 					"subpart_ArcherPod1_Missile_3", "subpart_ArcherPod2_Missile_3", "subpart_ArcherPod3_Missile_3", "subpart_ArcherPod4_Missile_3", "subpart_ArcherPod5_Missile_3", 
@@ -115,7 +115,7 @@ namespace Scripts {
                     FixedOffset = false,
                     InventorySize = 1.25f, // Your inventory size modifier.
                     Offset = Vector(x: 0, y: 0, z: 0), // Offset to aim focus.
-                    Hardware = BlockWeapon, // Upgrade, BlockWeapon, ActiveArmor, PassiveArmor, RegenArmor, Phantom .  What your Block is configured to be.
+                    Type = BlockWeapon, // Upgrade, BlockWeapon, ActiveArmor, PassiveArmor, RegenArmor, Phantom .  What your Block is configured to be.
 					//  Upgrade, means this Block ignores non-Upgrade Config Settings, etc etc.
 					// BlockWeapon , means this is a gun.
 					// ActiveArmor , means this is an Armor system unit.
@@ -125,7 +125,7 @@ namespace Scripts {
                 },
                 Other = new OtherDef
                 {
-                    GridWeaponCap = 0, // Cap per Grid, of this Block. 
+                    ConstructPartCap = 0, // Cap per Grid, of this Block. 
                     RotateBarrelAxis = 0, // Axis ( X, Y, Z) of Barrel Spin
                     EnergyPriority = 0, // Energy Priority, over other subsystems on grid, should Power be limited.
                     MuzzleCheck = false,
@@ -153,6 +153,8 @@ namespace Scripts {
                     GiveUpAfterBurst = false, //  If Turret disengages Target after firing full Burst.
                     BarrelSpinRate = 0, // visual only, 0 disables and uses RateOfFire. Use to set a fixed rate of spin, indepdendent of ROF, to allow more flexible RPM without losing visual.
                     DeterministicSpin = false, // Spin barrel position will always be relative to initial / starting positions (spin will not be as smooth).
+                    SpinFree = true, // Spin while not firing
+                    StayCharged = false, // Will start recharging whenever power cap is not full
                 },
                 Audio = new HardPointAudioDef
                 {
@@ -168,7 +170,7 @@ namespace Scripts {
                 Graphics = new HardPointParticleDef
                 {
 
-                    Barrel1 = new ParticleDef
+                    Effect1 = new ParticleDef
                     {
                         Name = "", // Smoke_LargeGunShot Example, Particle SubtypeID from particle SBCs, go here.
                         Color = Color(red: .05f, green: .05f, blue: .05f, alpha: 1),
@@ -182,7 +184,7 @@ namespace Scripts {
                             Scale = .75f, // This is a setting that works slightly. Please use SBC, for the rest, and more ensured results.
                         },
                     },
-                    Barrel2 = new ParticleDef
+                    Effect2 = new ParticleDef
                     {
                         Name = "",//Muzzle_Flash_Large
                         Color = Color(red: 20, green: 20, blue: 20, alpha: 1),
@@ -204,7 +206,7 @@ namespace Scripts {
 				MXA_M58ArcherPods_Stage,
 				MXA_M58ArcherPods_Shrapnel,
             },
-            //Animations = MXA_M58ArcherPods_Animation,
+            Animations = MXA_M58ArcherPods_Animation,
             //Upgrades = UpgradeModules,
             // Don't edit below this line
         };

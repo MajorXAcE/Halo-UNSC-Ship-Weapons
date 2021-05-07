@@ -2,11 +2,11 @@
 using System.ComponentModel;
 using VRageMath;
 using static Scripts.Structure;
-using static Scripts.Structure.PartDefinition.AmmoDef;
-using static Scripts.Structure.PartDefinition.AnimationDef.RelMove;
-using static Scripts.Structure.PartDefinition.AnimationDef.PartAnimationSetDef;
-using static Scripts.Structure.PartDefinition.AnimationDef;
-using static Scripts.Structure.PartDefinition.AnimationDef.PartAnimationSetDef.EventTriggers;
+using static Scripts.Structure.WeaponDefinition.AmmoDef;
+using static Scripts.Structure.WeaponDefinition.AnimationDef.RelMove;
+using static Scripts.Structure.WeaponDefinition.AnimationDef.PartAnimationSetDef;
+using static Scripts.Structure.WeaponDefinition.AnimationDef;
+using static Scripts.Structure.WeaponDefinition.AnimationDef.PartAnimationSetDef.EventTriggers;
 using static Scripts.Structure.ArmorDefinition.ArmorType;
 
 namespace Scripts
@@ -14,9 +14,9 @@ namespace Scripts
     partial class Parts
     {
         internal ContainerDefinition Container = new ContainerDefinition();
-        internal void PartFiles(params PartDefinition[] defs)
+        internal void PartFiles(params WeaponDefinition[] defs)
         {
-            Container.PartDefs = defs;
+            Container.WeaponDefs = defs;
         }
 
         internal void ArmorFiles(params ArmorDefinition[] defs)
@@ -24,11 +24,44 @@ namespace Scripts
             Container.ArmorDefs = defs;
         }
 
+        internal void SupportFiles(params SupportDefinition[] defs)
+        {
+            Container.SupportDefs = defs;
+        }
+
+        internal void UpgradeFiles(params UpgradeDefinition[] defs)
+        {
+            Container.UpgradeDefs = defs;
+        }
+
+        internal void PhantomFiles(params PhantomDefinition[] defs)
+        {
+            Container.PhantomDefs = defs;
+        }
+
         internal static void GetBaseDefinitions(out ContainerDefinition baseDefs)
         {
             baseDefs = new Parts().Container;
         }
+        
+        internal static void SetModPath(ContainerDefinition baseDefs, string modContext)
+        {
+            if (baseDefs.WeaponDefs != null)
+                for (int i = 0; i < baseDefs.WeaponDefs.Length; i++)
+                    baseDefs.WeaponDefs[i].ModPath = modContext;
 
+            if (baseDefs.SupportDefs != null)
+                for (int i = 0; i < baseDefs.SupportDefs.Length; i++)
+                    baseDefs.SupportDefs[i].ModPath = modContext;
+
+            if (baseDefs.UpgradeDefs != null)
+                for (int i = 0; i < baseDefs.UpgradeDefs.Length; i++)
+                    baseDefs.UpgradeDefs[i].ModPath = modContext;
+
+            if (baseDefs.PhantomDefs != null)
+                for (int i = 0; i < baseDefs.PhantomDefs.Length; i++)
+                    baseDefs.PhantomDefs[i].ModPath = modContext;
+        }
 
         internal Randomize Random(float start, float end)
         {
