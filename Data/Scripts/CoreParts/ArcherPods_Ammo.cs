@@ -1,4 +1,4 @@
-﻿using static Scripts.Structure.WeaponDefinition;
+﻿﻿using static Scripts.Structure.WeaponDefinition;
 using static Scripts.Structure.WeaponDefinition.AmmoDef;
 using static Scripts.Structure.WeaponDefinition.AmmoDef.EjectionDef;
 using static Scripts.Structure.WeaponDefinition.AmmoDef.EjectionDef.SpawnType;
@@ -16,15 +16,14 @@ using static Scripts.Structure.WeaponDefinition.AmmoDef.GraphicDef.LineDef;
 using static Scripts.Structure.WeaponDefinition.AmmoDef.GraphicDef.LineDef.TracerBaseDef;
 using static Scripts.Structure.WeaponDefinition.AmmoDef.GraphicDef.LineDef.Texture;
 using static Scripts.Structure.WeaponDefinition.AmmoDef.DamageScaleDef.DamageTypes.Damage;
-
 namespace Scripts
 { // Don't edit above this line
     partial class Parts
     {
-        private AmmoDef MXA_M58ArcherPods_Ammo => new AmmoDef
+        private AmmoDef MXA_ArcherPods_Ammo => new AmmoDef
         {
-            AmmoMagazine = "MXA_M58ArcherPods_Ammo",
-            AmmoRound = "MXA_M58ArcherPods_Ammo",
+            AmmoMagazine = "MXA_ArcherPods_Ammo",
+            AmmoRound = "MXA_ArcherPods_Ammo",
             HybridRound = false, //AmmoMagazine based weapon with energy cost
             EnergyCost = 0.16f, //(((EnergyCost * DefaultDamage) * ShotsPerSecond) * BarrelsPerShot) * ShotsPerBarrel
             BaseDamage = 1f,
@@ -38,8 +37,8 @@ namespace Scripts
 
             Shape = new ShapeDef //defines the collision shape of projectile, defaults line and visual Line Length if set to 0
             {
-                Shape = LineShape, // LineShape or SphereShape. Do not use SphereShape for fast moving projectiles if you care about precision.
-                Diameter = 1, // Diameter is minimum length of LineShape or minimum diameter of SphereShape
+                Shape = LineShape,
+                Diameter = 1,
             },
             ObjectsHit = new ObjectsHitDef
             {
@@ -48,11 +47,11 @@ namespace Scripts
             },
             Fragment = new FragmentDef
             {
-                AmmoRound = "MXA_M58ArcherPods_AccelStage",
+                AmmoRound = "MXA_ArcherPods_AccelStage",
                 Fragments = 1,
                 Degrees = 0,
                 Reverse = false,
-                RandomizeDir = false, // randomize between forward and backward directions
+                RandomizeDir = false, // randomzie between forward and backward directions
             },
             Pattern = new PatternDef
             {
@@ -122,7 +121,7 @@ namespace Scripts
                     Base = Kinetic,
                     AreaEffect = Kinetic,
 					Detonation = Energy,
-					Shield = Energy,
+					Shield = ShieldDefault,
                 }
             },
             AreaEffect = new AreaDamageDef
@@ -170,8 +169,8 @@ namespace Scripts
                 {
                     DetonateOnEnd = true,
                     ArmOnlyOnHit = false,
-                    DetonationDamage = 0,
-                    DetonationRadius = 0,
+                    DetonationDamage = 0f, //2250f Pre-ReBalance
+                    DetonationRadius = 0f,
                     MinArmingTime = 0, //Min time in ticks before projectile will arm for detonation (will also affect shrapnel spawning)
                 },
                 EwarFields = new EwarFieldsDef
@@ -200,13 +199,13 @@ namespace Scripts
             },
             Trajectory = new TrajectoryDef
             {
-                Guidance = Smart,
-                TargetLossDegree = 0,
+                Guidance = None,
+                TargetLossDegree = 90,
                 TargetLossTime = 600, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                 MaxLifeTime = 90, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                 AccelPerSec = 0f,
-                DesiredSpeed = 30, // voxel phasing if you go above 5100
-                MaxTrajectory =10000f,
+                DesiredSpeed = 25f,
+                MaxTrajectory = 10000f,
                 FieldTime = 0, // 0 is disabled, a value causes the projectile to come to rest, spawn a field and remain for a time (Measured in game ticks, 60 = 1 second)
                 GravityMultiplier = 0f, // Gravity multiplier, influences the trajectory of the projectile, value greater than 0 to enable.
                 SpeedVariance = Random(start: 0, end: 0), // subtracts value from DesiredSpeed
@@ -219,11 +218,10 @@ namespace Scripts
                     MaxLateralThrust = .49f, // controls how sharp the trajectile may turn
                     TrackingDelay = 20, // Measured in Shape diameter units traveled.
                     MaxChaseTime = 2400, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
-                    OverideTarget = false, // when set to true ammo picks its own target, does not use hardpoint's.
+                    OverideTarget = true, // when set to true ammo picks its own target, does not use hardpoint's.
                     MaxTargets = 8, // Number of targets allowed before ending, 0 = unlimited
                     NoTargetExpire = false, // Expire without ever having a target at TargetLossTime
                     Roam = false, // Roam current area after target loss
-                    KeepAliveAfterTargetLoss = false, // Whether to stop early death of projectile on target loss
                 },
                 Mines = new MinesDef
                 {
@@ -236,23 +234,24 @@ namespace Scripts
             },
             AmmoGraphics = new GraphicDef
             {
-                ModelName = "\\Models\\Missiles\\MXA_M58Archer_Missile.mwm",
+                ModelName = "\\Models\\Missiles\\MXA_Archer_Missile.mwm",
                 VisualProbability = 1f,
                 ShieldHitDraw = false,
                 Particles = new AmmoParticleDef
                 {
                     Ammo = new ParticleDef
                     {
-                        Name = "", //ShipWelderArc
+                        Name = "", //Archer_MissileSmokeTrail
                         ShrinkByDistance = false,
-                        Color = Color(red: 128, green: 0, blue: 0, alpha: 32),
-                        Offset = Vector(x: 0, y: 0, z: 0),
+                        Color = Color(red: 1, green: 1, blue: 1, alpha: 1),
+                        Offset = Vector(x: 0, y: 0, z: 0.55f),
                         Extras = new ParticleOptionDef
                         {
+                            Loop = true,
                             Restart = false,
                             MaxDistance = 5000,
-                            MaxDuration = 0,
-                            Scale = 1,
+                            MaxDuration = 10,
+                            Scale = 0.0625f,
                         },
                     },
                     Hit = new ParticleDef
@@ -260,30 +259,15 @@ namespace Scripts
                         Name = "",
                         ApplyToShield = true,
                         ShrinkByDistance = false,
-                        Color = Color(red: 3, green: 1.9f, blue: 1f, alpha: 1),
+                        Color = Color(red: 50, green: 25, blue: 0, alpha: 1),
                         Offset = Vector(x: 0, y: 0, z: 0),
                         Extras = new ParticleOptionDef
                         {
+                            Loop = true,
                             Restart = false,
                             MaxDistance = 5000,
-                            MaxDuration = 0,
-                            Scale = 1,
-                            HitPlayChance = 1f,
-                        },
-                    },
-                    Eject = new ParticleDef
-                    {
-                        Name = "",
-                        ApplyToShield = true,
-                        ShrinkByDistance = false,
-                        Color = Color(red: 3, green: 1.9f, blue: 1f, alpha: 1),
-                        Offset = Vector(x: 0, y: 0, z: 0),
-                        Extras = new ParticleOptionDef
-                        {
-                            Restart = false,
-                            MaxDistance = 5000,
-                            MaxDuration = 30,
-                            Scale = 1,
+                            MaxDuration = 1,
+                            Scale = .15f,
                             HitPlayChance = 1f,
                         },
                     },
@@ -308,7 +292,7 @@ namespace Scripts
                         {
                             Enable = false, // If true Tracer TextureMode is ignored
                             Textures = new[] {
-                                "",
+								"",
                             },
                             SegmentLength = 0f, // Uses the values below.
                             SegmentGap = 0f, // Uses Tracer textures and values
@@ -347,11 +331,7 @@ namespace Scripts
             {
                 TravelSound = "MXA_Archer_Travel",
                 HitSound = "",
-                ShieldHitSound = "",
-                PlayerHitSound = "",
-                VoxelHitSound = "",
-                FloatingHitSound = "",
-                HitPlayChance = 0.5f,
+                HitPlayChance = 1.0f,
                 HitPlayShield = true,
             }, // Don't edit below this line
             Ejection = new EjectionDef
@@ -367,10 +347,11 @@ namespace Scripts
                 }
             },
         };
-		private AmmoDef MXA_M58ArcherPods_AccelStage => new AmmoDef
+		
+		private AmmoDef MXA_ArcherPods_AccelStage => new AmmoDef
         {
             AmmoMagazine = "",
-            AmmoRound = "MXA_M58ArcherPods_AccelStage",
+            AmmoRound = "MXA_ArcherPods_AccelStage",
             HybridRound = false, //AmmoMagazine based weapon with energy cost
             EnergyCost = 0.16f, //(((EnergyCost * DefaultDamage) * ShotsPerSecond) * BarrelsPerShot) * ShotsPerBarrel
             BaseDamage = 1f,
@@ -384,8 +365,8 @@ namespace Scripts
 
             Shape = new ShapeDef //defines the collision shape of projectile, defaults line and visual Line Length if set to 0
             {
-                Shape = LineShape, // LineShape or SphereShape. Do not use SphereShape for fast moving projectiles if you care about precision.
-                Diameter = 1, // Diameter is minimum length of LineShape or minimum diameter of SphereShape
+                Shape = LineShape,
+                Diameter = 1,
             },
             ObjectsHit = new ObjectsHitDef
             {
@@ -394,11 +375,11 @@ namespace Scripts
             },
             Fragment = new FragmentDef
             {
-                AmmoRound = "MXA_M58ArcherPods_Stage",
+                AmmoRound = "MXA_ArcherPods_Stage",
                 Fragments = 1,
                 Degrees = 0,
                 Reverse = false,
-                RandomizeDir = false, // randomize between forward and backward directions
+                RandomizeDir = false, // randomzie between forward and backward directions
             },
             Pattern = new PatternDef
             {
@@ -468,7 +449,7 @@ namespace Scripts
                     Base = Kinetic,
                     AreaEffect = Kinetic,
 					Detonation = Energy,
-					Shield = Energy,
+					Shield = ShieldDefault,
                 }
             },
             AreaEffect = new AreaDamageDef
@@ -516,8 +497,8 @@ namespace Scripts
                 {
                     DetonateOnEnd = true,
                     ArmOnlyOnHit = false,
-                    DetonationDamage = 0,
-                    DetonationRadius = 0,
+                    DetonationDamage = 0f, //2250f Pre-ReBalance
+                    DetonationRadius = 0f,
                     MinArmingTime = 0, //Min time in ticks before projectile will arm for detonation (will also affect shrapnel spawning)
                 },
                 EwarFields = new EwarFieldsDef
@@ -551,7 +532,7 @@ namespace Scripts
                 TargetLossTime = 600, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                 MaxLifeTime = 60, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                 AccelPerSec = 500f,
-                DesiredSpeed = 30, // voxel phasing if you go above 5100
+                DesiredSpeed = 25,
                 MaxTrajectory = 10000f,
                 FieldTime = 0, // 0 is disabled, a value causes the projectile to come to rest, spawn a field and remain for a time (Measured in game ticks, 60 = 1 second)
                 GravityMultiplier = 0f, // Gravity multiplier, influences the trajectory of the projectile, value greater than 0 to enable.
@@ -562,14 +543,13 @@ namespace Scripts
                 {
                     Inaccuracy = 50f, // 0 is perfect, hit accuracy will be a random num of meters between 0 and this value.
                     Aggressiveness = 2f, // controls how responsive tracking is.
-                    MaxLateralThrust = .49f, // controls how sharp the trajectile may turn
+                    MaxLateralThrust = .45f, // controls how sharp the trajectile may turn
                     TrackingDelay = 0, // Measured in Shape diameter units traveled.
                     MaxChaseTime = 2400, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                     OverideTarget = true, // when set to true ammo picks its own target, does not use hardpoint's.
                     MaxTargets = 8, // Number of targets allowed before ending, 0 = unlimited
                     NoTargetExpire = false, // Expire without ever having a target at TargetLossTime
                     Roam = false, // Roam current area after target loss
-                    KeepAliveAfterTargetLoss = false, // Whether to stop early death of projectile on target loss
                 },
                 Mines = new MinesDef
                 {
@@ -582,7 +562,7 @@ namespace Scripts
             },
             AmmoGraphics = new GraphicDef
             {
-                ModelName = "\\Models\\Missiles\\MXA_M58Archer_Missile.mwm",
+                ModelName = "\\Models\\Missiles\\MXA_Archer_Missile.mwm",
                 VisualProbability = 1f,
                 ShieldHitDraw = false,
                 Particles = new AmmoParticleDef
@@ -592,13 +572,14 @@ namespace Scripts
                         Name = "Archer_MissileSmokeTrail", //Archer_MissileSmokeTrail
                         ShrinkByDistance = false,
                         Color = Color(red: 1, green: 1, blue: 1, alpha: 1),
-                        Offset = Vector(x: 0, y: 0, z: 0.55f),
+                        Offset = Vector(x: 0, y: 0, z: -1.8f),
                         Extras = new ParticleOptionDef
                         {
+                            Loop = true,
                             Restart = false,
                             MaxDistance = 5000,
                             MaxDuration = 10,
-                            Scale = 0.3f,
+                            Scale = 0.4f,
                         },
                     },
                     Hit = new ParticleDef
@@ -610,26 +591,11 @@ namespace Scripts
                         Offset = Vector(x: 0, y: 0, z: 0),
                         Extras = new ParticleOptionDef
                         {
+                            Loop = true,
                             Restart = false,
                             MaxDistance = 5000,
-                            MaxDuration = 0,
-                            Scale = 1,
-                            HitPlayChance = 1f,
-                        },
-                    },
-                    Eject = new ParticleDef
-                    {
-                        Name = "",
-                        ApplyToShield = true,
-                        ShrinkByDistance = false,
-                        Color = Color(red: 3, green: 1.9f, blue: 1f, alpha: 1),
-                        Offset = Vector(x: 0, y: 0, z: 0),
-                        Extras = new ParticleOptionDef
-                        {
-                            Restart = false,
-                            MaxDistance = 5000,
-                            MaxDuration = 30,
-                            Scale = 1,
+                            MaxDuration = 1,
+                            Scale = .15f,
                             HitPlayChance = 1f,
                         },
                     },
@@ -654,7 +620,7 @@ namespace Scripts
                         {
                             Enable = false, // If true Tracer TextureMode is ignored
                             Textures = new[] {
-                                "",
+								"",
                             },
                             SegmentLength = 0f, // Uses the values below.
                             SegmentGap = 0f, // Uses Tracer textures and values
@@ -693,11 +659,7 @@ namespace Scripts
             {
                 TravelSound = "MXA_Archer_Travel",
                 HitSound = "",
-                ShieldHitSound = "",
-                PlayerHitSound = "",
-                VoxelHitSound = "",
-                FloatingHitSound = "",
-                HitPlayChance = 0,
+                HitPlayChance = 1.0f,
                 HitPlayShield = true,
             }, // Don't edit below this line
             Ejection = new EjectionDef
@@ -714,15 +676,15 @@ namespace Scripts
             },
         };
 
-		private AmmoDef MXA_M58ArcherPods_Stage => new AmmoDef
+		private AmmoDef MXA_ArcherPods_Stage => new AmmoDef
         {
             AmmoMagazine = "",
-            AmmoRound = "MXA_M58ArcherPods_Stage",
+            AmmoRound = "MXA_ArcherPods_Stage",
             HybridRound = false, //AmmoMagazine based weapon with energy cost
-            EnergyCost = 0.16f, //(((EnergyCost * DefaultDamage) * ShotsPerSecond) * BarrelsPerShot) * ShotsPerBarrel
+            EnergyCost = 0f, //(((EnergyCost * DefaultDamage) * ShotsPerSecond) * BarrelsPerShot) * ShotsPerBarrel
             BaseDamage = 1f,
             Mass = 75f, // in kilograms
-            Health = 1f, // 0 = disabled, otherwise how much damage it can take from other trajectiles before dying.
+            Health = 2f, // 0 = disabled, otherwise how much damage it can take from other trajectiles before dying.
             BackKickForce = 5f,
             DecayPerShot = 0f,
             HardPointUsable = false, // set to false if this is a shrapnel ammoType and you don't want the turret to be able to select it directly.
@@ -731,8 +693,8 @@ namespace Scripts
 
             Shape = new ShapeDef //defines the collision shape of projectile, defaults line and visual Line Length if set to 0
             {
-                Shape = LineShape, // LineShape or SphereShape. Do not use SphereShape for fast moving projectiles if you care about precision.
-                Diameter = 1, // Diameter is minimum length of LineShape or minimum diameter of SphereShape
+                Shape = LineShape,
+                Diameter = 1,
             },
             ObjectsHit = new ObjectsHitDef
             {
@@ -741,11 +703,11 @@ namespace Scripts
             },
             Fragment = new FragmentDef
             {
-                AmmoRound = "MXA_M58ArcherPods_Shrapnel",
+                AmmoRound = "MXA_ArcherPods_Shrapnel",
                 Fragments = 25,
                 Degrees = 270,
                 Reverse = false,
-                RandomizeDir = false, // randomize between forward and backward directions
+                RandomizeDir = false, // randomzie between forward and backward directions
             },
             Pattern = new PatternDef
             {
@@ -777,7 +739,7 @@ namespace Scripts
                 Grids = new GridSizeDef
                 {
                     Large = -1f,
-                    Small = 0.33f,
+                    Small = 0.5f,
                 },
                 Armor = new ArmorDef
                 {
@@ -815,7 +777,7 @@ namespace Scripts
                     Base = Kinetic,
                     AreaEffect = Kinetic,
 					Detonation = Energy,
-					Shield = Energy,
+					Shield = ShieldDefault,
                 }
             },
             AreaEffect = new AreaDamageDef
@@ -855,7 +817,7 @@ namespace Scripts
                     NoSound = false,
                     NoShrapnel = false,
                     NoDeformation = false,
-                    Scale = .75f,
+                    Scale = 1.5f,
                     CustomParticle = "MXA_MissileExplosion",
                     CustomSound = "ArcWepLrgWarheadExpl",
                 },
@@ -863,8 +825,8 @@ namespace Scripts
                 {
                     DetonateOnEnd = true,
                     ArmOnlyOnHit = false,
-                    DetonationDamage = 1200,
-                    DetonationRadius = 8,
+                    DetonationDamage = 2000f, //4500f Pre-Rebalance
+                    DetonationRadius = 12f,
                     MinArmingTime = 0, //Min time in ticks before projectile will arm for detonation (will also affect shrapnel spawning)
                 },
                 EwarFields = new EwarFieldsDef
@@ -897,9 +859,9 @@ namespace Scripts
                 TargetLossDegree = 89,
                 TargetLossTime = 600, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                 MaxLifeTime = 3600, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
-                AccelPerSec = 30f,
-                DesiredSpeed = 300, // voxel phasing if you go above 5100
-                MaxTrajectory = 10000f,
+                AccelPerSec = 25f,
+                DesiredSpeed = 275,
+                MaxTrajectory = 11000f,
                 FieldTime = 0, // 0 is disabled, a value causes the projectile to come to rest, spawn a field and remain for a time (Measured in game ticks, 60 = 1 second)
                 GravityMultiplier = 0f, // Gravity multiplier, influences the trajectory of the projectile, value greater than 0 to enable.
                 SpeedVariance = Random(start: 0, end: 0), // subtracts value from DesiredSpeed
@@ -909,7 +871,7 @@ namespace Scripts
                 {
                     Inaccuracy = 0f, // 0 is perfect, hit accuracy will be a random num of meters between 0 and this value.
                     Aggressiveness = 2f, // controls how responsive tracking is.
-                    MaxLateralThrust = .49f, // controls how sharp the trajectile may turn
+                    MaxLateralThrust = .43f, // controls how sharp the trajectile may turn
                     TrackingDelay = 20, // Measured in Shape diameter units traveled.
                     MaxChaseTime = 2400, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                     OverideTarget = false, // when set to true ammo picks its own target, does not use hardpoint's.
@@ -931,9 +893,9 @@ namespace Scripts
             },
             AmmoGraphics = new GraphicDef
             {
-                ModelName = "\\Models\\Missiles\\MXA_M58Archer_Missile.mwm",
+                ModelName = "\\Models\\Missiles\\MXA_Archer_Missile.mwm",
                 VisualProbability = 1f,
-                ShieldHitDraw = false,
+                ShieldHitDraw = true,
                 Particles = new AmmoParticleDef
                 {
                     Ammo = new ParticleDef
@@ -941,13 +903,14 @@ namespace Scripts
                         Name = "Archer_MissileSmokeTrail", //ShipWelderArc
                         ShrinkByDistance = false,
                         Color = Color(red: 1, green: 1, blue: 1, alpha: 1),
-                        Offset = Vector(x: 0, y: 0, z: -0.55f),
+                        Offset = Vector(x: 0, y: 0, z: -1.8f),
                         Extras = new ParticleOptionDef
                         {
+                            Loop = true,
                             Restart = false,
                             MaxDistance = 5000,
                             MaxDuration = 10,
-                            Scale = .3f,
+                            Scale = .4f,
                         },
                     },
                     Hit = new ParticleDef
@@ -959,26 +922,11 @@ namespace Scripts
                         Offset = Vector(x: 0, y: 0, z: 0),
                         Extras = new ParticleOptionDef
                         {
+                            Loop = true,
                             Restart = false,
                             MaxDistance = 5000,
-                            MaxDuration = 0,
-                            Scale = 1,
-                            HitPlayChance = 1f,
-                        },
-                    },
-                    Eject = new ParticleDef
-                    {
-                        Name = "",
-                        ApplyToShield = true,
-                        ShrinkByDistance = false,
-                        Color = Color(red: 3, green: 1.9f, blue: 1f, alpha: 1),
-                        Offset = Vector(x: 0, y: 0, z: 0),
-                        Extras = new ParticleOptionDef
-                        {
-                            Restart = false,
-                            MaxDistance = 5000,
-                            MaxDuration = 30,
-                            Scale = 1,
+                            MaxDuration = 1,
+                            Scale = .15f,
                             HitPlayChance = 1f,
                         },
                     },
@@ -990,8 +938,8 @@ namespace Scripts
                     Tracer = new TracerBaseDef
                     {
                         Enable = true,
-                        Length = .5f,
-                        Width = 0.05f,
+                        Length = 1f,
+                        Width = 0.1f,
                         Color = Color(red: 1f, green: 1f, blue: 1f, alpha: 1f),
                         VisualFadeStart = 0, // Number of ticks the weapon has been firing before projectiles begin to fade their color
                         VisualFadeEnd = 0, // How many ticks after fade began before it will be invisible.
@@ -1003,7 +951,7 @@ namespace Scripts
                         {
                             Enable = false, // If true Tracer TextureMode is ignored
                             Textures = new[] {
-                                "",
+								"",
                             },
                             SegmentLength = 0f, // Uses the values below.
                             SegmentGap = 0f, // Uses Tracer textures and values
@@ -1026,7 +974,7 @@ namespace Scripts
                         DecayTime = 1,
                         Color = Color(red: 1.875f, green: 1.5625f, blue: 0.9375f, alpha: 1f),
                         Back = false,
-                        CustomWidth = 0.0875f,
+                        CustomWidth = 0.175f,
                         UseWidthVariance = false,
                         UseColorFade = true,
                     },
@@ -1046,7 +994,7 @@ namespace Scripts
                 PlayerHitSound = "",
                 VoxelHitSound = "",
                 FloatingHitSound = "",
-                HitPlayChance = 0.5f,
+                HitPlayChance = 1f,
                 HitPlayShield = true,
             }, // Don't edit below this line
             Ejection = new EjectionDef
@@ -1062,14 +1010,13 @@ namespace Scripts
                 }
             },
         };
-
-		private AmmoDef MXA_M58ArcherPods_Shrapnel => new AmmoDef
+		private AmmoDef MXA_ArcherPods_Shrapnel => new AmmoDef
         {
             AmmoMagazine = "",
-            AmmoRound = "MXA_M58ArcherPods_Shrapnel",
+            AmmoRound = "MXA_ArcherPods_Shrapnel",
             HybridRound = false, //AmmoMagazine based weapon with energy cost
             EnergyCost = 0f, //(((EnergyCost * DefaultDamage) * ShotsPerSecond) * BarrelsPerShot) * ShotsPerBarrel
-            BaseDamage = 5f,
+            BaseDamage = 10f,
             Mass = 0f, // in kilograms
             Health = 0, // 0 = disabled, otherwise how much damage it can take from other trajectiles before dying.
             BackKickForce = 0f,
@@ -1115,25 +1062,25 @@ namespace Scripts
                 DamageVoxels = false, // true = voxels are vulnerable to this weapon
                 SelfDamage = false, // true = allow self damage.
                 HealthHitModifier = 0.5, // defaults to a value of 1, this setting modifies how much Health is subtracted from a projectile per hit (1 = per hit).
-                VoxelHitModifier = -1f,
-                Characters = 1f,
+                VoxelHitModifier = 10,
+                Characters = -1f,
                 // modifier values: -1 = disabled (higher performance), 0 = no damage, 0.01 = 1% damage, 2 = 200% damage.
                 FallOff = new FallOffDef
                 {
-                    Distance = 2.5f, // Distance at which max damage begins falling off.
+                    Distance = 4f, // Distance at which max damage begins falling off.
                     MinMultipler = 0.4f, // value from 0.0f to 1f where 0.1f would be a min damage of 10% of max damage.
                 },
                 Grids = new GridSizeDef
                 {
                     Large = -1f,
-                    Small = .33f,
+                    Small = -1f,
                 },
                 Armor = new ArmorDef
                 {
                     Armor = -1f,
-                    Light = .5f,
-                    Heavy = -1f,
-                    NonArmor = 0.5f,
+                    Light = -1f,
+                    Heavy = 1.5f,
+                    NonArmor = -1f,
                 },
                 Shields = new ShieldDef
                 {
@@ -1163,8 +1110,8 @@ namespace Scripts
                 {
                     Base = Kinetic,
                     AreaEffect = Kinetic,
-                    Detonation = Energy,
-                    Shield = Energy,
+					Detonation = Energy,
+					Shield = ShieldDefault,
                 }
             },
             AreaEffect = new AreaDamageDef
@@ -1212,13 +1159,13 @@ namespace Scripts
                 {
                     DetonateOnEnd = false,
                     ArmOnlyOnHit = false,
-                    DetonationDamage = 0,
-                    DetonationRadius = 0,
+                    DetonationDamage = 1000f,
+                    DetonationRadius = 10f,
                     MinArmingTime = 0, //Min time in ticks before projectile will arm for detonation (will also affect shrapnel spawning)
                 },
                 EwarFields = new EwarFieldsDef
                 {
-                    Duration = 0,
+                    Duration = 1,
                     StackDuration = false,
                     Depletable = false,
                     MaxStacks = 0,
@@ -1247,11 +1194,11 @@ namespace Scripts
                 TargetLossTime = 0, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                 MaxLifeTime = 0, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                 AccelPerSec = 0f,
-                DesiredSpeed = 0, // voxel phasing if you go above 5100
+                DesiredSpeed = 0f, // DO NOT SET HIGHER THAN 4100
                 MaxTrajectory = 5f,
                 FieldTime = 0, // 0 is disabled, a value causes the projectile to come to rest, spawn a field and remain for a time (Measured in game ticks, 60 = 1 second)
                 GravityMultiplier = 0f, // Gravity multiplier, influences the trajectory of the projectile, value greater than 0 to enable.
-                SpeedVariance = Random(start: 0, end: 0), // subtracts value from DesiredSpeed
+                SpeedVariance = Random(start: 0, end: 250), // subtracts value from DesiredSpeed
                 RangeVariance = Random(start: 0, end: 0), // subtracts value from MaxTrajectory
                 MaxTrajectoryTime = 0, // How long the weapon must fire before it reaches MaxTrajectory.
                 Smarts = new SmartsDef
@@ -1264,18 +1211,16 @@ namespace Scripts
                     OverideTarget = false, // when set to true ammo picks its own target, does not use hardpoint's.
                     MaxTargets = 0, // Number of targets allowed before ending, 0 = unlimited
                     NoTargetExpire = false, // Expire without ever having a target at TargetLossTime
-					//OffsetRatio = 0, // The ratio to offset the random dir (0 to 1) 
-                    //OffsetTime = 0, // how often to offset degree, measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                     Roam = false, // Roam current area after target loss
-					KeepAliveAfterTargetLoss = true, // Whether to stop early death of projectile on target loss
+                    KeepAliveAfterTargetLoss = true, // Whether to stop early death of projectile on target loss
                 },
                 Mines = new MinesDef
                 {
-                    DetectRadius = 0,
+                    DetectRadius = 0f,
                     DeCloakRadius = 0,
                     FieldTime = 0,
                     Cloak = false,
-                    Persist = false,
+                    Persist = true,
                 },
             },
             AmmoGraphics = new GraphicDef
@@ -1290,12 +1235,13 @@ namespace Scripts
                         Name = "", //ShipWelderArc
                         ShrinkByDistance = false,
                         Color = Color(red: 128, green: 0, blue: 0, alpha: 32),
-                        Offset = Vector(x: 0, y: 0, z: 0),
+                        Offset = Vector(x: 0, y: -1, z: 0),
                         Extras = new ParticleOptionDef
                         {
+                            Loop = true,
                             Restart = false,
                             MaxDistance = 5000,
-                            MaxDuration = 0,
+                            MaxDuration = 1,
                             Scale = 1,
                         },
                     },
@@ -1308,9 +1254,10 @@ namespace Scripts
                         Offset = Vector(x: 0, y: 0, z: 0),
                         Extras = new ParticleOptionDef
                         {
+                            Loop = true,
                             Restart = false,
                             MaxDistance = 5000,
-                            MaxDuration = 0,
+                            MaxDuration = 30,
                             Scale = 1,
                             HitPlayChance = 1f,
                         },
@@ -1324,6 +1271,7 @@ namespace Scripts
                         Offset = Vector(x: 0, y: 0, z: 0),
                         Extras = new ParticleOptionDef
                         {
+                            Loop = true,
                             Restart = false,
                             MaxDistance = 5000,
                             MaxDuration = 30,
@@ -1352,7 +1300,7 @@ namespace Scripts
                         {
                             Enable = false, // If true Tracer TextureMode is ignored
                             Textures = new[] {
-                                "",
+								"",
                             },
                             SegmentLength = 0f, // Uses the values below.
                             SegmentGap = 0f, // Uses Tracer textures and values
@@ -1369,7 +1317,7 @@ namespace Scripts
                     {
                         Enable = false,
                         Textures = new[] {
-                            "",
+							"",
                         },
                         TextureMode = Normal,
                         DecayTime = 128,

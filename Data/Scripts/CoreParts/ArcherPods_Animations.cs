@@ -4,6 +4,7 @@ using static Scripts.Structure.WeaponDefinition.AnimationDef;
 using static Scripts.Structure.WeaponDefinition.AnimationDef.PartAnimationSetDef.EventTriggers;
 using static Scripts.Structure.WeaponDefinition.AnimationDef.RelMove.MoveType;
 using static Scripts.Structure.WeaponDefinition.AnimationDef.RelMove;
+
 namespace Scripts
 { // Don't edit above this line
     partial class Parts
@@ -23,7 +24,7 @@ namespace Scripts
         //StopFiring,
         //StopTracking
 
-        private AnimationDef MXA_M58ArcherPods_Animation => new AnimationDef
+        private AnimationDef MXA_ArcherPods_Animation => new AnimationDef
         {
             AnimationSets = new[]
             {
@@ -96,7 +97,7 @@ namespace Scripts
 							new RelMove
                             {
                                 CenterEmpty = "",
-                                TicksToMove = 780, //number of ticks to complete motion, 60 = 1 second
+                                TicksToMove = 2280, //number of ticks to complete motion, 60 = 1 second
                                 MovementType = Delay,
                                 LinearPoints = new XYZ[0],
                                 Rotation = Transformation(0, 0, 0), //degrees
@@ -4060,7 +4061,7 @@ namespace Scripts
                                 MovementType = Linear,
                                 LinearPoints = new[]
                                 {
-                                     Transformation(0, 0, -.1), //linear movement
+                                     Transformation(0, 0, -.2), //linear movement
                                 },
                                 Rotation = Transformation(0, 0, 0), //degrees
                                 RotAroundCenter = Transformation(0, 0, 0), //degrees
@@ -4085,7 +4086,7 @@ namespace Scripts
                                 MovementType = Linear,
                                 LinearPoints = new[]
                                 {
-                                     Transformation(0, 0, .1), //linear movement
+                                     Transformation(0, 0, .2), //linear movement
                                 },
                                 Rotation = Transformation(0, 0, 0), //degrees
                                 RotAroundCenter = Transformation(0, 0, 0), //degrees
@@ -4119,7 +4120,7 @@ namespace Scripts
                                 MovementType = Linear,
                                 LinearPoints = new[]
                                 {
-                                     Transformation(0, 0, .1), //linear movement
+                                     Transformation(0, 0, .2), //linear movement
                                 },
                                 Rotation = Transformation(0, 0, 0), //degrees
                                 RotAroundCenter = Transformation(0, 0, 0), //degrees
@@ -4127,7 +4128,7 @@ namespace Scripts
 							new RelMove
                             {
                                 CenterEmpty = "",
-                                TicksToMove = 780, //number of ticks to complete motion, 60 = 1 second
+                                TicksToMove = 2280, //number of ticks to complete motion, 60 = 1 second
                                 MovementType = Delay,
                                 LinearPoints = new XYZ[0],
                                 Rotation = Transformation(0, 0, 0), //degrees
@@ -4140,7 +4141,7 @@ namespace Scripts
                                 MovementType = Linear,
                                 LinearPoints = new[]
                                 {
-                                     Transformation(0, 0, -.1), //linear movement
+                                     Transformation(0, 0, -.2), //linear movement
                                 },
                                 Rotation = Transformation(0, 0, 0), //degrees
                                 RotAroundCenter = Transformation(0, 0, 0), //degrees
@@ -4231,7 +4232,7 @@ namespace Scripts
 							new RelMove
                             {
                                 CenterEmpty = "",
-                                TicksToMove = 780, //number of ticks to complete motion, 60 = 1 second
+                                TicksToMove = 2280, //number of ticks to complete motion, 60 = 1 second
                                 MovementType = Delay,
                                 LinearPoints = new XYZ[0],
                                 Rotation = Transformation(0, 0, 0), //degrees
@@ -4341,7 +4342,7 @@ namespace Scripts
 							new RelMove
                             {
                                 CenterEmpty = "",
-                                TicksToMove = 780, //number of ticks to complete motion, 60 = 1 second
+                                TicksToMove = 2280, //number of ticks to complete motion, 60 = 1 second
                                 MovementType = Delay,
                                 LinearPoints = new XYZ[0],
                                 Rotation = Transformation(0, 0, 0), //degrees

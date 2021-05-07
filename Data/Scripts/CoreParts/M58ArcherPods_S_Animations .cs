@@ -23,7 +23,7 @@ namespace Scripts
         //StopFiring,
         //StopTracking
 
-        private AnimationDef MXA_M58ArcherPods_Animation => new AnimationDef
+        private AnimationDef MXA_M58ArcherPods_S_Animation => new AnimationDef
         {
             AnimationSets = new[]
             {
@@ -4060,7 +4060,7 @@ namespace Scripts
                                 MovementType = Linear,
                                 LinearPoints = new[]
                                 {
-                                     Transformation(0, 0, -.1), //linear movement
+                                     Transformation(0, 0, -.06), //linear movement
                                 },
                                 Rotation = Transformation(0, 0, 0), //degrees
                                 RotAroundCenter = Transformation(0, 0, 0), //degrees
@@ -4085,7 +4085,7 @@ namespace Scripts
                                 MovementType = Linear,
                                 LinearPoints = new[]
                                 {
-                                     Transformation(0, 0, .1), //linear movement
+                                     Transformation(0, 0, .06), //linear movement
                                 },
                                 Rotation = Transformation(0, 0, 0), //degrees
                                 RotAroundCenter = Transformation(0, 0, 0), //degrees
@@ -4119,7 +4119,7 @@ namespace Scripts
                                 MovementType = Linear,
                                 LinearPoints = new[]
                                 {
-                                     Transformation(0, 0, .1), //linear movement
+                                     Transformation(0, 0, .06), //linear movement
                                 },
                                 Rotation = Transformation(0, 0, 0), //degrees
                                 RotAroundCenter = Transformation(0, 0, 0), //degrees
@@ -4140,7 +4140,7 @@ namespace Scripts
                                 MovementType = Linear,
                                 LinearPoints = new[]
                                 {
-                                     Transformation(0, 0, -.1), //linear movement
+                                     Transformation(0, 0, -.06), //linear movement
                                 },
                                 Rotation = Transformation(0, 0, 0), //degrees
                                 RotAroundCenter = Transformation(0, 0, 0), //degrees

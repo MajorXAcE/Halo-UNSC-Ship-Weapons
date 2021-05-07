@@ -367,7 +367,7 @@ namespace Scripts
                     [ProtoMember(1)] internal string[] SubpartId;
                     [ProtoMember(2)] internal string BarrelId;
                     [ProtoMember(3)] internal uint StartupFireDelay;
-                    [ProtoMember(4)] internal Dictionary<EventTriggers, uint> AnimationDelays;
+                    [ProtoMember(4)] internal Dictionary<EventTriggers, uint> AnimatiOnDelays;
                     [ProtoMember(5)] internal EventTriggers[] Reverse;
                     [ProtoMember(6)] internal EventTriggers[] Loop;
                     [ProtoMember(7)] internal Dictionary<EventTriggers, RelMove[]> EventMoveSets;
