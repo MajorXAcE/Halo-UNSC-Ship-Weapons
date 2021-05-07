@@ -347,15 +347,15 @@ namespace Scripts
                 HitPlayChance = 0.5f,
                 HitPlayShield = true,
             }, // Don't edit below this line
-            Ejection = new AmmoEjectionDef
+            Ejection = new EjectionDef
             {
                 Type = Particle, // Particle or Item (Inventory Component)
                 Speed = 100f, // Speed inventory is ejected from in dummy direction
                 SpawnChance = 0.5f, // chance of triggering effect (0 - 1)
                 CompDef = new ComponentDef
                 {
-                    ItemDefinition = "", //InventoryComponent name
-                    LifeTime = 0, // how long item should exist in world
+                    ItemName = "", //InventoryComponent name
+                    ItemLifeTime = 0, // how long item should exist in world
                     Delay = 0, // delay in ticks after shot before ejected
                 }
             },
@@ -686,15 +686,15 @@ namespace Scripts
                 HitPlayChance = 0,
                 HitPlayShield = true,
             }, // Don't edit below this line
-            Ejection = new AmmoEjectionDef
+            Ejection = new EjectionDef
             {
                 Type = Particle, // Particle or Item (Inventory Component)
                 Speed = 100f, // Speed inventory is ejected from in dummy direction
                 SpawnChance = 0.5f, // chance of triggering effect (0 - 1)
                 CompDef = new ComponentDef
                 {
-                    ItemDefinition = "", //InventoryComponent name
-                    LifeTime = 0, // how long item should exist in world
+                    ItemName = "", //InventoryComponent name
+                    ItemLifeTime = 0, // how long item should exist in world
                     Delay = 0, // delay in ticks after shot before ejected
                 }
             },
@@ -1028,15 +1028,15 @@ namespace Scripts
                 HitPlayChance = 0.5f,
                 HitPlayShield = true,
             }, // Don't edit below this line
-            Ejection = new AmmoEjectionDef
+            Ejection = new EjectionDef
             {
                 Type = Particle, // Particle or Item (Inventory Component)
                 Speed = 100f, // Speed inventory is ejected from in dummy direction
                 SpawnChance = 0.5f, // chance of triggering effect (0 - 1)
                 CompDef = new ComponentDef
                 {
-                    ItemDefinition = "", //InventoryComponent name
-                    LifeTime = 0, // how long item should exist in world
+                    ItemName = "", //InventoryComponent name
+                    ItemLifeTime = 0, // how long item should exist in world
                     Delay = 0, // delay in ticks after shot before ejected
                 }
             },
@@ -1370,15 +1370,15 @@ namespace Scripts
                 HitPlayChance = 0.5f,
                 HitPlayShield = true,
             }, // Don't edit below this line
-            Ejection = new AmmoEjectionDef
+            Ejection = new EjectionDef
             {
                 Type = Particle, // Particle or Item (Inventory Component)
                 Speed = 100f, // Speed inventory is ejected from in dummy direction
                 SpawnChance = 0.5f, // chance of triggering effect (0 - 1)
                 CompDef = new ComponentDef
                 {
-                    ItemDefinition = "", //InventoryComponent name
-                    LifeTime = 0, // how long item should exist in world
+                    ItemName = "", //InventoryComponent name
+                    ItemLifeTime = 0, // how long item should exist in world
                     Delay = 0, // delay in ticks after shot before ejected
                 }
             },
