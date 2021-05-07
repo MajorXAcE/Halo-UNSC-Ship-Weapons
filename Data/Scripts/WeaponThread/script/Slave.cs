@@ -2,14 +2,12 @@ using System;
 using System.IO;
 using Sandbox.ModAPI;
 using VRage.Game.Components;
-
-namespace WeaponThread
+using static Scripts.Structure;
+namespace Scripts
 {
     [MySessionComponentDescriptor(MyUpdateOrder.NoUpdate, int.MaxValue)]
     public class Session : MySessionComponentBase
     {
-        internal WeaponStructure.WeaponDefinition[] WeaponDefinitions;
-
         public override void LoadData()
         {
             Log.Init($"{ModContext.ModName}Init.log");
@@ -33,70 +31,53 @@ namespace WeaponThread
 
         void SendModMessage(bool sending)
         {
-            if (sending) Log.CleanLine($"Sending request to core");
-            else Log.CleanLine($"Receiving request from core");
+            Log.CleanLine(sending ? "Sending request to core" : "Receiving request from core");
             MyAPIGateway.Utilities.SendModMessage(7771, Storage);
-            MyAPIGateway.Utilities.SendModMessage(7773, ArmorStorage);
         }
 
         internal byte[] Storage;
-        internal byte[] ArmorStorage;
 
         internal void Init()
         {
-            var weapons = new Weapons();
-            WeaponDefinitions = weapons.ReturnDefs();
-            Log.CleanLine($"Found: {WeaponDefinitions.Length} weapon definitions");
-            for (int i = 0; i < WeaponDefinitions.Length; i++)
+            ContainerDefinition baseDefs;
+            Parts.GetBaseDefinitions(out baseDefs);
+            for (int i = 0; i < baseDefs.PartDefs.Length; i++)
             {
-                Log.CleanLine($"Compiling: {WeaponDefinitions[i].HardPoint.WeaponName}");
-                WeaponDefinitions[i].ModPath = ModContext.ModPath;
+                var partDef = baseDefs.PartDefs[i];
 
+                if (partDef != null) 
+                    partDef.ModPath = ModContext.ModPath;
             }
-            var ArmorDefinitions = weapons.ReturnArmorDefs();
-            Log.CleanLine($"Found: {ArmorDefinitions.Length} armor compatibility definitions");
-            Storage = MyAPIGateway.Utilities.SerializeToBinary(WeaponDefinitions);
-            ArmorStorage = MyAPIGateway.Utilities.SerializeToBinary(ArmorDefinitions);
-            Array.Clear(WeaponDefinitions, 0, WeaponDefinitions.Length);
-            WeaponDefinitions = null;
+            Storage = MyAPIGateway.Utilities.SerializeToBinary(baseDefs);
             Log.CleanLine($"Handing over control to Core and going to sleep");
         }
-    }
-    public class Log
-    {
-        private static Log _instance = null;
-        private TextWriter _file = null;
 
-        private static Log GetInstance()
+        public class Log
         {
-            return _instance ?? (_instance = new Log());
-        }
+            private static Log _instance = null;
+            internal TextWriter File = null;
 
-        public static void Init(string name)
-        {
-            if (GetInstance()._file == null)
-                GetInstance()._file = MyAPIGateway.Utilities.WriteFileInLocalStorage(name, typeof(Log));
-        }
+            public static void Init(string name)
+            {
+                _instance = new Log {File = MyAPIGateway.Utilities.WriteFileInLocalStorage(name, typeof(Log))};
+            }
 
-        public static void CleanLine(string text)
-        {
-            if (GetInstance()._file == null) return;
-            var message = $"{DateTime.Now:MM-dd-yy_HH-mm-ss-fff} - " + text;
-            GetInstance()._file.WriteLine(message);
-            GetInstance()._file.Flush();
-        }
+            public static void CleanLine(string text)
+            {
+                _instance.File.WriteLine(text);
+                _instance.File.Flush();
+            }
 
-        public static void Close()
-        {
-            var instance = (GetInstance());
-            if (instance._file == null) return;
-            instance._file.Flush();
-            instance._file.Close();
-            instance._file.Dispose();
-            instance._file = null;
-            instance = null;
+            public static void Close()
+            {
+                if (_instance?.File == null) return;
+                _instance.File.Flush();
+                _instance.File.Close();
+                _instance.File.Dispose();
+                _instance.File = null;
+                _instance = null;
+            }
         }
     }
-
 }
 

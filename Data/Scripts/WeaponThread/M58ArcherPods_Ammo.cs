@@ -1,23 +1,25 @@
-﻿using static WeaponThread.WeaponStructure.WeaponDefinition;
-using static WeaponThread.WeaponStructure.WeaponDefinition.AmmoDef;
-using static WeaponThread.WeaponStructure.WeaponDefinition.AmmoDef.AmmoEjectionDef;
-using static WeaponThread.WeaponStructure.WeaponDefinition.AmmoDef.AmmoEjectionDef.SpawnType;
-using static WeaponThread.WeaponStructure.WeaponDefinition.AmmoDef.ShapeDef.Shapes;
-using static WeaponThread.WeaponStructure.WeaponDefinition.AmmoDef.GraphicDef;
-using static WeaponThread.WeaponStructure.WeaponDefinition.AmmoDef.TrajectoryDef;
-using static WeaponThread.WeaponStructure.WeaponDefinition.AmmoDef.TrajectoryDef.GuidanceType;
-using static WeaponThread.WeaponStructure.WeaponDefinition.AmmoDef.DamageScaleDef;
-using static WeaponThread.WeaponStructure.WeaponDefinition.AmmoDef.DamageScaleDef.ShieldDef.ShieldType;
-using static WeaponThread.WeaponStructure.WeaponDefinition.AmmoDef.AreaDamageDef;
-using static WeaponThread.WeaponStructure.WeaponDefinition.AmmoDef.AreaDamageDef.EwarFieldsDef;
-using static WeaponThread.WeaponStructure.WeaponDefinition.AmmoDef.AreaDamageDef.EwarFieldsDef.PushPullDef.Force;
-using static WeaponThread.WeaponStructure.WeaponDefinition.AmmoDef.AreaDamageDef.AreaEffectType;
-using static WeaponThread.WeaponStructure.WeaponDefinition.AmmoDef.GraphicDef.LineDef;
-using static WeaponThread.WeaponStructure.WeaponDefinition.AmmoDef.GraphicDef.LineDef.Texture;
-using static WeaponThread.WeaponStructure.WeaponDefinition.AmmoDef.GraphicDef.LineDef.TracerBaseDef;
-namespace WeaponThread
+﻿using static Scripts.Structure.WeaponDefinition;
+using static Scripts.Structure.WeaponDefinition.AmmoDef;
+using static Scripts.Structure.WeaponDefinition.AmmoDef.EjectionDef;
+using static Scripts.Structure.WeaponDefinition.AmmoDef.EjectionDef.SpawnType;
+using static Scripts.Structure.WeaponDefinition.AmmoDef.ShapeDef.Shapes;
+using static Scripts.Structure.WeaponDefinition.AmmoDef.GraphicDef;
+using static Scripts.Structure.WeaponDefinition.AmmoDef.TrajectoryDef;
+using static Scripts.Structure.WeaponDefinition.AmmoDef.TrajectoryDef.GuidanceType;
+using static Scripts.Structure.WeaponDefinition.AmmoDef.DamageScaleDef;
+using static Scripts.Structure.WeaponDefinition.AmmoDef.DamageScaleDef.ShieldDef.ShieldType;
+using static Scripts.Structure.WeaponDefinition.AmmoDef.AreaDamageDef;
+using static Scripts.Structure.WeaponDefinition.AmmoDef.AreaDamageDef.AreaEffectType;
+using static Scripts.Structure.WeaponDefinition.AmmoDef.AreaDamageDef.EwarFieldsDef;
+using static Scripts.Structure.WeaponDefinition.AmmoDef.AreaDamageDef.EwarFieldsDef.PushPullDef.Force;
+using static Scripts.Structure.WeaponDefinition.AmmoDef.GraphicDef.LineDef;
+using static Scripts.Structure.WeaponDefinition.AmmoDef.GraphicDef.LineDef.TracerBaseDef;
+using static Scripts.Structure.WeaponDefinition.AmmoDef.GraphicDef.LineDef.Texture;
+using static Scripts.Structure.WeaponDefinition.AmmoDef.DamageScaleDef.DamageTypes.Damage;
+
+namespace Scripts
 { // Don't edit above this line
-    partial class Weapons
+    partial class Parts
     {
         private AmmoDef MXA_M58ArcherPods_Ammo => new AmmoDef
         {
@@ -36,25 +38,25 @@ namespace WeaponThread
 
             Shape = new ShapeDef //defines the collision shape of projectile, defaults line and visual Line Length if set to 0
             {
-                Shape = LineShape,
-                Diameter = 1,
+                Shape = LineShape, // LineShape or SphereShape. Do not use SphereShape for fast moving projectiles if you care about precision.
+                Diameter = 1, // Diameter is minimum length of LineShape or minimum diameter of SphereShape
             },
             ObjectsHit = new ObjectsHitDef
             {
                 MaxObjectsHit = 0, // 0 = disabled
                 CountBlocks = false, // counts gridBlocks and not just entities hit
             },
-            Shrapnel = new ShrapnelDef
+            Fragment = new FragmentDef
             {
                 AmmoRound = "MXA_M58ArcherPods_AccelStage",
                 Fragments = 1,
                 Degrees = 0,
                 Reverse = false,
-                RandomizeDir = false, // randomzie between forward and backward directions
+                RandomizeDir = false, // randomize between forward and backward directions
             },
-            Pattern = new AmmoPatternDef
+            Pattern = new PatternDef
             {
-                Ammos = new[] {
+                Patterns = new[] {
                     "",
                 },
                 Enable = false,
@@ -161,8 +163,8 @@ namespace WeaponThread
                 {
                     DetonateOnEnd = true,
                     ArmOnlyOnHit = false,
-                    DetonationDamage = 0f, //2250f Pre-ReBalance
-                    DetonationRadius = 0f,
+                    DetonationDamage = 0,
+                    DetonationRadius = 0,
                     MinArmingTime = 0, //Min time in ticks before projectile will arm for detonation (will also affect shrapnel spawning)
                 },
                 EwarFields = new EwarFieldsDef
@@ -196,8 +198,8 @@ namespace WeaponThread
                 TargetLossTime = 600, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                 MaxLifeTime = 90, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                 AccelPerSec = 0f,
-                DesiredSpeed = 30,
-                MaxTrajectory = 10000f,
+                DesiredSpeed = 30, // voxel phasing if you go above 5100
+                MaxTrajectory =10000f,
                 FieldTime = 0, // 0 is disabled, a value causes the projectile to come to rest, spawn a field and remain for a time (Measured in game ticks, 60 = 1 second)
                 GravityMultiplier = 0f, // Gravity multiplier, influences the trajectory of the projectile, value greater than 0 to enable.
                 SpeedVariance = Random(start: 0, end: 0), // subtracts value from DesiredSpeed
@@ -214,6 +216,7 @@ namespace WeaponThread
                     MaxTargets = 8, // Number of targets allowed before ending, 0 = unlimited
                     NoTargetExpire = false, // Expire without ever having a target at TargetLossTime
                     Roam = false, // Roam current area after target loss
+                    KeepAliveAfterTargetLoss = false, // Whether to stop early death of projectile on target loss
                 },
                 Mines = new MinesDef
                 {
@@ -233,17 +236,16 @@ namespace WeaponThread
                 {
                     Ammo = new ParticleDef
                     {
-                        Name = "", //Archer_MissileSmokeTrail
+                        Name = "", //ShipWelderArc
                         ShrinkByDistance = false,
-                        Color = Color(red: 1, green: 1, blue: 1, alpha: 1),
-                        Offset = Vector(x: 0, y: 0, z: 0.55f),
+                        Color = Color(red: 128, green: 0, blue: 0, alpha: 32),
+                        Offset = Vector(x: 0, y: 0, z: 0),
                         Extras = new ParticleOptionDef
                         {
-                            Loop = true,
                             Restart = false,
                             MaxDistance = 5000,
-                            MaxDuration = 10,
-                            Scale = 0.0625f,
+                            MaxDuration = 0,
+                            Scale = 1,
                         },
                     },
                     Hit = new ParticleDef
@@ -251,15 +253,30 @@ namespace WeaponThread
                         Name = "",
                         ApplyToShield = true,
                         ShrinkByDistance = false,
-                        Color = Color(red: 50, green: 25, blue: 0, alpha: 1),
+                        Color = Color(red: 3, green: 1.9f, blue: 1f, alpha: 1),
                         Offset = Vector(x: 0, y: 0, z: 0),
                         Extras = new ParticleOptionDef
                         {
-                            Loop = true,
                             Restart = false,
                             MaxDistance = 5000,
-                            MaxDuration = 1,
-                            Scale = .15f,
+                            MaxDuration = 0,
+                            Scale = 1,
+                            HitPlayChance = 1f,
+                        },
+                    },
+                    Eject = new ParticleDef
+                    {
+                        Name = "",
+                        ApplyToShield = true,
+                        ShrinkByDistance = false,
+                        Color = Color(red: 3, green: 1.9f, blue: 1f, alpha: 1),
+                        Offset = Vector(x: 0, y: 0, z: 0),
+                        Extras = new ParticleOptionDef
+                        {
+                            Restart = false,
+                            MaxDistance = 5000,
+                            MaxDuration = 30,
+                            Scale = 1,
                             HitPlayChance = 1f,
                         },
                     },
@@ -284,7 +301,7 @@ namespace WeaponThread
                         {
                             Enable = false, // If true Tracer TextureMode is ignored
                             Textures = new[] {
-								"",
+                                "",
                             },
                             SegmentLength = 0f, // Uses the values below.
                             SegmentGap = 0f, // Uses Tracer textures and values
@@ -323,7 +340,11 @@ namespace WeaponThread
             {
                 TravelSound = "MXA_Archer_Travel",
                 HitSound = "",
-                HitPlayChance = 1.0f,
+                ShieldHitSound = "",
+                PlayerHitSound = "",
+                VoxelHitSound = "",
+                FloatingHitSound = "",
+                HitPlayChance = 0.5f,
                 HitPlayShield = true,
             }, // Don't edit below this line
             Ejection = new AmmoEjectionDef
@@ -356,25 +377,25 @@ namespace WeaponThread
 
             Shape = new ShapeDef //defines the collision shape of projectile, defaults line and visual Line Length if set to 0
             {
-                Shape = LineShape,
-                Diameter = 1,
+                Shape = LineShape, // LineShape or SphereShape. Do not use SphereShape for fast moving projectiles if you care about precision.
+                Diameter = 1, // Diameter is minimum length of LineShape or minimum diameter of SphereShape
             },
             ObjectsHit = new ObjectsHitDef
             {
                 MaxObjectsHit = 0, // 0 = disabled
                 CountBlocks = false, // counts gridBlocks and not just entities hit
             },
-            Shrapnel = new ShrapnelDef
+            Fragment = new FragmentDef
             {
                 AmmoRound = "MXA_M58ArcherPods_Stage",
                 Fragments = 1,
                 Degrees = 0,
                 Reverse = false,
-                RandomizeDir = false, // randomzie between forward and backward directions
+                RandomizeDir = false, // randomize between forward and backward directions
             },
-            Pattern = new AmmoPatternDef
+            Pattern = new PatternDef
             {
-                Ammos = new[] {
+                Patterns = new[] {
                     "",
                 },
                 Enable = false,
@@ -481,8 +502,8 @@ namespace WeaponThread
                 {
                     DetonateOnEnd = true,
                     ArmOnlyOnHit = false,
-                    DetonationDamage = 0f, //2250f Pre-ReBalance
-                    DetonationRadius = 0f,
+                    DetonationDamage = 0,
+                    DetonationRadius = 0,
                     MinArmingTime = 0, //Min time in ticks before projectile will arm for detonation (will also affect shrapnel spawning)
                 },
                 EwarFields = new EwarFieldsDef
@@ -516,7 +537,7 @@ namespace WeaponThread
                 TargetLossTime = 600, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                 MaxLifeTime = 60, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                 AccelPerSec = 500f,
-                DesiredSpeed = 30,
+                DesiredSpeed = 30, // voxel phasing if you go above 5100
                 MaxTrajectory = 10000f,
                 FieldTime = 0, // 0 is disabled, a value causes the projectile to come to rest, spawn a field and remain for a time (Measured in game ticks, 60 = 1 second)
                 GravityMultiplier = 0f, // Gravity multiplier, influences the trajectory of the projectile, value greater than 0 to enable.
@@ -534,6 +555,7 @@ namespace WeaponThread
                     MaxTargets = 8, // Number of targets allowed before ending, 0 = unlimited
                     NoTargetExpire = false, // Expire without ever having a target at TargetLossTime
                     Roam = false, // Roam current area after target loss
+                    KeepAliveAfterTargetLoss = false, // Whether to stop early death of projectile on target loss
                 },
                 Mines = new MinesDef
                 {
@@ -559,7 +581,6 @@ namespace WeaponThread
                         Offset = Vector(x: 0, y: 0, z: 0.55f),
                         Extras = new ParticleOptionDef
                         {
-                            Loop = true,
                             Restart = false,
                             MaxDistance = 5000,
                             MaxDuration = 10,
@@ -575,11 +596,26 @@ namespace WeaponThread
                         Offset = Vector(x: 0, y: 0, z: 0),
                         Extras = new ParticleOptionDef
                         {
-                            Loop = true,
                             Restart = false,
                             MaxDistance = 5000,
-                            MaxDuration = 1,
-                            Scale = .15f,
+                            MaxDuration = 0,
+                            Scale = 1,
+                            HitPlayChance = 1f,
+                        },
+                    },
+                    Eject = new ParticleDef
+                    {
+                        Name = "",
+                        ApplyToShield = true,
+                        ShrinkByDistance = false,
+                        Color = Color(red: 3, green: 1.9f, blue: 1f, alpha: 1),
+                        Offset = Vector(x: 0, y: 0, z: 0),
+                        Extras = new ParticleOptionDef
+                        {
+                            Restart = false,
+                            MaxDistance = 5000,
+                            MaxDuration = 30,
+                            Scale = 1,
                             HitPlayChance = 1f,
                         },
                     },
@@ -604,7 +640,7 @@ namespace WeaponThread
                         {
                             Enable = false, // If true Tracer TextureMode is ignored
                             Textures = new[] {
-								"",
+                                "",
                             },
                             SegmentLength = 0f, // Uses the values below.
                             SegmentGap = 0f, // Uses Tracer textures and values
@@ -643,7 +679,11 @@ namespace WeaponThread
             {
                 TravelSound = "MXA_Archer_Travel",
                 HitSound = "",
-                HitPlayChance = 1.0f,
+                ShieldHitSound = "",
+                PlayerHitSound = "",
+                VoxelHitSound = "",
+                FloatingHitSound = "",
+                HitPlayChance = 0,
                 HitPlayShield = true,
             }, // Don't edit below this line
             Ejection = new AmmoEjectionDef
@@ -677,21 +717,21 @@ namespace WeaponThread
 
             Shape = new ShapeDef //defines the collision shape of projectile, defaults line and visual Line Length if set to 0
             {
-                Shape = LineShape,
-                Diameter = 1,
+                Shape = LineShape, // LineShape or SphereShape. Do not use SphereShape for fast moving projectiles if you care about precision.
+                Diameter = 1, // Diameter is minimum length of LineShape or minimum diameter of SphereShape
             },
             ObjectsHit = new ObjectsHitDef
             {
                 MaxObjectsHit = 0, // 0 = disabled
                 CountBlocks = false, // counts gridBlocks and not just entities hit
             },
-            Shrapnel = new ShrapnelDef
+            Fragment = new FragmentDef
             {
                 AmmoRound = "MXA_M58ArcherPods_Shrapnel",
                 Fragments = 25,
                 Degrees = 270,
                 Reverse = false,
-                RandomizeDir = false, // randomzie between forward and backward directions
+                RandomizeDir = false, // randomize between forward and backward directions
             },
             Pattern = new AmmoPatternDef
             {
@@ -802,8 +842,8 @@ namespace WeaponThread
                 {
                     DetonateOnEnd = true,
                     ArmOnlyOnHit = false,
-                    DetonationDamage = 1200f, //2250f Pre-ReBalance
-                    DetonationRadius = 8f,
+                    DetonationDamage = 1200,
+                    DetonationRadius = 8,
                     MinArmingTime = 0, //Min time in ticks before projectile will arm for detonation (will also affect shrapnel spawning)
                 },
                 EwarFields = new EwarFieldsDef
@@ -837,7 +877,7 @@ namespace WeaponThread
                 TargetLossTime = 600, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                 MaxLifeTime = 3600, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                 AccelPerSec = 30f,
-                DesiredSpeed = 300,
+                DesiredSpeed = 300, // voxel phasing if you go above 5100
                 MaxTrajectory = 10000f,
                 FieldTime = 0, // 0 is disabled, a value causes the projectile to come to rest, spawn a field and remain for a time (Measured in game ticks, 60 = 1 second)
                 GravityMultiplier = 0f, // Gravity multiplier, influences the trajectory of the projectile, value greater than 0 to enable.
@@ -883,7 +923,6 @@ namespace WeaponThread
                         Offset = Vector(x: 0, y: 0, z: -0.55f),
                         Extras = new ParticleOptionDef
                         {
-                            Loop = true,
                             Restart = false,
                             MaxDistance = 5000,
                             MaxDuration = 10,
@@ -899,11 +938,26 @@ namespace WeaponThread
                         Offset = Vector(x: 0, y: 0, z: 0),
                         Extras = new ParticleOptionDef
                         {
-                            Loop = true,
                             Restart = false,
                             MaxDistance = 5000,
-                            MaxDuration = 1,
-                            Scale = .15f,
+                            MaxDuration = 0,
+                            Scale = 1,
+                            HitPlayChance = 1f,
+                        },
+                    },
+                    Eject = new ParticleDef
+                    {
+                        Name = "",
+                        ApplyToShield = true,
+                        ShrinkByDistance = false,
+                        Color = Color(red: 3, green: 1.9f, blue: 1f, alpha: 1),
+                        Offset = Vector(x: 0, y: 0, z: 0),
+                        Extras = new ParticleOptionDef
+                        {
+                            Restart = false,
+                            MaxDistance = 5000,
+                            MaxDuration = 30,
+                            Scale = 1,
                             HitPlayChance = 1f,
                         },
                     },
@@ -928,7 +982,7 @@ namespace WeaponThread
                         {
                             Enable = false, // If true Tracer TextureMode is ignored
                             Textures = new[] {
-								"",
+                                "",
                             },
                             SegmentLength = 0f, // Uses the values below.
                             SegmentGap = 0f, // Uses Tracer textures and values
@@ -967,7 +1021,11 @@ namespace WeaponThread
             {
                 TravelSound = "MXA_Archer_Travel",
                 HitSound = "",
-                HitPlayChance = 1.0f,
+                ShieldHitSound = "",
+                PlayerHitSound = "",
+                VoxelHitSound = "",
+                FloatingHitSound = "",
+                HitPlayChance = 0.5f,
                 HitPlayShield = true,
             }, // Don't edit below this line
             Ejection = new AmmoEjectionDef
@@ -1009,7 +1067,7 @@ namespace WeaponThread
                 MaxObjectsHit = 0, // 0 = disabled
                 CountBlocks = false, // counts gridBlocks and not just entities hit
             },
-            Shrapnel = new ShrapnelDef
+            Fragment = new FragmentDef
             {
                 AmmoRound = "",
                 Fragments = 0,
@@ -1036,8 +1094,8 @@ namespace WeaponThread
                 DamageVoxels = false, // true = voxels are vulnerable to this weapon
                 SelfDamage = false, // true = allow self damage.
                 HealthHitModifier = 0.5, // defaults to a value of 1, this setting modifies how much Health is subtracted from a projectile per hit (1 = per hit).
-                VoxelHitModifier = 10,
-                Characters = -1f,
+                VoxelHitModifier = -1f,
+                Characters = 1f,
                 // modifier values: -1 = disabled (higher performance), 0 = no damage, 0.01 = 1% damage, 2 = 200% damage.
                 FallOff = new FallOffDef
                 {
@@ -1126,13 +1184,13 @@ namespace WeaponThread
                 {
                     DetonateOnEnd = false,
                     ArmOnlyOnHit = false,
-                    DetonationDamage = 0f,
-                    DetonationRadius = 0f,
+                    DetonationDamage = 0,
+                    DetonationRadius = 0,
                     MinArmingTime = 0, //Min time in ticks before projectile will arm for detonation (will also affect shrapnel spawning)
                 },
                 EwarFields = new EwarFieldsDef
                 {
-                    Duration = 1,
+                    Duration = 0,
                     StackDuration = false,
                     Depletable = false,
                     MaxStacks = 0,
@@ -1161,11 +1219,11 @@ namespace WeaponThread
                 TargetLossTime = 0, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                 MaxLifeTime = 0, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                 AccelPerSec = 0f,
-                DesiredSpeed = 0f, // DO NOT SET HIGHER THAN 4100
+                DesiredSpeed = 0, // voxel phasing if you go above 5100
                 MaxTrajectory = 5f,
                 FieldTime = 0, // 0 is disabled, a value causes the projectile to come to rest, spawn a field and remain for a time (Measured in game ticks, 60 = 1 second)
                 GravityMultiplier = 0f, // Gravity multiplier, influences the trajectory of the projectile, value greater than 0 to enable.
-                SpeedVariance = Random(start: 0, end: 250), // subtracts value from DesiredSpeed
+                SpeedVariance = Random(start: 0, end: 0), // subtracts value from DesiredSpeed
                 RangeVariance = Random(start: 0, end: 0), // subtracts value from MaxTrajectory
                 MaxTrajectoryTime = 0, // How long the weapon must fire before it reaches MaxTrajectory.
                 Smarts = new SmartsDef
@@ -1178,16 +1236,18 @@ namespace WeaponThread
                     OverideTarget = false, // when set to true ammo picks its own target, does not use hardpoint's.
                     MaxTargets = 0, // Number of targets allowed before ending, 0 = unlimited
                     NoTargetExpire = false, // Expire without ever having a target at TargetLossTime
+					OffsetRatio = 0, // The ratio to offset the random dir (0 to 1) 
+                    OffsetTime = 0, // how often to offset degree, measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                     Roam = false, // Roam current area after target loss
-                    KeepAliveAfterTargetLoss = true, // Whether to stop early death of projectile on target loss
+					KeepAliveAfterTargetLoss = true, // Whether to stop early death of projectile on target loss
                 },
                 Mines = new MinesDef
                 {
-                    DetectRadius = 0f,
+                    DetectRadius = 0,
                     DeCloakRadius = 0,
                     FieldTime = 0,
                     Cloak = false,
-                    Persist = true,
+                    Persist = false,
                 },
             },
             AmmoGraphics = new GraphicDef
@@ -1202,13 +1262,12 @@ namespace WeaponThread
                         Name = "", //ShipWelderArc
                         ShrinkByDistance = false,
                         Color = Color(red: 128, green: 0, blue: 0, alpha: 32),
-                        Offset = Vector(x: 0, y: -1, z: 0),
+                        Offset = Vector(x: 0, y: 0, z: 0),
                         Extras = new ParticleOptionDef
                         {
-                            Loop = true,
                             Restart = false,
                             MaxDistance = 5000,
-                            MaxDuration = 1,
+                            MaxDuration = 0,
                             Scale = 1,
                         },
                     },
@@ -1221,10 +1280,9 @@ namespace WeaponThread
                         Offset = Vector(x: 0, y: 0, z: 0),
                         Extras = new ParticleOptionDef
                         {
-                            Loop = true,
                             Restart = false,
                             MaxDistance = 5000,
-                            MaxDuration = 30,
+                            MaxDuration = 0,
                             Scale = 1,
                             HitPlayChance = 1f,
                         },
@@ -1238,7 +1296,6 @@ namespace WeaponThread
                         Offset = Vector(x: 0, y: 0, z: 0),
                         Extras = new ParticleOptionDef
                         {
-                            Loop = true,
                             Restart = false,
                             MaxDistance = 5000,
                             MaxDuration = 30,
@@ -1267,7 +1324,7 @@ namespace WeaponThread
                         {
                             Enable = false, // If true Tracer TextureMode is ignored
                             Textures = new[] {
-								"",
+                                "",
                             },
                             SegmentLength = 0f, // Uses the values below.
                             SegmentGap = 0f, // Uses Tracer textures and values
@@ -1284,7 +1341,7 @@ namespace WeaponThread
                     {
                         Enable = false,
                         Textures = new[] {
-							"",
+                            "",
                         },
                         TextureMode = Normal,
                         DecayTime = 128,

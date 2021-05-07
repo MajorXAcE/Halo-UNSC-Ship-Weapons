@@ -2,12 +2,19 @@
 using ProtoBuf;
 using VRageMath;
 
-namespace WeaponThread
+namespace Scripts
 {
-    public class WeaponStructure
+    public class Structure
     {
         [ProtoContract]
-        public struct WeaponDefinition
+        public class ContainerDefinition
+        {
+            [ProtoMember(1)] internal PartDefinition[] PartDefs;
+            [ProtoMember(2)] internal ArmorDefinition[] ArmorDefs;
+        }
+
+        [ProtoContract]
+        public class PartDefinition
         {
             [ProtoMember(1)] internal ModelAssignmentsDef Assignments;
             [ProtoMember(2)] internal TargetingDef Targeting;
@@ -29,7 +36,7 @@ namespace WeaponThread
                 public struct MountPointDef
                 {
                     [ProtoMember(1)] internal string SubtypeId;
-                    [ProtoMember(2)] internal string AimPartId; //Depreciated
+                    [ProtoMember(2)] internal string AimPartId; // no longer used
                     [ProtoMember(3)] internal string MuzzlePartId;
                     [ProtoMember(4)] internal string AzimuthPartId;
                     [ProtoMember(5)] internal string ElevationPartId;
@@ -81,8 +88,8 @@ namespace WeaponThread
             [ProtoContract]
             public struct AnimationDef
             {
-                [ProtoMember(1)] internal PartAnimationSetDef[] WeaponAnimationSets;
-                [ProtoMember(2)] internal WeaponEmissive[] Emissives;
+                [ProtoMember(1)] internal PartAnimationSetDef[] AnimationSets;
+                [ProtoMember(2)] internal PartEmissive[] Emissives;
                 [ProtoMember(3)] internal string[] HeatingEmissiveParts;
                 [ProtoMember(4)] internal Dictionary<PartAnimationSetDef.EventTriggers, EventParticle[]> EventParticles;
 
@@ -98,11 +105,12 @@ namespace WeaponThread
                         TurnOn,
                         TurnOff,
                         BurstReload,
-                        OutOfAmmo,
+                        NoMagsToLoad,
                         PreFire,
                         EmptyOnGameLoad,
                         StopFiring,
-                        StopTracking
+                        StopTracking,
+                        LockDelay,
                     }
 
 
@@ -119,7 +127,7 @@ namespace WeaponThread
                 }
 
                 [ProtoContract]
-                public struct WeaponEmissive
+                public struct PartEmissive
                 {
                     [ProtoMember(1)] internal string EmissiveName;
                     [ProtoMember(2)] internal string[] EmissivePartNames;
@@ -128,7 +136,6 @@ namespace WeaponThread
                     [ProtoMember(5)] internal Vector4[] Colors;
                     [ProtoMember(6)] internal float[] IntensityRange;
                 }
-
                 [ProtoContract]
                 public struct EventParticle
                 {
@@ -139,7 +146,6 @@ namespace WeaponThread
                     [ProtoMember(5)] internal uint LoopDelay;
                     [ProtoMember(6)] internal bool ForceStop;
                 }
-
                 [ProtoContract]
                 internal struct RelMove
                 {
@@ -197,7 +203,7 @@ namespace WeaponThread
                     Advanced,
                 }
 
-                [ProtoMember(1)] internal string WeaponName;
+                [ProtoMember(1)] internal string PartName;
                 [ProtoMember(2)] internal int DelayCeaseFire;
                 [ProtoMember(3)] internal float DeviateShotAngle;
                 [ProtoMember(4)] internal double AimingTolerance;
@@ -259,11 +265,15 @@ namespace WeaponThread
                 [ProtoContract]
                 public struct HardwareDef
                 {
-                    public enum ArmorState
+                    public enum HardwareType
                     {
-                        IsWeapon,
-                        Passive,
-                        Active,
+                        BlockWeapon,
+                        HandWeapon,
+                        PassiveArmor,
+                        ActiveArmor,
+                        RegenArmor,
+                        Upgrade,
+                        Phantom,
                     }
 
                     [ProtoMember(1)] internal float RotateRate;
@@ -275,9 +285,7 @@ namespace WeaponThread
                     [ProtoMember(7)] internal int MaxElevation;
                     [ProtoMember(8)] internal int MinElevation;
                     [ProtoMember(9)] internal float InventorySize;
-                    [ProtoMember(10)] internal ArmorState Armor;
-                    [ProtoMember(11)] internal int HomeAzimuth;
-                    [ProtoMember(12)] internal int HomeElevation;
+                    [ProtoMember(10)] internal HardwareType Hardware;
                 }
 
                 [ProtoContract]
@@ -331,14 +339,14 @@ namespace WeaponThread
                 [ProtoMember(12)] internal TrajectoryDef Trajectory;
                 [ProtoMember(13)] internal AreaDamageDef AreaEffect;
                 [ProtoMember(14)] internal BeamDef Beams;
-                [ProtoMember(15)] internal ShrapnelDef Shrapnel;
+                [ProtoMember(15)] internal FragmentDef Fragment;
                 [ProtoMember(16)] internal GraphicDef AmmoGraphics;
                 [ProtoMember(17)] internal AmmoAudioDef AmmoAudio;
                 [ProtoMember(18)] internal bool HardPointUsable;
-                [ProtoMember(19)] internal AmmoPatternDef Pattern;
+                [ProtoMember(19)] internal PatternDef Pattern;
                 [ProtoMember(20)] internal int EnergyMagazineSize;
                 [ProtoMember(21)] internal float DecayPerShot;
-                [ProtoMember(22)] internal AmmoEjectionDef Ejection;
+                [ProtoMember(22)] internal EjectionDef Ejection;
                 [ProtoMember(23)] internal bool IgnoreWater;
 
                 [ProtoContract]
@@ -388,6 +396,21 @@ namespace WeaponThread
                     }
 
                     [ProtoContract]
+                    public struct DamageTypes
+                    {
+                        internal enum Damage
+                        {
+                            Energetic,
+                            Kinetic,
+                        }
+
+                        [ProtoMember(1)] internal Damage Base;
+                        [ProtoMember(2)] internal Damage AreaEffect;
+                        [ProtoMember(3)] internal Damage Detonation;
+                        [ProtoMember(4)] internal Damage Shield;
+                    }
+
+                    [ProtoContract]
                     public struct ShieldDef
                     {
                         internal enum ShieldType
@@ -395,8 +418,8 @@ namespace WeaponThread
                             Heal,
                             Bypass,
                             Emp,
-                            Energy,
-                            Kinetic
+                            Energy, // retired
+                            Kinetic // retired
                         }
 
                         [ProtoMember(1)] internal float Modifier;
@@ -536,7 +559,7 @@ namespace WeaponThread
                 }
 
                 [ProtoContract]
-                public struct ShrapnelDef
+                public struct FragmentDef
                 {
                     [ProtoMember(1)] internal string AmmoRound;
                     [ProtoMember(2)] internal int Fragments;
@@ -548,9 +571,9 @@ namespace WeaponThread
                 }
 
                 [ProtoContract]
-                public struct AmmoPatternDef
+                public struct PatternDef
                 {
-                    [ProtoMember(1)] internal string[] Ammos;
+                    [ProtoMember(1)] internal string[] Patterns;
                     [ProtoMember(2)] internal bool Enable;
                     [ProtoMember(3)] internal float TriggerChance;
                     [ProtoMember(4)] internal bool SkipParent;
@@ -561,7 +584,7 @@ namespace WeaponThread
                 }
 
                 [ProtoContract]
-                public struct AmmoEjectionDef
+                public struct EjectionDef
                 {
                     public enum SpawnType
                     {
@@ -576,8 +599,8 @@ namespace WeaponThread
                     [ProtoContract]
                     public struct ComponentDef
                     {
-                        [ProtoMember(1)] internal string ItemDefinition;
-                        [ProtoMember(2)] internal int LifeTime;
+                        [ProtoMember(1)] internal string ItemName;
+                        [ProtoMember(2)] internal int ItemLifeTime;
                         [ProtoMember(3)] internal int Delay;
                     }
                 }
@@ -602,8 +625,8 @@ namespace WeaponThread
                         PullField,
                     }
 
-                    [ProtoMember(1)] internal double AreaEffectRadius; //Depreciated
-                    [ProtoMember(2)] internal float AreaEffectDamage; //Depreciated
+                    [ProtoMember(1)] internal double AreaEffectRadius;
+                    [ProtoMember(2)] internal float AreaEffectDamage;
                     [ProtoMember(3)] internal AreaEffectType AreaEffect;
                     [ProtoMember(4)] internal PulseDef Pulse;
                     [ProtoMember(5)] internal DetonateDef Detonation;
@@ -737,8 +760,6 @@ namespace WeaponThread
                         [ProtoMember(8)] internal bool NoTargetExpire;
                         [ProtoMember(9)] internal bool Roam;
                         [ProtoMember(10)] internal bool KeepAliveAfterTargetLoss;
-                        [ProtoMember(11)] internal float OffsetRatio;
-                        [ProtoMember(12)] internal int OffsetTime;
                     }
 
                     [ProtoContract]
@@ -783,17 +804,21 @@ namespace WeaponThread
                 [ProtoMember(6)] internal bool ShrinkByDistance;
             }
         }
-    
+
         [ProtoContract]
-        public struct ArmorCompatibilityDef
+        public class ArmorDefinition 
         {
             internal enum ArmorType
             {
                 Light,
                 Heavy,
+                NonArmor,
             }
+
             [ProtoMember(1)] internal string SubtypeId;
             [ProtoMember(2)] internal ArmorType Kind;
+            [ProtoMember(3)] internal double KineticResistance;
+            [ProtoMember(4)] internal double EnergeticResistance;
         }
     }
 }
