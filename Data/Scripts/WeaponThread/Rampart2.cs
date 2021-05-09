@@ -8,12 +8,15 @@ using static WeaponThread.WeaponStructure.WeaponDefinition.HardPointDef.Predicti
 using static WeaponThread.WeaponStructure.WeaponDefinition.TargetingDef.BlockTypes;
 using static WeaponThread.WeaponStructure.WeaponDefinition.TargetingDef.Threat;
 
-namespace WeaponThread {   
-    partial class Weapons {
+namespace WeaponThread
+{
+    partial class Weapons
+    {
         // Don't edit above this line
-        WeaponDefinition MXA_Rampart2 => new WeaponDefinition {
+        WeaponDefinition MXA_Rampart2 => new WeaponDefinition
+        {
 
-            Assignments = new ModelAssignmentsDef 
+            Assignments = new ModelAssignmentsDef
             {
                 MountPoints = new[] {
                     new MountPointDef {
@@ -25,7 +28,7 @@ namespace WeaponThread {
                         DurabilityMod = 0.5f,
                         IconName = ""
                     },
-					new MountPointDef {
+                    new MountPointDef {
                         SubtypeId = "MXA_Rampart2_S",
                         AimPartId = "None",
                         MuzzlePartId = "Elevation",
@@ -35,16 +38,16 @@ namespace WeaponThread {
                         IconName = ""
                     },
                 },
-                Barrels = new [] {
+                Barrels = new[] {
                     "muzzle_projectile_1",
-					"muzzle_projectile_3",
+                    "muzzle_projectile_3",
                     "muzzle_projectile_2",
                     "muzzle_projectile_4",
                 },
                 Ejector = "",
-				Scope = "scope", //Where line of sight checks are performed from must be clear of block collision
+                Scope = "scope", //Where line of sight checks are performed from must be clear of block collision
             },
-            Targeting = new TargetingDef  
+            Targeting = new TargetingDef
             {
                 Threats = new[] {
                     Projectiles, Grids, Characters, Meteors,
@@ -60,10 +63,10 @@ namespace WeaponThread {
                 MaxTargetDistance = 1250, // 0 = unlimited, Maximum target distance that targets will be automatically shot at.
                 MinTargetDistance = 50, // 0 = unlimited, Min target distance that targets will be automatically shot at.
                 TopTargets = 4, // 0 = unlimited, max number of top targets to randomize between.
-                TopBlocks = 0, // 0 = unlimited, max number of blocks to randomize between
+                TopBlocks = 6, // 0 = unlimited, max number of blocks to randomize between
                 StopTrackingSpeed = 1500, // do not track target threats traveling faster than this speed
             },
-            HardPoint = new HardPointDef 
+            HardPoint = new HardPointDef
             {
                 WeaponName = "M870 Point Defense", // name of weapon in terminal
                 DeviateShotAngle = 0.1725f,
@@ -73,20 +76,23 @@ namespace WeaponThread {
                 AddToleranceToTracking = true,
                 CanShootSubmerged = false,
 
-                Ui = new UiDef {
+                Ui = new UiDef
+                {
                     RateOfFire = true,
                     DamageModifier = false,
                     ToggleGuidance = false,
-                    EnableOverload =  false,
+                    EnableOverload = false,
                 },
-                Ai = new AiDef {
+                Ai = new AiDef
+                {
                     TrackTargets = true,
                     TurretAttached = true,
                     TurretController = true,
                     PrimaryTracking = true,
                     LockOnFocus = false,
                 },
-                HardWare = new HardwareDef {
+                HardWare = new HardwareDef
+                {
                     RotateRate = 0.04f,
                     ElevateRate = 0.02f,
                     MinAzimuth = -180,
@@ -98,7 +104,8 @@ namespace WeaponThread {
                     Offset = Vector(x: 0, y: 0, z: 0),
                     //Armor = IsWeapon, // IsWeapon, Passive, Active
                 },
-                Other = new OtherDef {
+                Other = new OtherDef
+                {
                     GridWeaponCap = 0,
                     RotateBarrelAxis = 0,
                     EnergyPriority = 0,
@@ -108,7 +115,8 @@ namespace WeaponThread {
                     CheckInflatedBox = false, // if true, the bounding box of the gun is expanded by the RestrictionRadius
                     CheckForAnyWeapon = false, // if true, the check will fail if ANY gun is present, false only looks for this subtype
                 },
-                Loading = new LoadingDef {
+                Loading = new LoadingDef
+                {
                     RateOfFire = 420, // visual only, 0 disables and uses RateOfFire
                     BarrelsPerShot = 1,
                     TrajectilesPerBarrel = 1, // Number of Trajectiles per barrel per fire event.
@@ -127,7 +135,8 @@ namespace WeaponThread {
                     BarrelSpinRate = 0, // visual only, 0 disables and uses RateOfFire
                     DeterministicSpin = false, // Spin barrel position will always be relative to initial / starting positions (spin will not be as smooth).
                 },
-                Audio = new HardPointAudioDef {
+                Audio = new HardPointAudioDef
+                {
                     PreFiringSound = "",
                     FiringSound = "MXA_CoilgunPD_Fire", // WepShipGatlingShot
                     FiringSoundPerShot = true,
@@ -137,14 +146,17 @@ namespace WeaponThread {
                     BarrelRotationSound = "", //WepShipGatlingRotation
                     FireSoundEndDelay = 0, // Measured in game ticks(6 = 100ms, 60 = 1 seconds, etc..).
                 },
-                Graphics = new HardPointParticleDef {
+                Graphics = new HardPointParticleDef
+                {
 
-                    Barrel1 = new ParticleDef {
+                    Barrel1 = new ParticleDef
+                    {
                         Name = "MXA_SmallCoilgunMuzzleFlash", // Smoke_LargeGunShot
                         Color = Color(red: .095f, green: .075f, blue: .05f, alpha: 1),
                         Offset = Vector(x: 0, y: 0, z: -0.125f),
 
-                        Extras = new ParticleOptionDef {
+                        Extras = new ParticleOptionDef
+                        {
                             Loop = false,
                             Restart = false,
                             MaxDistance = 300,
@@ -152,12 +164,14 @@ namespace WeaponThread {
                             Scale = .5f,
                         },
                     },
-                    Barrel2 = new ParticleDef {
+                    Barrel2 = new ParticleDef
+                    {
                         Name = "",//Muzzle_Flash_Large
                         Color = Color(red: 20, green: 20, blue: 20, alpha: 1),
                         Offset = Vector(x: 0, y: 0, z: 0),
 
-                        Extras = new ParticleOptionDef {
+                        Extras = new ParticleOptionDef
+                        {
                             Loop = false,
                             Restart = false,
                             MaxDistance = 300,
@@ -167,9 +181,9 @@ namespace WeaponThread {
                     },
                 },
             },
-            Ammos = new [] {
+            Ammos = new[] {
                 MXA_CoilgunPD_Ammo,
-				MXA_CoilgunPD_ProxAmmo,
+                MXA_CoilgunPD_ProxAmmo,
             },
             Animations = MXA_Rampart2_Animation,
             //Upgrades = UpgradeModules,
