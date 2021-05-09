@@ -284,7 +284,7 @@ namespace WeaponThread
                         {
                             Enable = false, // If true Tracer TextureMode is ignored
                             Textures = new[] {
-								"",
+                                "",
                             },
                             SegmentLength = 0f, // Uses the values below.
                             SegmentGap = 0f, // Uses Tracer textures and values
@@ -301,7 +301,7 @@ namespace WeaponThread
                     {
                         Enable = true,
                         Textures = new[] {
-							"WeaponLaser",
+                            "WeaponLaser",
                         },
                         TextureMode = Normal,
                         DecayTime = 3,
@@ -339,7 +339,7 @@ namespace WeaponThread
                 }
             },
         };
-		private AmmoDef MXA_M58ArcherPods_AccelStage => new AmmoDef
+        private AmmoDef MXA_M58ArcherPods_AccelStage => new AmmoDef
         {
             AmmoMagazine = "",
             AmmoRound = "MXA_M58ArcherPods_AccelStage",
@@ -604,7 +604,7 @@ namespace WeaponThread
                         {
                             Enable = false, // If true Tracer TextureMode is ignored
                             Textures = new[] {
-								"",
+                                "",
                             },
                             SegmentLength = 0f, // Uses the values below.
                             SegmentGap = 0f, // Uses Tracer textures and values
@@ -621,7 +621,7 @@ namespace WeaponThread
                     {
                         Enable = true,
                         Textures = new[] {
-							"WeaponLaser",
+                            "WeaponLaser",
                         },
                         TextureMode = Normal,
                         DecayTime = 3,
@@ -660,7 +660,7 @@ namespace WeaponThread
             },
         };
 
-		private AmmoDef MXA_M58ArcherPods_Stage => new AmmoDef
+        private AmmoDef MXA_M58ArcherPods_Stage => new AmmoDef
         {
             AmmoMagazine = "",
             AmmoRound = "MXA_M58ArcherPods_Stage",
@@ -854,10 +854,10 @@ namespace WeaponThread
                     OverideTarget = false, // when set to true ammo picks its own target, does not use hardpoint's.
                     MaxTargets = 3, // Number of targets allowed before ending, 0 = unlimited
                     NoTargetExpire = false, // Expire without ever having a target at TargetLossTime
-					OffsetRatio = .30f, // The ratio to offset the random dir (0 to 1) 
-                    OffsetTime = 120, // how often to offset degree, measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
+                    //OffsetRatio = .30f, // The ratio to offset the random dir (0 to 1) 
+                    //OffsetTime = 120, // how often to offset degree, measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                     Roam = false, // Roam current area after target loss
-					KeepAliveAfterTargetLoss = true, // Whether to stop early death of projectile on target loss
+                    KeepAliveAfterTargetLoss = true, // Whether to stop early death of projectile on target loss
                 },
                 Mines = new MinesDef
                 {
@@ -928,7 +928,7 @@ namespace WeaponThread
                         {
                             Enable = false, // If true Tracer TextureMode is ignored
                             Textures = new[] {
-								"",
+                                "",
                             },
                             SegmentLength = 0f, // Uses the values below.
                             SegmentGap = 0f, // Uses Tracer textures and values
@@ -945,7 +945,7 @@ namespace WeaponThread
                     {
                         Enable = false,
                         Textures = new[] {
-							"WeaponLaser",
+                            "WeaponLaser",
                         },
                         TextureMode = Normal,
                         DecayTime = 1,
@@ -984,7 +984,7 @@ namespace WeaponThread
             },
         };
 
-		private AmmoDef MXA_M58ArcherPods_Shrapnel => new AmmoDef
+        private AmmoDef MXA_M58ArcherPods_Shrapnel => new AmmoDef
         {
             AmmoMagazine = "",
             AmmoRound = "MXA_M58ArcherPods_Shrapnel",
@@ -1267,7 +1267,7 @@ namespace WeaponThread
                         {
                             Enable = false, // If true Tracer TextureMode is ignored
                             Textures = new[] {
-								"",
+                                "",
                             },
                             SegmentLength = 0f, // Uses the values below.
                             SegmentGap = 0f, // Uses Tracer textures and values
@@ -1284,7 +1284,7 @@ namespace WeaponThread
                     {
                         Enable = false,
                         Textures = new[] {
-							"",
+                            "",
                         },
                         TextureMode = Normal,
                         DecayTime = 128,
