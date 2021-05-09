@@ -24,7 +24,7 @@ namespace Scripts
                         MuzzlePartId = "None",
                         AzimuthPartId = "None",
                         ElevationPartId = "None",
-                        //DurabilityMod = 0.75f,
+                        DurabilityMod = 0.50f,
                         IconName = ""
                     },
                 },
@@ -88,7 +88,7 @@ namespace Scripts
                     FixedOffset = false,
                     InventorySize = 2.25f,
                     Offset = Vector(x: 0, y: 0, z: 0),
-                    //Type = BlockWeapon, // IsWeapon, Passive, Active
+                    Type = BlockWeapon, // IsWeapon, Passive, Active
                 },
                 Other = new OtherDef
                 {
