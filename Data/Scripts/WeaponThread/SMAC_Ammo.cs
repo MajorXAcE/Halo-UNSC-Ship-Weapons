@@ -2,27 +2,25 @@
 using static WeaponThread.WeaponStructure.WeaponDefinition.AmmoDef;
 using static WeaponThread.WeaponStructure.WeaponDefinition.AmmoDef.AmmoEjectionDef;
 using static WeaponThread.WeaponStructure.WeaponDefinition.AmmoDef.AmmoEjectionDef.SpawnType;
-using static WeaponThread.WeaponStructure.WeaponDefinition.AmmoDef.AreaDamageDef;
-using static WeaponThread.WeaponStructure.WeaponDefinition.AmmoDef.AreaDamageDef.AreaEffectType;
-using static WeaponThread.WeaponStructure.WeaponDefinition.AmmoDef.AreaDamageDef.EwarFieldsDef;
-using static WeaponThread.WeaponStructure.WeaponDefinition.AmmoDef.AreaDamageDef.EwarFieldsDef.PushPullDef.Force;
+using static WeaponThread.WeaponStructure.WeaponDefinition.AmmoDef.ShapeDef.Shapes;
+using static WeaponThread.WeaponStructure.WeaponDefinition.AmmoDef.GraphicDef;
+using static WeaponThread.WeaponStructure.WeaponDefinition.AmmoDef.TrajectoryDef;
+using static WeaponThread.WeaponStructure.WeaponDefinition.AmmoDef.TrajectoryDef.GuidanceType;
 using static WeaponThread.WeaponStructure.WeaponDefinition.AmmoDef.DamageScaleDef;
 using static WeaponThread.WeaponStructure.WeaponDefinition.AmmoDef.DamageScaleDef.ShieldDef.ShieldType;
-using static WeaponThread.WeaponStructure.WeaponDefinition.AmmoDef.GraphicDef;
+using static WeaponThread.WeaponStructure.WeaponDefinition.AmmoDef.AreaDamageDef;
+using static WeaponThread.WeaponStructure.WeaponDefinition.AmmoDef.AreaDamageDef.EwarFieldsDef;
+using static WeaponThread.WeaponStructure.WeaponDefinition.AmmoDef.AreaDamageDef.EwarFieldsDef.PushPullDef.Force;
+using static WeaponThread.WeaponStructure.WeaponDefinition.AmmoDef.AreaDamageDef.AreaEffectType;
 using static WeaponThread.WeaponStructure.WeaponDefinition.AmmoDef.GraphicDef.LineDef;
 using static WeaponThread.WeaponStructure.WeaponDefinition.AmmoDef.GraphicDef.LineDef.Texture;
 using static WeaponThread.WeaponStructure.WeaponDefinition.AmmoDef.GraphicDef.LineDef.TracerBaseDef;
-using static WeaponThread.WeaponStructure.WeaponDefinition.AmmoDef.ShapeDef.Shapes;
-using static WeaponThread.WeaponStructure.WeaponDefinition.AmmoDef.TrajectoryDef;
-using static WeaponThread.WeaponStructure.WeaponDefinition.AmmoDef.TrajectoryDef.GuidanceType;
-
 namespace WeaponThread
 { // Don't edit above this line
     partial class Weapons
     {
         #region Regular Ammo
-
-        private AmmoDef MXA_SMAC_Ammo => new AmmoDef
+		private AmmoDef MXA_SMAC_Ammo => new AmmoDef
         {
             AmmoMagazine = "MXA_SMAC_Ammo",
             AmmoRound = "Low P",
@@ -287,7 +285,7 @@ namespace WeaponThread
                         {
                             Enable = false, // If true Tracer TextureMode is ignored
                             Textures = new[] {
-                                "",
+								"",
                             },
                             SegmentLength = 0f, // Uses the values below.
                             SegmentGap = 0f, // Uses Tracer textures and values
@@ -304,7 +302,7 @@ namespace WeaponThread
                     {
                         Enable = true,
                         Textures = new[] {
-                            "WeaponLaser",
+							"WeaponLaser",
                         },
                         TextureMode = Normal,
                         DecayTime = 45,
@@ -346,8 +344,9 @@ namespace WeaponThread
                 }
             },
         };
-
-        private AmmoDef MXA_SMAC_Shrapnel => new AmmoDef
+		
+		
+		private AmmoDef MXA_SMAC_Shrapnel => new AmmoDef
         {
             AmmoMagazine = "",
             AmmoRound = "MXA_SMAC_Shrapnel",
@@ -629,7 +628,7 @@ namespace WeaponThread
                         {
                             Enable = false, // If true Tracer TextureMode is ignored
                             Textures = new[] {
-                                "",
+								"",
                             },
                             SegmentLength = 0f, // Uses the values below.
                             SegmentGap = 0f, // Uses Tracer textures and values
@@ -646,7 +645,7 @@ namespace WeaponThread
                     {
                         Enable = false,
                         Textures = new[] {
-                            "",
+							"",
                         },
                         TextureMode = Normal,
                         DecayTime = 128,
@@ -688,12 +687,11 @@ namespace WeaponThread
                 }
             },
         };
-
-        #endregion Regular Ammo
-
-        #region Dense Ammo
-
-        private AmmoDef MXA_SMAC_HPImpact => new AmmoDef
+		
+		#endregion
+		
+		#region Dense Ammo
+		private AmmoDef MXA_SMAC_HPImpact => new AmmoDef
         {
             AmmoMagazine = "MXA_SMAC_Ammo",
             AmmoRound = "High Power",
@@ -958,7 +956,7 @@ namespace WeaponThread
                         {
                             Enable = false, // If true Tracer TextureMode is ignored
                             Textures = new[] {
-                                "",
+								"",
                             },
                             SegmentLength = 0f, // Uses the values below.
                             SegmentGap = 0f, // Uses Tracer textures and values
@@ -975,7 +973,7 @@ namespace WeaponThread
                     {
                         Enable = true,
                         Textures = new[] {
-                            "WeaponLaser",
+							"WeaponLaser",
                         },
                         TextureMode = Normal,
                         DecayTime = 45,
@@ -1017,8 +1015,8 @@ namespace WeaponThread
                 }
             },
         };
-
-        private AmmoDef MXA_SMAC_HPAmmo => new AmmoDef
+		
+		private AmmoDef MXA_SMAC_HPAmmo => new AmmoDef
         {
             AmmoMagazine = "",
             AmmoRound = "MXA_SMAC_HPAmmo",
@@ -1283,7 +1281,7 @@ namespace WeaponThread
                         {
                             Enable = false, // If true Tracer TextureMode is ignored
                             Textures = new[] {
-                                "",
+								"",
                             },
                             SegmentLength = 0f, // Uses the values below.
                             SegmentGap = 0f, // Uses Tracer textures and values
@@ -1300,7 +1298,7 @@ namespace WeaponThread
                     {
                         Enable = true,
                         Textures = new[] {
-                            "WeaponLaser",
+							"WeaponLaser",
                         },
                         TextureMode = Normal,
                         DecayTime = 30,
@@ -1342,7 +1340,7 @@ namespace WeaponThread
                 }
             },
         };
-
-        #endregion Dense Ammo
+				
+		#endregion
     }
 }

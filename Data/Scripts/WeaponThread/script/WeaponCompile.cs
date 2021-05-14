@@ -3,9 +3,9 @@ using VRageMath;
 using static WeaponThread.WeaponStructure;
 using static WeaponThread.WeaponStructure.WeaponDefinition;
 using static WeaponThread.WeaponStructure.WeaponDefinition.AnimationDef;
+using static WeaponThread.WeaponStructure.WeaponDefinition.AnimationDef.RelMove;
 using static WeaponThread.WeaponStructure.WeaponDefinition.AnimationDef.PartAnimationSetDef;
 using static WeaponThread.WeaponStructure.WeaponDefinition.AnimationDef.PartAnimationSetDef.EventTriggers;
-using static WeaponThread.WeaponStructure.WeaponDefinition.AnimationDef.RelMove;
 
 namespace WeaponThread
 {
@@ -13,7 +13,6 @@ namespace WeaponThread
     {
         internal List<WeaponDefinition> Weapon = new List<WeaponDefinition>();
         internal List<ArmorCompatibilityDef> ArmorBlocks = new List<ArmorCompatibilityDef>();
-
         internal void ConfigFiles(params WeaponDefinition[] defs)
         {
             foreach (var def in defs) Weapon.Add(def);
@@ -104,7 +103,7 @@ namespace WeaponThread
                 CycleEmissivesParts = CycleEmissiveParts,
                 LeavePreviousOn = LeavePreviousOn,
                 EmissivePartNames = EmissivePartNames,
-                IntensityRange = new[] { IntensityFrom, IntensityTo }
+                IntensityRange = new[]{ IntensityFrom, IntensityTo }
             };
         }
 

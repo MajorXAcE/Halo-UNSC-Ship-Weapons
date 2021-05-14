@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ParticleEffects>
-
+    
     <ParticleEffect xsi:type="MyObjectBuilder_ParticleEffect">
       <Id>
         <TypeId>ParticleEffect</TypeId>
@@ -3781,5 +3781,7 @@
       </ParticleLights>
       <ParticleSounds />
     </ParticleEffect>
+    
+  
   </ParticleEffects>
 </Definitions>

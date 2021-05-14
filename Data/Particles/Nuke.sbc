@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <ParticleEffects>
+  <ParticleEffects> 
 	 <ParticleEffect xsi:type="MyObjectBuilder_ParticleEffect">
 		  <Id>
 			<TypeId>ParticleEffect</TypeId>
@@ -234,7 +234,7 @@
 							<Time>0.9</Time>
 							<ValueFloat>22.5</ValueFloat>
 						  </Key>
-
+						  
 						  <Key>
 							<Time>1</Time>
 							<ValueFloat>15</ValueFloat>
@@ -828,6 +828,7 @@
 				</Property>
 			  </Properties>
 			</ParticleGeneration>
+
 		</ParticleGenerations>
 		<ParticleLights>
         <ParticleLight Name="ExplosionLight" Version="0">
@@ -942,6 +943,6 @@
           </Properties>
         </ParticleLight>
       </ParticleLights>
-	</ParticleEffect>
+	</ParticleEffect>  
   </ParticleEffects>
 </Definitions>

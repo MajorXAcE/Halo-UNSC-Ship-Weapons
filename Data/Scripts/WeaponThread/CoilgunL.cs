@@ -1,20 +1,19 @@
-﻿using static WeaponThread.WeaponStructure;
+﻿using System.Collections.Generic;
+using static WeaponThread.WeaponStructure;
 using static WeaponThread.WeaponStructure.WeaponDefinition;
 using static WeaponThread.WeaponStructure.WeaponDefinition.HardPointDef;
+using static WeaponThread.WeaponStructure.WeaponDefinition.ModelAssignmentsDef;
 using static WeaponThread.WeaponStructure.WeaponDefinition.HardPointDef.HardwareDef.ArmorState;
 using static WeaponThread.WeaponStructure.WeaponDefinition.HardPointDef.Prediction;
-using static WeaponThread.WeaponStructure.WeaponDefinition.ModelAssignmentsDef;
 using static WeaponThread.WeaponStructure.WeaponDefinition.TargetingDef.BlockTypes;
 using static WeaponThread.WeaponStructure.WeaponDefinition.TargetingDef.Threat;
 
-namespace WeaponThread
-{
-    partial class Weapons
-    {
+namespace WeaponThread {   
+    partial class Weapons {
         // Don't edit above this line
-        private WeaponDefinition MXA_CoilgunL => new WeaponDefinition
-        {
-            Assignments = new ModelAssignmentsDef
+        WeaponDefinition MXA_CoilgunL => new WeaponDefinition {
+
+            Assignments = new ModelAssignmentsDef 
             {
                 MountPoints = new[] {
                     new MountPointDef {
@@ -27,14 +26,14 @@ namespace WeaponThread
                         IconName = ""
                     },
                 },
-                Barrels = new[] {
+                Barrels = new [] {
                     "muzzle_projectile_1",
                     "muzzle_projectile_2",
                 },
                 Ejector = "",
-                Scope = "scope", //Where line of sight checks are performed from must be clear of block collision
+				Scope = "scope", //Where line of sight checks are performed from must be clear of block collision
             },
-            Targeting = new TargetingDef
+            Targeting = new TargetingDef  
             {
                 Threats = new[] {
                     Grids, Projectiles,
@@ -53,7 +52,7 @@ namespace WeaponThread
                 TopBlocks = 4, // 0 = unlimited, max number of blocks to randomize between
                 StopTrackingSpeed = 1000, // do not track target threats traveling faster than this speed
             },
-            HardPoint = new HardPointDef
+            HardPoint = new HardPointDef 
             {
                 WeaponName = "M66 Sentry", // name of weapon in terminal
                 DeviateShotAngle = 0.4f,
@@ -63,23 +62,20 @@ namespace WeaponThread
                 AddToleranceToTracking = true,
                 CanShootSubmerged = false,
 
-                Ui = new UiDef
-                {
+                Ui = new UiDef {
                     RateOfFire = false,
                     DamageModifier = false,
                     ToggleGuidance = false,
-                    EnableOverload = false,
+                    EnableOverload =  false,
                 },
-                Ai = new AiDef
-                {
+                Ai = new AiDef {
                     TrackTargets = true,
                     TurretAttached = true,
                     TurretController = true,
                     PrimaryTracking = true,
                     LockOnFocus = false,
                 },
-                HardWare = new HardwareDef
-                {
+                HardWare = new HardwareDef {
                     RotateRate = 0.03f,
                     ElevateRate = 0.02f,
                     MinAzimuth = -180,
@@ -91,8 +87,7 @@ namespace WeaponThread
                     Offset = Vector(x: 0, y: 0, z: 0),
                     Armor = IsWeapon, // IsWeapon, Passive, Active
                 },
-                Other = new OtherDef
-                {
+                Other = new OtherDef {
                     GridWeaponCap = 0,
                     RotateBarrelAxis = 0,
                     EnergyPriority = 0,
@@ -102,8 +97,7 @@ namespace WeaponThread
                     CheckInflatedBox = false, // if true, the bounding box of the gun is expanded by the RestrictionRadius
                     CheckForAnyWeapon = false, // if true, the check will fail if ANY gun is present, false only looks for this subtype
                 },
-                Loading = new LoadingDef
-                {
+                Loading = new LoadingDef {
                     RateOfFire = 360, //180 // visual only, 0 disables and uses RateOfFire
                     BarrelsPerShot = 1,
                     TrajectilesPerBarrel = 1, // Number of Trajectiles per barrel per fire event.
@@ -122,8 +116,7 @@ namespace WeaponThread
                     BarrelSpinRate = 0, // visual only, 0 disables and uses RateOfFire
                     DeterministicSpin = false, // Spin barrel position will always be relative to initial / starting positions (spin will not be as smooth).
                 },
-                Audio = new HardPointAudioDef
-                {
+                Audio = new HardPointAudioDef {
                     PreFiringSound = "",
                     FiringSound = "MXA_CoilgunL_Fire", // WepShipGatlingShot
                     FiringSoundPerShot = false,
@@ -133,16 +126,14 @@ namespace WeaponThread
                     BarrelRotationSound = "WepShipGatlingRotation",
                     FireSoundEndDelay = 180, // Measured in game ticks(6 = 100ms, 60 = 1 seconds, etc..).
                 },
-                Graphics = new HardPointParticleDef
-                {
-                    Barrel1 = new ParticleDef
-                    {
+                Graphics = new HardPointParticleDef {
+
+                    Barrel1 = new ParticleDef {
                         Name = "MXA_SmallCoilgunMuzzleFlash", // Smoke_LargeGunShot
                         Color = Color(red: .095f, green: .075f, blue: .05f, alpha: .25f),
                         Offset = Vector(x: 0, y: 0, z: 0),
 
-                        Extras = new ParticleOptionDef
-                        {
+                        Extras = new ParticleOptionDef {
                             Loop = false,
                             Restart = false,
                             MaxDistance = 1500,
@@ -150,14 +141,12 @@ namespace WeaponThread
                             Scale = 1.5f,
                         },
                     },
-                    Barrel2 = new ParticleDef
-                    {
+                    Barrel2 = new ParticleDef {
                         Name = "",//Muzzle_Flash_Large
                         Color = Color(red: 20, green: 20, blue: 20, alpha: 1),
                         Offset = Vector(x: 0, y: 0, z: 0),
 
-                        Extras = new ParticleOptionDef
-                        {
+                        Extras = new ParticleOptionDef {
                             Loop = false,
                             Restart = false,
                             MaxDistance = 300,
@@ -167,11 +156,11 @@ namespace WeaponThread
                     },
                 },
             },
-            Ammos = new[] {
+            Ammos = new [] {
                 MXA_CoilgunL_Ammo,
-                MXA_CoilgunL_Shrapnel,
-                MXA_CoilgunL_AMFlak,
-                MXA_CoilgunL_Flak,
+				MXA_CoilgunL_Shrapnel,
+				MXA_CoilgunL_AMFlak,
+				MXA_CoilgunL_Flak,
             },
             Animations = MXA_CoilgunL_Animation,
             //Upgrades = UpgradeModules,

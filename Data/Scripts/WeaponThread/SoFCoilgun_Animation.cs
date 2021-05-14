@@ -1,16 +1,16 @@
 ﻿using System.Collections.Generic;
+using static WeaponThread.WeaponStructure;
 using static WeaponThread.WeaponStructure.WeaponDefinition;
 using static WeaponThread.WeaponStructure.WeaponDefinition.AnimationDef;
 using static WeaponThread.WeaponStructure.WeaponDefinition.AnimationDef.PartAnimationSetDef.EventTriggers;
-using static WeaponThread.WeaponStructure.WeaponDefinition.AnimationDef.RelMove;
 using static WeaponThread.WeaponStructure.WeaponDefinition.AnimationDef.RelMove.MoveType;
-
+using static WeaponThread.WeaponStructure.WeaponDefinition.AnimationDef.RelMove;
 namespace WeaponThread
 { // Don't edit above this line
     partial class Weapons
     {
         /// Possible Events ///
-
+        
         //Reloading,
         //Firing,
         //Tracking,
@@ -26,7 +26,7 @@ namespace WeaponThread
 
         private AnimationDef MXA_SoFCoilgun_Animation => new AnimationDef
         {
-            /*
+			/*
 			HeatingEmissiveParts = new string[]
             {
                 "MissileTurretBase1"
@@ -64,7 +64,7 @@ namespace WeaponThread
                     {
                         "Emissive1"
                     }),
-                Emissive(
+				Emissive(
                     EmissiveName: "YellowOn",
                     Colors: new []
                     {
@@ -94,7 +94,7 @@ namespace WeaponThread
                     {
                         "Emissive2"
                     }),
-                Emissive(
+				Emissive(
                     EmissiveName: "TurnOn",
                     Colors: new []
                     {
@@ -124,6 +124,7 @@ namespace WeaponThread
                     {
                         "Emissive0"
                     }),
+
             },
             /*
             EventParticles = new Dictionary<PartAnimationSetDef.EventTriggers, EventParticle[]>
@@ -155,7 +156,8 @@ namespace WeaponThread
             */
             WeaponAnimationSets = new[]
             {
-                new PartAnimationSetDef()
+                
+				new PartAnimationSetDef()
                 {
                     SubpartId = Names("Elevation"),
                     BarrelId = "Any", //only used for firing, use "Any" for all muzzles
@@ -166,6 +168,9 @@ namespace WeaponThread
                     ResetEmissives = Events(),
                     EventMoveSets = new Dictionary<PartAnimationSetDef.EventTriggers, RelMove[]>
                     {
+                        
+
+
                         [TurnOn] =
                             new[] //Firing, Reloading, Overheated, Tracking, On, Off, BurstReload, OutOfAmmo, PreFire define a new[] for each
                             {
@@ -195,9 +200,9 @@ namespace WeaponThread
                                     RotAroundCenter = Transformation(0, 0, 0), //degrees
                                 },
                             },
-                    }
-                },
-                new PartAnimationSetDef()
+					}
+				},
+				new PartAnimationSetDef()
                 {
                     SubpartId = Names("Elevation"),
                     BarrelId = "Any", //only used for firing, use "Any" for all muzzles
@@ -207,8 +212,8 @@ namespace WeaponThread
                     Loop = Events(),
                     ResetEmissives = Events(),
                     EventMoveSets = new Dictionary<PartAnimationSetDef.EventTriggers, RelMove[]>
-                    {
-                        [TurnOn] =
+                    {                  
+						[TurnOn] =
                             new[] //Firing, Reloading, Overheated, Tracking, On, Off, BurstReload, OutOfAmmo, PreFire define a new[] for each
                             {
                                 new RelMove
@@ -237,9 +242,9 @@ namespace WeaponThread
                                     RotAroundCenter = Transformation(0, 0, 0), //degrees
                                 },
                             },
-                    }
-                },
-                new PartAnimationSetDef()
+					}
+				},
+				new PartAnimationSetDef()
                 {
                     SubpartId = Names("Elevation"),
                     BarrelId = "Any", //only used for firing, use "Any" for all muzzles
@@ -250,6 +255,9 @@ namespace WeaponThread
                     ResetEmissives = Events(),
                     EventMoveSets = new Dictionary<PartAnimationSetDef.EventTriggers, RelMove[]>
                     {
+                        
+
+
                         [TurnOn] =
                             new[] //Firing, Reloading, Overheated, Tracking, On, Off, BurstReload, OutOfAmmo, PreFire define a new[] for each
                             {
@@ -279,9 +287,9 @@ namespace WeaponThread
                                     RotAroundCenter = Transformation(0, 0, 0), //degrees
                                 },
                             },
-                    }
-                },
-                new PartAnimationSetDef()
+					}
+				},
+				new PartAnimationSetDef()
                 {
                     SubpartId = Names("None"),
                     BarrelId = "Any", //only used for firing, use "Any" for all muzzles
@@ -292,6 +300,9 @@ namespace WeaponThread
                     ResetEmissives = Events(),
                     EventMoveSets = new Dictionary<PartAnimationSetDef.EventTriggers, RelMove[]>
                     {
+                        
+
+
                         [TurnOn] =
                             new[] //Firing, Reloading, Overheated, Tracking, On, Off, BurstReload, OutOfAmmo, PreFire define a new[] for each
                             {
@@ -321,11 +332,10 @@ namespace WeaponThread
                                     RotAroundCenter = Transformation(0, 0, 0), //degrees
                                 },
                             },
-                    }
-                },
-
+					}
+				},
+				
 				#region Recoil
-
 				new PartAnimationSetDef()
                 {
                     SubpartId = Names("Recoil_1"),
@@ -337,6 +347,9 @@ namespace WeaponThread
                     ResetEmissives = Events(),
                     EventMoveSets = new Dictionary<PartAnimationSetDef.EventTriggers, RelMove[]>
                     {
+                        
+
+
                         [Firing] =
                             new[] //Firing, Reloading, Overheated, Tracking, On, Off, BurstReload, OutOfAmmo, PreFire define a new[] for each
                             {
@@ -352,18 +365,18 @@ namespace WeaponThread
                                     Rotation = Transformation(0, 0, 0), //degrees
                                     RotAroundCenter = Transformation(0, 0, 0), //degrees
                                 },
-
-                                new RelMove
-                                {
-                                    CenterEmpty = "",
-                                    TicksToMove = 5, //number of ticks to complete motion, 60 = 1 second
+								
+								new RelMove
+								{
+									CenterEmpty = "",
+									TicksToMove = 5, //number of ticks to complete motion, 60 = 1 second
 									MovementType = Delay,
-                                    LinearPoints = new XYZ[0],
-                                    Rotation = Transformation(0, 0, 0), //degrees
+									LinearPoints = new XYZ[0],
+									Rotation = Transformation(0, 0, 0), //degrees
 									RotAroundCenter = Transformation(0, 0, 0), //degrees
 								},
-
-                                new RelMove
+								
+								new RelMove
                                 {
                                     CenterEmpty = "",
                                     TicksToMove = 10, //number of ticks to complete motion, 60 = 1 second
@@ -376,9 +389,10 @@ namespace WeaponThread
                                     RotAroundCenter = Transformation(0, 0, 0), //degrees
                                 },
                             },
-                    }
-                },
-                new PartAnimationSetDef()
+
+					}
+				},
+				new PartAnimationSetDef()
                 {
                     SubpartId = Names("Barrel_1"),
                     BarrelId = "muzzle_projectile_1", //only used for firing, use "Any" for all muzzles
@@ -389,6 +403,9 @@ namespace WeaponThread
                     ResetEmissives = Events(),
                     EventMoveSets = new Dictionary<PartAnimationSetDef.EventTriggers, RelMove[]>
                     {
+                        
+
+
                         [Firing] =
                             new[] //Firing, Reloading, Overheated, Tracking, On, Off, BurstReload, OutOfAmmo, PreFire define a new[] for each
                             {
@@ -404,8 +421,8 @@ namespace WeaponThread
                                     Rotation = Transformation(0, 0, 0), //degrees
                                     RotAroundCenter = Transformation(0, 0, 0), //degrees
                                 },
-
-                                new RelMove
+								
+								new RelMove
                                 {
                                     CenterEmpty = "",
                                     TicksToMove = 10, //number of ticks to complete motion, 60 = 1 second
@@ -418,10 +435,11 @@ namespace WeaponThread
                                     RotAroundCenter = Transformation(0, 0, 0), //degrees
                                 },
                             },
-                    }
-                },
 
-                new PartAnimationSetDef()
+					}
+				},
+				
+				new PartAnimationSetDef()
                 {
                     SubpartId = Names("Recoil_2"),
                     BarrelId = "muzzle_projectile_3", //only used for firing, use "Any" for all muzzles
@@ -432,6 +450,9 @@ namespace WeaponThread
                     ResetEmissives = Events(),
                     EventMoveSets = new Dictionary<PartAnimationSetDef.EventTriggers, RelMove[]>
                     {
+                        
+
+
                         [Firing] =
                             new[] //Firing, Reloading, Overheated, Tracking, On, Off, BurstReload, OutOfAmmo, PreFire define a new[] for each
                             {
@@ -447,18 +468,18 @@ namespace WeaponThread
                                     Rotation = Transformation(0, 0, 0), //degrees
                                     RotAroundCenter = Transformation(0, 0, 0), //degrees
                                 },
-
-                                new RelMove
-                                {
-                                    CenterEmpty = "",
-                                    TicksToMove = 5, //number of ticks to complete motion, 60 = 1 second
+								
+								new RelMove
+								{
+									CenterEmpty = "",
+									TicksToMove = 5, //number of ticks to complete motion, 60 = 1 second
 									MovementType = Delay,
-                                    LinearPoints = new XYZ[0],
-                                    Rotation = Transformation(0, 0, 0), //degrees
+									LinearPoints = new XYZ[0],
+									Rotation = Transformation(0, 0, 0), //degrees
 									RotAroundCenter = Transformation(0, 0, 0), //degrees
 								},
-
-                                new RelMove
+								
+								new RelMove
                                 {
                                     CenterEmpty = "",
                                     TicksToMove = 10, //number of ticks to complete motion, 60 = 1 second
@@ -471,9 +492,10 @@ namespace WeaponThread
                                     RotAroundCenter = Transformation(0, 0, 0), //degrees
                                 },
                             },
-                    }
-                },
-                new PartAnimationSetDef()
+
+					}
+				},
+				new PartAnimationSetDef()
                 {
                     SubpartId = Names("Barrel_2"),
                     BarrelId = "muzzle_projectile_3", //only used for firing, use "Any" for all muzzles
@@ -484,6 +506,9 @@ namespace WeaponThread
                     ResetEmissives = Events(),
                     EventMoveSets = new Dictionary<PartAnimationSetDef.EventTriggers, RelMove[]>
                     {
+                        
+
+
                         [Firing] =
                             new[] //Firing, Reloading, Overheated, Tracking, On, Off, BurstReload, OutOfAmmo, PreFire define a new[] for each
                             {
@@ -499,8 +524,8 @@ namespace WeaponThread
                                     Rotation = Transformation(0, 0, 0), //degrees
                                     RotAroundCenter = Transformation(0, 0, 0), //degrees
                                 },
-
-                                new RelMove
+								
+								new RelMove
                                 {
                                     CenterEmpty = "",
                                     TicksToMove = 10, //number of ticks to complete motion, 60 = 1 second
@@ -513,13 +538,12 @@ namespace WeaponThread
                                     RotAroundCenter = Transformation(0, 0, 0), //degrees
                                 },
                             },
-                    }
-                },
 
-				#endregion Recoil
-
+					}
+				},
+				
+				#endregion
 				#region Retract
-
 				new PartAnimationSetDef()
                 {
                     SubpartId = Names("Barrel_1","Barrel_2","Recoil_1","Recoil_2"),
@@ -531,6 +555,9 @@ namespace WeaponThread
                     ResetEmissives = Events(),
                     EventMoveSets = new Dictionary<PartAnimationSetDef.EventTriggers, RelMove[]>
                     {
+                        
+
+
                         [TurnOff] =
                             new[] //Firing, Reloading, Overheated, Tracking, On, Off, BurstReload, OutOfAmmo, PreFire define a new[] for each
                             {
@@ -546,20 +573,21 @@ namespace WeaponThread
                                     Rotation = Transformation(0, 0, 0), //degrees
                                     RotAroundCenter = Transformation(0, 0, 0), //degrees
                                 },
+								
                             },
-                        [TurnOn] =
+						[TurnOn] =
                             new[] //Firing, Reloading, Overheated, Tracking, On, Off, BurstReload, OutOfAmmo, PreFire define a new[] for each
                             {
                                 new RelMove
-                                {
-                                    CenterEmpty = "",
-                                    TicksToMove = 360, //number of ticks to complete motion, 60 = 1 second
+								{
+									CenterEmpty = "",
+									TicksToMove = 360, //number of ticks to complete motion, 60 = 1 second
 									MovementType = Delay,
-                                    LinearPoints = new XYZ[0],
-                                    Rotation = Transformation(0, 0, 0), //degrees
+									LinearPoints = new XYZ[0],
+									Rotation = Transformation(0, 0, 0), //degrees
 									RotAroundCenter = Transformation(0, 0, 0), //degrees
 								},
-                                new RelMove
+								new RelMove
                                 {
                                     CenterEmpty = "",
                                     TicksToMove = 6, //number of ticks to complete motion, 60 = 1 second
@@ -571,10 +599,12 @@ namespace WeaponThread
                                     Rotation = Transformation(0, 0, 0), //degrees
                                     RotAroundCenter = Transformation(0, 0, 0), //degrees
                                 },
+								
                             },
-                    }
-                },
-                new PartAnimationSetDef()
+
+					}
+				},
+				new PartAnimationSetDef()
                 {
                     SubpartId = Names("Piston"),
                     BarrelId = "Any", //only used for firing, use "Any" for all muzzles
@@ -585,19 +615,22 @@ namespace WeaponThread
                     ResetEmissives = Events(),
                     EventMoveSets = new Dictionary<PartAnimationSetDef.EventTriggers, RelMove[]>
                     {
+                        
+
+
                         [TurnOff] =
                             new[] //Firing, Reloading, Overheated, Tracking, On, Off, BurstReload, OutOfAmmo, PreFire define a new[] for each
                             {
                                 new RelMove
-                                {
-                                    CenterEmpty = "",
-                                    TicksToMove = 60, //number of ticks to complete motion, 60 = 1 second
+								{
+									CenterEmpty = "",
+									TicksToMove = 60, //number of ticks to complete motion, 60 = 1 second
 									MovementType = Delay,
-                                    LinearPoints = new XYZ[0],
-                                    Rotation = Transformation(0, 0, 0), //degrees
+									LinearPoints = new XYZ[0],
+									Rotation = Transformation(0, 0, 0), //degrees
 									RotAroundCenter = Transformation(0, 0, 0), //degrees
 								},
-                                new RelMove
+								new RelMove
                                 {
                                     CenterEmpty = "",
                                     TicksToMove = 180, //number of ticks to complete motion, 60 = 1 second
@@ -609,20 +642,21 @@ namespace WeaponThread
                                     Rotation = Transformation(0, 0, 0), //degrees
                                     RotAroundCenter = Transformation(0, 0, 0), //degrees
                                 },
+								
                             },
-                        [TurnOn] =
+						[TurnOn] =
                             new[] //Firing, Reloading, Overheated, Tracking, On, Off, BurstReload, OutOfAmmo, PreFire define a new[] for each
                             {
                                 new RelMove
-                                {
-                                    CenterEmpty = "",
-                                    TicksToMove = 180, //number of ticks to complete motion, 60 = 1 second
+								{
+									CenterEmpty = "",
+									TicksToMove = 180, //number of ticks to complete motion, 60 = 1 second
 									MovementType = Delay,
-                                    LinearPoints = new XYZ[0],
-                                    Rotation = Transformation(0, 0, 0), //degrees
+									LinearPoints = new XYZ[0],
+									Rotation = Transformation(0, 0, 0), //degrees
 									RotAroundCenter = Transformation(0, 0, 0), //degrees
 								},
-                                new RelMove
+								new RelMove
                                 {
                                     CenterEmpty = "",
                                     TicksToMove = 180, //number of ticks to complete motion, 60 = 1 second
@@ -634,10 +668,12 @@ namespace WeaponThread
                                     Rotation = Transformation(0, 0, 0), //degrees
                                     RotAroundCenter = Transformation(0, 0, 0), //degrees
                                 },
+								
                             },
-                    }
-                },
-                new PartAnimationSetDef()
+
+					}
+				},
+				new PartAnimationSetDef()
                 {
                     SubpartId = Names("RightDoor","RightSubDoor"),
                     BarrelId = "Any", //only used for firing, use "Any" for all muzzles
@@ -648,19 +684,22 @@ namespace WeaponThread
                     ResetEmissives = Events(),
                     EventMoveSets = new Dictionary<PartAnimationSetDef.EventTriggers, RelMove[]>
                     {
+                        
+
+
                         [TurnOff] =
                             new[] //Firing, Reloading, Overheated, Tracking, On, Off, BurstReload, OutOfAmmo, PreFire define a new[] for each
                             {
                                 new RelMove
-                                {
-                                    CenterEmpty = "",
-                                    TicksToMove = 240, //number of ticks to complete motion, 60 = 1 second
+								{
+									CenterEmpty = "",
+									TicksToMove = 240, //number of ticks to complete motion, 60 = 1 second
 									MovementType = Delay,
-                                    LinearPoints = new XYZ[0],
-                                    Rotation = Transformation(0, 0, 0), //degrees
+									LinearPoints = new XYZ[0],
+									Rotation = Transformation(0, 0, 0), //degrees
 									RotAroundCenter = Transformation(0, 0, 0), //degrees
 								},
-                                new RelMove
+								new RelMove
                                 {
                                     CenterEmpty = "",
                                     TicksToMove = 120, //number of ticks to complete motion, 60 = 1 second
@@ -672,20 +711,21 @@ namespace WeaponThread
                                     Rotation = Transformation(0, 0, 0), //degrees
                                     RotAroundCenter = Transformation(0, 0, 0), //degrees
                                 },
+								
                             },
-                        [TurnOn] =
+						[TurnOn] =
                             new[] //Firing, Reloading, Overheated, Tracking, On, Off, BurstReload, OutOfAmmo, PreFire define a new[] for each
                             {
                                 new RelMove
-                                {
-                                    CenterEmpty = "",
-                                    TicksToMove = 60, //number of ticks to complete motion, 60 = 1 second
+								{
+									CenterEmpty = "",
+									TicksToMove = 60, //number of ticks to complete motion, 60 = 1 second
 									MovementType = Delay,
-                                    LinearPoints = new XYZ[0],
-                                    Rotation = Transformation(0, 0, 0), //degrees
+									LinearPoints = new XYZ[0],
+									Rotation = Transformation(0, 0, 0), //degrees
 									RotAroundCenter = Transformation(0, 0, 0), //degrees
 								},
-                                new RelMove
+								new RelMove
                                 {
                                     CenterEmpty = "",
                                     TicksToMove = 120, //number of ticks to complete motion, 60 = 1 second
@@ -697,10 +737,12 @@ namespace WeaponThread
                                     Rotation = Transformation(0, 0, 0), //degrees
                                     RotAroundCenter = Transformation(0, 0, 0), //degrees
                                 },
+								
                             },
-                    }
-                },
-                new PartAnimationSetDef()
+
+					}
+				},
+				new PartAnimationSetDef()
                 {
                     SubpartId = Names("RightSubDoor"),
                     BarrelId = "Any", //only used for firing, use "Any" for all muzzles
@@ -711,19 +753,22 @@ namespace WeaponThread
                     ResetEmissives = Events(),
                     EventMoveSets = new Dictionary<PartAnimationSetDef.EventTriggers, RelMove[]>
                     {
+                        
+
+
                         [TurnOff] =
                             new[] //Firing, Reloading, Overheated, Tracking, On, Off, BurstReload, OutOfAmmo, PreFire define a new[] for each
                             {
                                 new RelMove
-                                {
-                                    CenterEmpty = "",
-                                    TicksToMove = 360, //number of ticks to complete motion, 60 = 1 second
+								{
+									CenterEmpty = "",
+									TicksToMove = 360, //number of ticks to complete motion, 60 = 1 second
 									MovementType = Delay,
-                                    LinearPoints = new XYZ[0],
-                                    Rotation = Transformation(0, 0, 0), //degrees
+									LinearPoints = new XYZ[0],
+									Rotation = Transformation(0, 0, 0), //degrees
 									RotAroundCenter = Transformation(0, 0, 0), //degrees
 								},
-                                new RelMove
+								new RelMove
                                 {
                                     CenterEmpty = "",
                                     TicksToMove = 60, //number of ticks to complete motion, 60 = 1 second
@@ -735,11 +780,12 @@ namespace WeaponThread
                                     Rotation = Transformation(0, 0, 0), //degrees
                                     RotAroundCenter = Transformation(0, 0, 0), //degrees
                                 },
+								
                             },
-                        [TurnOn] =
+						[TurnOn] =
                             new[] //Firing, Reloading, Overheated, Tracking, On, Off, BurstReload, OutOfAmmo, PreFire define a new[] for each
                             {
-                                new RelMove
+								new RelMove
                                 {
                                     CenterEmpty = "",
                                     TicksToMove = 60, //number of ticks to complete motion, 60 = 1 second
@@ -751,11 +797,13 @@ namespace WeaponThread
                                     Rotation = Transformation(0, 0, 0), //degrees
                                     RotAroundCenter = Transformation(0, 0, 0), //degrees
                                 },
+								
                             },
-                    }
-                },
 
-                new PartAnimationSetDef()
+					}
+				},
+				
+				new PartAnimationSetDef()
                 {
                     SubpartId = Names("LeftDoor","LeftSubDoor"),
                     BarrelId = "Any", //only used for firing, use "Any" for all muzzles
@@ -766,19 +814,22 @@ namespace WeaponThread
                     ResetEmissives = Events(),
                     EventMoveSets = new Dictionary<PartAnimationSetDef.EventTriggers, RelMove[]>
                     {
+                        
+
+
                         [TurnOff] =
                             new[] //Firing, Reloading, Overheated, Tracking, On, Off, BurstReload, OutOfAmmo, PreFire define a new[] for each
                             {
                                 new RelMove
-                                {
-                                    CenterEmpty = "",
-                                    TicksToMove = 240, //number of ticks to complete motion, 60 = 1 second
+								{
+									CenterEmpty = "",
+									TicksToMove = 240, //number of ticks to complete motion, 60 = 1 second
 									MovementType = Delay,
-                                    LinearPoints = new XYZ[0],
-                                    Rotation = Transformation(0, 0, 0), //degrees
+									LinearPoints = new XYZ[0],
+									Rotation = Transformation(0, 0, 0), //degrees
 									RotAroundCenter = Transformation(0, 0, 0), //degrees
 								},
-                                new RelMove
+								new RelMove
                                 {
                                     CenterEmpty = "",
                                     TicksToMove = 120, //number of ticks to complete motion, 60 = 1 second
@@ -790,20 +841,21 @@ namespace WeaponThread
                                     Rotation = Transformation(0, 0, 0), //degrees
                                     RotAroundCenter = Transformation(0, 0, 0), //degrees
                                 },
+								
                             },
-                        [TurnOn] =
+						[TurnOn] =
                             new[] //Firing, Reloading, Overheated, Tracking, On, Off, BurstReload, OutOfAmmo, PreFire define a new[] for each
                             {
                                 new RelMove
-                                {
-                                    CenterEmpty = "",
-                                    TicksToMove = 60, //number of ticks to complete motion, 60 = 1 second
+								{
+									CenterEmpty = "",
+									TicksToMove = 60, //number of ticks to complete motion, 60 = 1 second
 									MovementType = Delay,
-                                    LinearPoints = new XYZ[0],
-                                    Rotation = Transformation(0, 0, 0), //degrees
+									LinearPoints = new XYZ[0],
+									Rotation = Transformation(0, 0, 0), //degrees
 									RotAroundCenter = Transformation(0, 0, 0), //degrees
 								},
-                                new RelMove
+								new RelMove
                                 {
                                     CenterEmpty = "",
                                     TicksToMove = 120, //number of ticks to complete motion, 60 = 1 second
@@ -815,10 +867,12 @@ namespace WeaponThread
                                     Rotation = Transformation(0, 0, 0), //degrees
                                     RotAroundCenter = Transformation(0, 0, 0), //degrees
                                 },
+								
                             },
-                    }
-                },
-                new PartAnimationSetDef()
+
+					}
+				},
+				new PartAnimationSetDef()
                 {
                     SubpartId = Names("LeftSubDoor"),
                     BarrelId = "Any", //only used for firing, use "Any" for all muzzles
@@ -829,19 +883,22 @@ namespace WeaponThread
                     ResetEmissives = Events(),
                     EventMoveSets = new Dictionary<PartAnimationSetDef.EventTriggers, RelMove[]>
                     {
+                        
+
+
                         [TurnOff] =
                             new[] //Firing, Reloading, Overheated, Tracking, On, Off, BurstReload, OutOfAmmo, PreFire define a new[] for each
                             {
                                 new RelMove
-                                {
-                                    CenterEmpty = "",
-                                    TicksToMove = 360, //number of ticks to complete motion, 60 = 1 second
+								{
+									CenterEmpty = "",
+									TicksToMove = 360, //number of ticks to complete motion, 60 = 1 second
 									MovementType = Delay,
-                                    LinearPoints = new XYZ[0],
-                                    Rotation = Transformation(0, 0, 0), //degrees
+									LinearPoints = new XYZ[0],
+									Rotation = Transformation(0, 0, 0), //degrees
 									RotAroundCenter = Transformation(0, 0, 0), //degrees
 								},
-                                new RelMove
+								new RelMove
                                 {
                                     CenterEmpty = "",
                                     TicksToMove = 60, //number of ticks to complete motion, 60 = 1 second
@@ -853,11 +910,12 @@ namespace WeaponThread
                                     Rotation = Transformation(0, 0, 0), //degrees
                                     RotAroundCenter = Transformation(0, 0, 0), //degrees
                                 },
+								
                             },
-                        [TurnOn] =
+						[TurnOn] =
                             new[] //Firing, Reloading, Overheated, Tracking, On, Off, BurstReload, OutOfAmmo, PreFire define a new[] for each
                             {
-                                new RelMove
+								new RelMove
                                 {
                                     CenterEmpty = "",
                                     TicksToMove = 60, //number of ticks to complete motion, 60 = 1 second
@@ -869,12 +927,16 @@ namespace WeaponThread
                                     Rotation = Transformation(0, 0, 0), //degrees
                                     RotAroundCenter = Transformation(0, 0, 0), //degrees
                                 },
+								
                             },
-                    }
-                },
 
-				#endregion Retract
+					}
+				},
+				#endregion
+				
+
             }
+            
         };
     }
 }

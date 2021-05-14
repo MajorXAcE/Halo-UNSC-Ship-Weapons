@@ -1,15 +1,16 @@
 ﻿using System.Collections.Generic;
+using static WeaponThread.WeaponStructure;
 using static WeaponThread.WeaponStructure.WeaponDefinition;
 using static WeaponThread.WeaponStructure.WeaponDefinition.AnimationDef;
 using static WeaponThread.WeaponStructure.WeaponDefinition.AnimationDef.PartAnimationSetDef.EventTriggers;
 using static WeaponThread.WeaponStructure.WeaponDefinition.AnimationDef.RelMove.MoveType;
-
+using static WeaponThread.WeaponStructure.WeaponDefinition.AnimationDef.RelMove;
 namespace WeaponThread
 { // Don't edit above this line
     partial class Weapons
     {
         /// Possible Events ///
-
+        
         //Reloading,
         //Firing,
         //Tracking,
@@ -27,7 +28,7 @@ namespace WeaponThread
         {
             WeaponAnimationSets = new[]
             {
-                new PartAnimationSetDef()
+				new PartAnimationSetDef()
                 {
                     SubpartId = Names("Recoil3"),
                     BarrelId = "muzzle_projectile_3", //only used for firing, use "Any" for all muzzles
@@ -38,6 +39,9 @@ namespace WeaponThread
                     ResetEmissives = Events(),
                     EventMoveSets = new Dictionary<PartAnimationSetDef.EventTriggers, RelMove[]>
                     {
+                        
+
+
                         [Firing] =
                             new[] //Firing, Reloading, Overheated, Tracking, On, Off, BurstReload, OutOfAmmo, PreFire define a new[] for each
                             {
@@ -54,8 +58,8 @@ namespace WeaponThread
                                     Rotation = Transformation(0, 0, 0), //degrees
                                     RotAroundCenter = Transformation(0, 0, 0), //degrees
                                 },
-
-                                new RelMove
+								
+								new RelMove
                                 {
                                     CenterEmpty = "",
                                     TicksToMove = 10, //number of ticks to complete motion, 60 = 1 second
@@ -69,9 +73,11 @@ namespace WeaponThread
                                     RotAroundCenter = Transformation(0, 0, 0), //degrees
                                 },
                             },
-                    }
-                },
+
+					}
+				},
             }
+            
         };
     }
 }
