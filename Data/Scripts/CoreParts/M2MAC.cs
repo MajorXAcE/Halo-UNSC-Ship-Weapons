@@ -7,12 +7,15 @@ using static Scripts.Structure.WeaponDefinition.TargetingDef.BlockTypes;
 using static Scripts.Structure.WeaponDefinition.TargetingDef.Threat;
 using static Scripts.Structure.WeaponDefinition.HardPointDef.HardwareDef.HardwareType;
 
-namespace Scripts {   
-    partial class Parts {
+namespace Scripts
+{
+    partial class Parts
+    {
         // Don't edit above this line
-        WeaponDefinition MXA_M2MAC => new WeaponDefinition {
+        WeaponDefinition MXA_M2MAC => new WeaponDefinition
+        {
 
-            Assignments = new ModelAssignmentsDef 
+            Assignments = new ModelAssignmentsDef
             {
                 MountPoints = new[] {
                     new MountPointDef {
@@ -25,12 +28,12 @@ namespace Scripts {
                         IconName = ""
                     },
                 },
-                Muzzles = new [] {
+                Muzzles = new[] {
                     "muzzle_projectile_1",
                 },
                 Ejector = "",
             },
-            Targeting = new TargetingDef  
+            Targeting = new TargetingDef
             {
                 Threats = new[] {
                     Grids,
@@ -49,7 +52,7 @@ namespace Scripts {
                 TopBlocks = 4, // 0 = unlimited, max number of blocks to randomize between
                 StopTrackingSpeed = 1000, // do not track target threats traveling faster than this speed
             },
-            HardPoint = new HardPointDef 
+            HardPoint = new HardPointDef
             {
                 PartName = "Mark II MAC", // name of weapon in terminal
                 DeviateShotAngle = 0.01f,
@@ -59,20 +62,23 @@ namespace Scripts {
                 AddToleranceToTracking = true,
                 CanShootSubmerged = false,
 
-                Ui = new UiDef {
+                Ui = new UiDef
+                {
                     RateOfFire = false,
                     DamageModifier = true,
                     ToggleGuidance = false,
-                    EnableOverload =  false,
+                    EnableOverload = false,
                 },
-                Ai = new AiDef {
+                Ai = new AiDef
+                {
                     TrackTargets = false,
                     TurretAttached = false,
                     TurretController = false,
                     PrimaryTracking = false,
                     LockOnFocus = false,
                 },
-                HardWare = new HardwareDef {
+                HardWare = new HardwareDef
+                {
                     RotateRate = 0,
                     ElevateRate = 0,
                     MinAzimuth = 0,
@@ -84,7 +90,8 @@ namespace Scripts {
                     Offset = Vector(x: 0, y: 0, z: 0),
                     //Type = BlockWeapon, // IsWeapon, Passive, Active
                 },
-                Other = new OtherDef {
+                Other = new OtherDef
+                {
                     ConstructPartCap = 0,
                     RotateBarrelAxis = 0,
                     EnergyPriority = 0,
@@ -94,7 +101,8 @@ namespace Scripts {
                     CheckInflatedBox = false, // if true, the bounding box of the gun is expanded by the RestrictionRadius
                     CheckForAnyWeapon = false, // if true, the check will fail if ANY gun is present, false only looks for this subtype
                 },
-                Loading = new LoadingDef {
+                Loading = new LoadingDef
+                {
                     RateOfFire = 60, // visual only, 0 disables and uses RateOfFire
                     BarrelsPerShot = 1,
                     TrajectilesPerBarrel = 1, // Number of Trajectiles per barrel per fire event.
@@ -113,7 +121,8 @@ namespace Scripts {
                     BarrelSpinRate = 0, // visual only, 0 disables and uses RateOfFire
                     DeterministicSpin = false, // Spin barrel position will always be relative to initial / starting positions (spin will not be as smooth).
                 },
-                Audio = new HardPointAudioDef {
+                Audio = new HardPointAudioDef
+                {
                     PreFiringSound = "MXA_MAC_Charge",
                     FiringSound = "MXA_MAC_Fire", // WepShipGatlingShot
                     FiringSoundPerShot = true,
@@ -123,14 +132,17 @@ namespace Scripts {
                     BarrelRotationSound = "WepShipGatlingRotation",
                     FireSoundEndDelay = 0, // Measured in game ticks(6 = 100ms, 60 = 1 seconds, etc..).
                 },
-                Graphics = new HardPointParticleDef {
+                Graphics = new HardPointParticleDef
+                {
 
-                    Effect1 = new ParticleDef {
+                    Effect1 = new ParticleDef
+                    {
                         Name = "MXA_MACMuzzleFlash", // Smoke_LargeGunShot
                         Color = Color(red: 1f, green: 1f, blue: 1f, alpha: 1),
                         Offset = Vector(x: 0, y: 0, z: 0),
 
-                        Extras = new ParticleOptionDef {
+                        Extras = new ParticleOptionDef
+                        {
                             Loop = false,
                             Restart = false,
                             MaxDistance = 5000,
@@ -138,12 +150,14 @@ namespace Scripts {
                             Scale = 0.75f,
                         },
                     },
-                    Effect2 = new ParticleDef {
+                    Effect2 = new ParticleDef
+                    {
                         Name = "",//Muzzle_Flash_Large
                         Color = Color(red: 20, green: 20, blue: 20, alpha: 1),
                         Offset = Vector(x: 0, y: 0, z: 0),
 
-                        Extras = new ParticleOptionDef {
+                        Extras = new ParticleOptionDef
+                        {
                             Loop = false,
                             Restart = false,
                             MaxDistance = 300,
@@ -153,11 +167,11 @@ namespace Scripts {
                     },
                 },
             },
-            Ammos = new [] {
+            Ammos = new[] {
                 MXA_MACL_S_Ammo,
-				MXA_MACL_S_Shrapnel,
-				MXA_MACL_S_Impact,
-				MXA_MACL_S_HPAmmo,
+                MXA_MACL_S_Shrapnel,
+                MXA_MACL_S_Impact,
+                MXA_MACL_S_HPAmmo,
 				//MXA_MACL_S_HPShrapnel,
             },
             Animations = MXA_M2MAC_Animation,

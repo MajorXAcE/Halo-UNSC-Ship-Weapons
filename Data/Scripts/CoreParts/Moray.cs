@@ -7,12 +7,15 @@ using static Scripts.Structure.WeaponDefinition.TargetingDef.BlockTypes;
 using static Scripts.Structure.WeaponDefinition.TargetingDef.Threat;
 using static Scripts.Structure.WeaponDefinition.HardPointDef.HardwareDef.HardwareType;
 
-namespace Scripts {   
-    partial class Parts {
+namespace Scripts
+{
+    partial class Parts
+    {
         // Don't edit above this line
-        WeaponDefinition MXA_Moray => new WeaponDefinition {
+        WeaponDefinition MXA_Moray => new WeaponDefinition
+        {
 
-            Assignments = new ModelAssignmentsDef 
+            Assignments = new ModelAssignmentsDef
             {
                 MountPoints = new[] {
                     new MountPointDef {
@@ -25,20 +28,20 @@ namespace Scripts {
                         IconName = "TestIcon.dds"
                     },
                 },
-                Muzzles = new [] {
+                Muzzles = new[] {
                     "subpart_Mine_1",
                     "subpart_Mine_2",
                     "subpart_Mine_3",
-					"subpart_Mine_4",
-					"subpart_Mine_5",
-					"subpart_Mine_6",
-					"subpart_Mine_7",
-					"subpart_Mine_8",
+                    "subpart_Mine_4",
+                    "subpart_Mine_5",
+                    "subpart_Mine_6",
+                    "subpart_Mine_7",
+                    "subpart_Mine_8",
                 },
                 Ejector = "",
                 Scope = "", //Where line of sight checks are performed from must be clear of block collision
             },
-            Targeting = new TargetingDef  
+            Targeting = new TargetingDef
             {
                 Threats = new[] {
                     Grids,
@@ -57,7 +60,7 @@ namespace Scripts {
                 TopBlocks = 0, // 0 = unlimited, max number of blocks to randomize between
                 StopTrackingSpeed = 0, // do not track target threats traveling faster than this speed
             },
-            HardPoint = new HardPointDef 
+            HardPoint = new HardPointDef
             {
                 PartName = "CBU-R68 Moray System", // name of weapon in terminal
                 DeviateShotAngle = 10f,
@@ -67,13 +70,15 @@ namespace Scripts {
                 AddToleranceToTracking = false,
                 CanShootSubmerged = false,
 
-                Ui = new UiDef {
+                Ui = new UiDef
+                {
                     RateOfFire = false,
                     DamageModifier = false,
                     ToggleGuidance = false,
-                    EnableOverload =  false,
+                    EnableOverload = false,
                 },
-                Ai = new AiDef {
+                Ai = new AiDef
+                {
                     TrackTargets = false,
                     TurretAttached = false,
                     TurretController = false,
@@ -81,7 +86,8 @@ namespace Scripts {
                     LockOnFocus = false,
                     SuppressFire = true,
                 },
-                HardWare = new HardwareDef {
+                HardWare = new HardwareDef
+                {
                     RotateRate = 0f,
                     ElevateRate = 0f,
                     MinAzimuth = 0,
@@ -93,7 +99,8 @@ namespace Scripts {
                     Offset = Vector(x: 0, y: 0, z: 0),
                     Type = BlockWeapon, // IsWeapon, Passive, Active
                 },
-                Other = new OtherDef {
+                Other = new OtherDef
+                {
                     ConstructPartCap = 0,
                     RotateBarrelAxis = 0,
                     EnergyPriority = 0,
@@ -103,7 +110,8 @@ namespace Scripts {
                     CheckInflatedBox = false, // if true, the bounding box of the gun is expanded by the RestrictionRadius
                     CheckForAnyWeapon = false, // if true, the check will fail if ANY gun is present, false only looks for this subtype
                 },
-                Loading = new LoadingDef {
+                Loading = new LoadingDef
+                {
                     RateOfFire = 60, // visual only, 0 disables and uses RateOfFire
                     BarrelsPerShot = 1,
                     TrajectilesPerBarrel = 1, // Number of Trajectiles per barrel per fire event.
@@ -122,7 +130,8 @@ namespace Scripts {
                     BarrelSpinRate = 0, // visual only, 0 disables and uses RateOfFire
                     DeterministicSpin = false, // Spin barrel position will always be relative to initial / starting positions (spin will not be as smooth).
                 },
-                Audio = new HardPointAudioDef {
+                Audio = new HardPointAudioDef
+                {
                     PreFiringSound = "",
                     FiringSound = "", // WepShipGatlingShot
                     FiringSoundPerShot = true,
@@ -132,14 +141,17 @@ namespace Scripts {
                     BarrelRotationSound = "WepShipGatlingRotation",
                     FireSoundEndDelay = 120, // Measured in game ticks(6 = 100ms, 60 = 1 seconds, etc..).
                 },
-                Graphics = new HardPointParticleDef {
+                Graphics = new HardPointParticleDef
+                {
 
-                    Effect1 = new ParticleDef {
+                    Effect1 = new ParticleDef
+                    {
                         Name = "", // Smoke_LargeGunShot
                         Color = Color(red: 0, green: 0, blue: 0, alpha: 1),
                         Offset = Vector(x: 0, y: -1, z: 0),
 
-                        Extras = new ParticleOptionDef {
+                        Extras = new ParticleOptionDef
+                        {
                             Loop = false,
                             Restart = false,
                             MaxDistance = 50,
@@ -147,12 +159,14 @@ namespace Scripts {
                             Scale = 1f,
                         },
                     },
-                    Effect2 = new ParticleDef {
+                    Effect2 = new ParticleDef
+                    {
                         Name = "",//Muzzle_Flash_Large
                         Color = Color(red: 0, green: 0, blue: 0, alpha: 1),
                         Offset = Vector(x: 0, y: -1, z: 0),
 
-                        Extras = new ParticleOptionDef {
+                        Extras = new ParticleOptionDef
+                        {
                             Loop = false,
                             Restart = false,
                             MaxDistance = 150,
@@ -162,12 +176,12 @@ namespace Scripts {
                     },
                 },
             },
-            Ammos = new [] {
+            Ammos = new[] {
                 MXA_Moray_Ammo,
-				MXA_Moray_Mine,
-				MXA_Moray_SAmmo,
-				MXA_Moray_SMine,
-				MXA_Moray_Shrapnel,
+                MXA_Moray_Mine,
+                MXA_Moray_SAmmo,
+                MXA_Moray_SMine,
+                MXA_Moray_Shrapnel,
             },
             Animations = MXA_Moray_Animation,
             //Upgrades = UpgradeModules,

@@ -7,12 +7,15 @@ using static Scripts.Structure.WeaponDefinition.TargetingDef.BlockTypes;
 using static Scripts.Structure.WeaponDefinition.TargetingDef.Threat;
 using static Scripts.Structure.WeaponDefinition.HardPointDef.HardwareDef.HardwareType;
 
-namespace Scripts {   
-    partial class Parts {
+namespace Scripts
+{
+    partial class Parts
+    {
         // Don't edit above this line
-        WeaponDefinition MXA_BreakWater => new WeaponDefinition {
+        WeaponDefinition MXA_BreakWater => new WeaponDefinition
+        {
 
-            Assignments = new ModelAssignmentsDef 
+            Assignments = new ModelAssignmentsDef
             {
                 MountPoints = new[] {
                     new MountPointDef {
@@ -21,17 +24,17 @@ namespace Scripts {
                         MuzzlePartId = "Elevation1",
                         AzimuthPartId = "Azimuth",
                         ElevationPartId = "Elevation1",
-						DurabilityMod = 0.25f,
+                        DurabilityMod = 0.25f,
                         IconName = ""
                     },
                 },
-                Muzzles = new [] {
+                Muzzles = new[] {
                     "muzzle_projectile_1",
                 },
                 //Ejector = "",
-				//Scope = "scope1", //Where line of sight checks are performed from must be clear of block collision
+                //Scope = "scope1", //Where line of sight checks are performed from must be clear of block collision
             },
-            Targeting = new TargetingDef  
+            Targeting = new TargetingDef
             {
                 Threats = new[] {
                     Grids,
@@ -50,7 +53,7 @@ namespace Scripts {
                 TopBlocks = 4, // 0 = unlimited, max number of blocks to randomize between
                 StopTrackingSpeed = 1000, // do not track target threats traveling faster than this speed
             },
-            HardPoint = new HardPointDef 
+            HardPoint = new HardPointDef
             {
                 PartName = "Mark 15 Breakwater B1", // name of weapon in terminal
                 DeviateShotAngle = 0.15f,
@@ -60,20 +63,23 @@ namespace Scripts {
                 AddToleranceToTracking = true,
                 CanShootSubmerged = false,
 
-                Ui = new UiDef {
+                Ui = new UiDef
+                {
                     RateOfFire = true,
                     DamageModifier = false,
                     ToggleGuidance = false,
-                    EnableOverload =  false,
+                    EnableOverload = false,
                 },
-                Ai = new AiDef {
+                Ai = new AiDef
+                {
                     TrackTargets = true,
                     TurretAttached = true,
                     TurretController = true,
                     PrimaryTracking = true,
                     LockOnFocus = true,
                 },
-                HardWare = new HardwareDef {
+                HardWare = new HardwareDef
+                {
                     RotateRate = 0.004f,
                     ElevateRate = 0.003f,
                     MinAzimuth = -180,
@@ -85,7 +91,8 @@ namespace Scripts {
                     Offset = Vector(x: 0, y: 0, z: 0),
                     Type = BlockWeapon, // IsWeapon, Passive, Active
                 },
-                Other = new OtherDef {
+                Other = new OtherDef
+                {
                     ConstructPartCap = 0,
                     RotateBarrelAxis = 0,
                     EnergyPriority = 0,
@@ -95,7 +102,8 @@ namespace Scripts {
                     CheckInflatedBox = false, // if true, the bounding box of the gun is expanded by the RestrictionRadius
                     CheckForAnyWeapon = false, // if true, the check will fail if ANY gun is present, false only looks for this subtype
                 },
-                Loading = new LoadingDef {
+                Loading = new LoadingDef
+                {
                     RateOfFire = 30, // visual only, 0 disables and uses RateOfFire
                     BarrelsPerShot = 1,
                     TrajectilesPerBarrel = 1, // Number of Trajectiles per barrel per fire event.
@@ -114,7 +122,8 @@ namespace Scripts {
                     BarrelSpinRate = 0, // visual only, 0 disables and uses RateOfFire
                     DeterministicSpin = false, // Spin barrel position will always be relative to initial / starting positions (spin will not be as smooth).
                 },
-                Audio = new HardPointAudioDef {
+                Audio = new HardPointAudioDef
+                {
                     PreFiringSound = "",
                     FiringSound = "MXA_BreakWater_Fire", // WepShipGatlingShot
                     FiringSoundPerShot = true,
@@ -124,14 +133,17 @@ namespace Scripts {
                     BarrelRotationSound = "WepShipGatlingRotation",
                     FireSoundEndDelay = 0, // Measured in game ticks(6 = 100ms, 60 = 1 seconds, etc..).
                 },
-                Graphics = new HardPointParticleDef {
+                Graphics = new HardPointParticleDef
+                {
 
-                    Effect1 = new ParticleDef {
+                    Effect1 = new ParticleDef
+                    {
                         Name = "MXA_CoilgunMuzzleFlash", // Smoke_LargeGunShot
                         Color = Color(red: 1f, green: 1f, blue: 1f, alpha: 1),
                         Offset = Vector(x: 0, y: 0, z: 0),
 
-                        Extras = new ParticleOptionDef {
+                        Extras = new ParticleOptionDef
+                        {
                             Loop = false,
                             Restart = false,
                             MaxDistance = 1500,
@@ -139,12 +151,14 @@ namespace Scripts {
                             Scale = 1f,
                         },
                     },
-                    Effect2 = new ParticleDef {
+                    Effect2 = new ParticleDef
+                    {
                         Name = "",//Muzzle_Flash_Large
                         Color = Color(red: 20, green: 20, blue: 20, alpha: 1),
                         Offset = Vector(x: 0, y: 0, z: 0),
 
-                        Extras = new ParticleOptionDef {
+                        Extras = new ParticleOptionDef
+                        {
                             Loop = false,
                             Restart = false,
                             MaxDistance = 300,
@@ -154,13 +168,13 @@ namespace Scripts {
                     },
                 },
             },
-            Ammos = new [] {
+            Ammos = new[] {
                 MXA_BreakWater_Ammo,
-				MXA_BreakWater_APFuse,
-				MXA_BreakWater_Shrapnel,
-				MXA_BreakWater_HEAmmo,
-				MXA_BreakWater_GStage,
-				MXA_BreakWater_GAmmo,
+                MXA_BreakWater_APFuse,
+                MXA_BreakWater_Shrapnel,
+                MXA_BreakWater_HEAmmo,
+                MXA_BreakWater_GStage,
+                MXA_BreakWater_GAmmo,
             },
             Animations = MXA_BreakWater_Animation,
             //Upgrades = UpgradeModules,
