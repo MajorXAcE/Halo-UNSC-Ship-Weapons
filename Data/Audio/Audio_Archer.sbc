@@ -13,14 +13,14 @@
 
 	  <PreventSynchronization>0</PreventSynchronization>
       <SoundLimit>10</SoundLimit>
-	  
+
       <DynamicMusicCategory>HeavyFight</DynamicMusicCategory>
       <DynamicMusicAmount>3</DynamicMusicAmount>
       <Volume>0.15</Volume>
       <Waves>
         <Wave Type="D3">
           <Start>Audio\MXA\ArcherMissile_Fire1.xwm</Start>
-        </Wave> 
+        </Wave>
 		<Wave Type="D3">
           <Start>Audio\MXA\ArcherMissile_Fire2.xwm</Start>
         </Wave>
@@ -32,7 +32,7 @@
         </Wave>
       </Waves>
     </Sound>
-	
+
 	<Sound>
       <Id>
         <TypeId>MyObjectBuilder_AudioDefinition</TypeId>
@@ -42,7 +42,7 @@
 	  <Loopable>true</Loopable>
       <MaxDistance>300</MaxDistance>
 	  <VolumeVariation>0.05</VolumeVariation>
-	
+
 	  <Pitch>1</Pitch>
       <PitchVariation>2</PitchVariation>
       <PreventSynchronization>0</PreventSynchronization>
@@ -53,10 +53,10 @@
       <Waves>
         <Wave Type="D3">
           <Loop>Audio\MXA\ArcherMissile_Travel.xwm</Loop>
-        </Wave> 
+        </Wave>
       </Waves>
     </Sound>
-	
+
 	<Sound>
       <Id>
         <TypeId>MyObjectBuilder_AudioDefinition</TypeId>
@@ -74,10 +74,7 @@
 		<Wave Type="D3">
           <Loop>Audio\MXA\ArcherMissile_Travel.xwm</Loop>
         </Wave>
-        
-
       </Waves>
-    </Sound> 
-	
+    </Sound>
   </Sounds>
 </Definitions>

@@ -1,6 +1,6 @@
+using Sandbox.ModAPI;
 using System;
 using System.IO;
-using Sandbox.ModAPI;
 using VRage.Game.Components;
 
 namespace WeaponThread
@@ -26,12 +26,12 @@ namespace WeaponThread
             Storage = null;
         }
 
-        void Handler(object o)
+        private void Handler(object o)
         {
             if (o == null) SendModMessage(false);
         }
 
-        void SendModMessage(bool sending)
+        private void SendModMessage(bool sending)
         {
             if (sending) Log.CleanLine($"Sending request to core");
             else Log.CleanLine($"Receiving request from core");
@@ -51,7 +51,6 @@ namespace WeaponThread
             {
                 Log.CleanLine($"Compiling: {WeaponDefinitions[i].HardPoint.WeaponName}");
                 WeaponDefinitions[i].ModPath = ModContext.ModPath;
-
             }
             var ArmorDefinitions = weapons.ReturnArmorDefs();
             Log.CleanLine($"Found: {ArmorDefinitions.Length} armor compatibility definitions");
@@ -62,6 +61,7 @@ namespace WeaponThread
             Log.CleanLine($"Handing over control to Core and going to sleep");
         }
     }
+
     public class Log
     {
         private static Log _instance = null;
@@ -97,6 +97,4 @@ namespace WeaponThread
             instance = null;
         }
     }
-
 }
-

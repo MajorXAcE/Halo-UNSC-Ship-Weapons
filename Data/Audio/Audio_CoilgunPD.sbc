@@ -10,10 +10,10 @@
       <Category>SHOT</Category>
       <MaxDistance>200</MaxDistance>
       <PitchVariation>1.2</PitchVariation>
-	  
+
       <PreventSynchronization>0</PreventSynchronization>
       <SoundLimit>10</SoundLimit>
-	  
+
       <DynamicMusicCategory>HeavyFight</DynamicMusicCategory>
       <DynamicMusicAmount>3</DynamicMusicAmount>
       <DistantSounds>
@@ -23,11 +23,10 @@
       <Waves>
         <Wave Type="D3">
           <Start>Audio\MXA\CoilgunPD_Fire.xwm</Start>
-        </Wave> 
+        </Wave>
       </Waves>
     </Sound>
-	
-	
+
     <Sound>
       <Id>
         <TypeId>MyObjectBuilder_AudioDefinition</TypeId>
@@ -38,7 +37,7 @@
 	  <VolumeVariation>0.02</VolumeVariation>
 	  <Pitch>1</Pitch>
       <PitchVariation>1.2</PitchVariation>
-	  
+
       <Volume>0.3</Volume>
       <Waves>
         <Wave Type="D3">
@@ -46,6 +45,5 @@
         </Wave>
       </Waves>
     </Sound>
-
   </Sounds>
 </Definitions>

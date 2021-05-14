@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ParticleEffects>
-  
+
   <ParticleEffect xsi:type="MyObjectBuilder_ParticleEffect">
       <Id>
         <TypeId>ParticleEffect</TypeId>
@@ -15,7 +15,7 @@
       <DistanceMax>5000</DistanceMax>
       <Loop>true</Loop>
       <ParticleGenerations>
-		
+
         <ParticleGeneration Name="Trail_Smoke" Version="2">
           <GenerationType>GPU</GenerationType>
           <Properties>
@@ -411,7 +411,6 @@
             </Property>
           </Properties>
         </ParticleGeneration>
-		
 	  </ParticleGenerations>
       <ParticleLights>
         <ParticleLight Name="ParticleLight" Version="0">
@@ -482,7 +481,5 @@
       </ParticleLights>
       <ParticleSounds />
     </ParticleEffect>
-        
-		
   </ParticleEffects>
 </Definitions>

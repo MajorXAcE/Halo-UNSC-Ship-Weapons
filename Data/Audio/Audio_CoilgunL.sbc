@@ -13,7 +13,7 @@
 
       <PreventSynchronization>0</PreventSynchronization>
       <SoundLimit>10</SoundLimit>
-	  
+
       <DynamicMusicCategory>HeavyFight</DynamicMusicCategory>
       <DynamicMusicAmount>3</DynamicMusicAmount>
       <DistantSounds>
@@ -35,8 +35,7 @@
         </Wave>
       </Waves>
     </Sound>
-	
-	
+
     <Sound>
       <Id>
         <TypeId>MyObjectBuilder_AudioDefinition</TypeId>
@@ -45,11 +44,11 @@
       <Category>SHOT</Category>
       <MaxDistance>2250</MaxDistance>
 	  <VolumeVariation>0.02</VolumeVariation>
-	  
+
 	  <Pitch>1</Pitch>
       <PitchVariation>2</PitchVariation>
       <PreventSynchronization>1</PreventSynchronization>
-      
+
 	  <Volume>0.4</Volume>
       <Waves>
         <Wave Type="D3">
@@ -66,6 +65,5 @@
         </Wave>
       </Waves>
     </Sound>
-
   </Sounds>
 </Definitions>

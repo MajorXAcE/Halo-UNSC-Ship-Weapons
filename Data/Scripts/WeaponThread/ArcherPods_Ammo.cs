@@ -2,19 +2,20 @@
 using static WeaponThread.WeaponStructure.WeaponDefinition.AmmoDef;
 using static WeaponThread.WeaponStructure.WeaponDefinition.AmmoDef.AmmoEjectionDef;
 using static WeaponThread.WeaponStructure.WeaponDefinition.AmmoDef.AmmoEjectionDef.SpawnType;
-using static WeaponThread.WeaponStructure.WeaponDefinition.AmmoDef.ShapeDef.Shapes;
-using static WeaponThread.WeaponStructure.WeaponDefinition.AmmoDef.GraphicDef;
-using static WeaponThread.WeaponStructure.WeaponDefinition.AmmoDef.TrajectoryDef;
-using static WeaponThread.WeaponStructure.WeaponDefinition.AmmoDef.TrajectoryDef.GuidanceType;
-using static WeaponThread.WeaponStructure.WeaponDefinition.AmmoDef.DamageScaleDef;
-using static WeaponThread.WeaponStructure.WeaponDefinition.AmmoDef.DamageScaleDef.ShieldDef.ShieldType;
 using static WeaponThread.WeaponStructure.WeaponDefinition.AmmoDef.AreaDamageDef;
+using static WeaponThread.WeaponStructure.WeaponDefinition.AmmoDef.AreaDamageDef.AreaEffectType;
 using static WeaponThread.WeaponStructure.WeaponDefinition.AmmoDef.AreaDamageDef.EwarFieldsDef;
 using static WeaponThread.WeaponStructure.WeaponDefinition.AmmoDef.AreaDamageDef.EwarFieldsDef.PushPullDef.Force;
-using static WeaponThread.WeaponStructure.WeaponDefinition.AmmoDef.AreaDamageDef.AreaEffectType;
+using static WeaponThread.WeaponStructure.WeaponDefinition.AmmoDef.DamageScaleDef;
+using static WeaponThread.WeaponStructure.WeaponDefinition.AmmoDef.DamageScaleDef.ShieldDef.ShieldType;
+using static WeaponThread.WeaponStructure.WeaponDefinition.AmmoDef.GraphicDef;
 using static WeaponThread.WeaponStructure.WeaponDefinition.AmmoDef.GraphicDef.LineDef;
 using static WeaponThread.WeaponStructure.WeaponDefinition.AmmoDef.GraphicDef.LineDef.Texture;
 using static WeaponThread.WeaponStructure.WeaponDefinition.AmmoDef.GraphicDef.LineDef.TracerBaseDef;
+using static WeaponThread.WeaponStructure.WeaponDefinition.AmmoDef.ShapeDef.Shapes;
+using static WeaponThread.WeaponStructure.WeaponDefinition.AmmoDef.TrajectoryDef;
+using static WeaponThread.WeaponStructure.WeaponDefinition.AmmoDef.TrajectoryDef.GuidanceType;
+
 namespace WeaponThread
 { // Don't edit above this line
     partial class Weapons
@@ -855,7 +856,7 @@ namespace WeaponThread
                     OverideTarget = false, // when set to true ammo picks its own target, does not use hardpoint's.
                     MaxTargets = 3, // Number of targets allowed before ending, 0 = unlimited
                     NoTargetExpire = false, // Expire without ever having a target at TargetLossTime
-                                            //OffsetRatio = .30f, // The ratio to offset the random dir (0 to 1) 
+                                            //OffsetRatio = .30f, // The ratio to offset the random dir (0 to 1)
                                             //OffsetTime = 120, // how often to offset degree, measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                     Roam = false, // Roam current area after target loss
                     KeepAliveAfterTargetLoss = true, // Whether to stop early death of projectile on target loss
@@ -988,6 +989,7 @@ namespace WeaponThread
                 }
             },
         };
+
         private AmmoDef MXA_ArcherPods_Shrapnel => new AmmoDef
         {
             AmmoMagazine = "",
@@ -1330,6 +1332,5 @@ namespace WeaponThread
                 }
             },
         };
-
     }
 }

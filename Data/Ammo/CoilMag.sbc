@@ -19,7 +19,7 @@
       <Capacity>3</Capacity>
       <AmmoDefinitionId Subtype="Blank" />
    </AmmoMagazine>
-   
+
    <AmmoMagazine>
       <Id>
         <TypeId>AmmoMagazine</TypeId>
@@ -38,7 +38,7 @@
       <Capacity>1</Capacity>
       <AmmoDefinitionId Subtype="Blank" />
    </AmmoMagazine>
-   
+
    <AmmoMagazine>
       <Id>
         <TypeId>AmmoMagazine</TypeId>
@@ -57,7 +57,7 @@
       <Capacity>1</Capacity>
       <AmmoDefinitionId Subtype="Blank" />
    </AmmoMagazine>
-   
+
    <AmmoMagazine>
       <Id>
         <TypeId>AmmoMagazine</TypeId>
@@ -76,7 +76,7 @@
       <Capacity>1</Capacity>
       <AmmoDefinitionId Subtype="Blank" />
    </AmmoMagazine>
-   
+
    <AmmoMagazine>
       <Id>
         <TypeId>AmmoMagazine</TypeId>
@@ -95,7 +95,7 @@
       <Capacity>4</Capacity>
       <AmmoDefinitionId Subtype="Blank" />
    </AmmoMagazine>
-   
+
    <AmmoMagazine>
       <Id>
         <TypeId>AmmoMagazine</TypeId>
@@ -114,7 +114,7 @@
       <Capacity>4</Capacity>
       <AmmoDefinitionId Subtype="Blank" />
    </AmmoMagazine>
-   
+
    <AmmoMagazine>
       <Id>
         <TypeId>AmmoMagazine</TypeId>
@@ -133,7 +133,7 @@
       <Capacity>6</Capacity>
       <AmmoDefinitionId Subtype="Blank" />
    </AmmoMagazine>
-   
+
    <AmmoMagazine>
       <Id>
         <TypeId>AmmoMagazine</TypeId>
@@ -152,7 +152,7 @@
       <Capacity>6</Capacity>
       <AmmoDefinitionId Subtype="Blank" />
    </AmmoMagazine>
-   
+
    <AmmoMagazine>
       <Id>
         <TypeId>AmmoMagazine</TypeId>
@@ -171,7 +171,7 @@
       <Capacity>258</Capacity>
       <AmmoDefinitionId Subtype="Blank" />
    </AmmoMagazine>
-   
+
    <AmmoMagazine>
       <Id>
         <TypeId>AmmoMagazine</TypeId>
@@ -190,7 +190,7 @@
       <Capacity>512</Capacity>
       <AmmoDefinitionId Subtype="Blank" />
    </AmmoMagazine>
-   
+
    <AmmoMagazine>
       <Id>
         <TypeId>AmmoMagazine</TypeId>
@@ -209,7 +209,7 @@
       <Capacity>1</Capacity>
       <AmmoDefinitionId Subtype="Blank" />
    </AmmoMagazine>
-   
+
    <AmmoMagazine>
       <Id>
         <TypeId>AmmoMagazine</TypeId>
@@ -228,7 +228,7 @@
       <Capacity>1</Capacity>
       <AmmoDefinitionId Subtype="Blank" />
    </AmmoMagazine>
-   
+
    <AmmoMagazine>
       <Id>
         <TypeId>AmmoMagazine</TypeId>
@@ -247,7 +247,7 @@
       <Capacity>1</Capacity>
       <AmmoDefinitionId Subtype="Blank" />
    </AmmoMagazine>
-   
+
    <AmmoMagazine>
       <Id>
         <TypeId>AmmoMagazine</TypeId>
@@ -266,6 +266,5 @@
       <Capacity>1</Capacity>
       <AmmoDefinitionId Subtype="Blank" />
    </AmmoMagazine>
-   
   </AmmoMagazines>
 </Definitions>

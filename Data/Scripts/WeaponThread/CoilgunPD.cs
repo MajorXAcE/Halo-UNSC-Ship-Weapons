@@ -1,10 +1,9 @@
-﻿using VRageMath;
-using static WeaponThread.WeaponStructure;
+﻿using static WeaponThread.WeaponStructure;
 using static WeaponThread.WeaponStructure.WeaponDefinition;
 using static WeaponThread.WeaponStructure.WeaponDefinition.HardPointDef;
-using static WeaponThread.WeaponStructure.WeaponDefinition.ModelAssignmentsDef;
 using static WeaponThread.WeaponStructure.WeaponDefinition.HardPointDef.HardwareDef.ArmorState;
 using static WeaponThread.WeaponStructure.WeaponDefinition.HardPointDef.Prediction;
+using static WeaponThread.WeaponStructure.WeaponDefinition.ModelAssignmentsDef;
 using static WeaponThread.WeaponStructure.WeaponDefinition.TargetingDef.BlockTypes;
 using static WeaponThread.WeaponStructure.WeaponDefinition.TargetingDef.Threat;
 
@@ -13,9 +12,8 @@ namespace WeaponThread
     partial class Weapons
     {
         // Don't edit above this line
-        WeaponDefinition MXA_CoilgunPD => new WeaponDefinition
+        private WeaponDefinition MXA_CoilgunPD => new WeaponDefinition
         {
-
             Assignments = new ModelAssignmentsDef
             {
                 MountPoints = new[] {
@@ -146,7 +144,6 @@ namespace WeaponThread
                 },
                 Graphics = new HardPointParticleDef
                 {
-
                     Barrel1 = new ParticleDef
                     {
                         Name = "MXA_SmallCoilgunMuzzleFlash", // Smoke_LargeGunShot

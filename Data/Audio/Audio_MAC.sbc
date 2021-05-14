@@ -12,7 +12,7 @@
 	  <VolumeVariation>0.05</VolumeVariation>
 
       <PreventSynchronization>1</PreventSynchronization>
-	  
+
       <DynamicMusicCategory>HeavyFight</DynamicMusicCategory>
       <DynamicMusicAmount>3</DynamicMusicAmount>
       <DistantSounds>
@@ -22,17 +22,16 @@
       <Waves>
         <Wave Type="D3">
           <Start>Audio\MXA\MAC_Fire_1.xwm</Start>
-        </Wave> 
+        </Wave>
 		<Wave Type="D3">
           <Start>Audio\MXA\MAC_Fire_2.xwm</Start>
         </Wave>
 		<Wave Type="D3">
           <Start>Audio\MXA\MAC_Fire_3.xwm</Start>
-        </Wave> 
+        </Wave>
       </Waves>
     </Sound>
-	
-	
+
     <Sound>
       <Id>
         <TypeId>MyObjectBuilder_AudioDefinition</TypeId>
@@ -41,9 +40,9 @@
       <Category>SHOT</Category>
       <MaxDistance>25000</MaxDistance>
 	  <VolumeVariation>0.02</VolumeVariation>
-	  
+
       <PreventSynchronization>1</PreventSynchronization>
-      
+
 	  <Volume>1</Volume>
       <Waves>
         <Wave Type="D3">
@@ -70,16 +69,15 @@
 	  <Pitch>1</Pitch>
       <PitchVariation>2</PitchVariation>
       <PreventSynchronization>1</PreventSynchronization>
-	  
+
       <DynamicMusicCategory>HeavyFight</DynamicMusicCategory>
       <DynamicMusicAmount>3</DynamicMusicAmount>
       <Volume>1</Volume>
       <Waves>
         <Wave Type="D3">
           <Start>Audio\MXA\MAC_Charge.xwm</Start>
-        </Wave> 
+        </Wave>
       </Waves>
     </Sound>
-	
   </Sounds>
 </Definitions>

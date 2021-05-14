@@ -1,16 +1,16 @@
 ﻿using System.Collections.Generic;
-using static WeaponThread.WeaponStructure;
 using static WeaponThread.WeaponStructure.WeaponDefinition;
 using static WeaponThread.WeaponStructure.WeaponDefinition.AnimationDef;
 using static WeaponThread.WeaponStructure.WeaponDefinition.AnimationDef.PartAnimationSetDef.EventTriggers;
-using static WeaponThread.WeaponStructure.WeaponDefinition.AnimationDef.RelMove.MoveType;
 using static WeaponThread.WeaponStructure.WeaponDefinition.AnimationDef.RelMove;
+using static WeaponThread.WeaponStructure.WeaponDefinition.AnimationDef.RelMove.MoveType;
+
 namespace WeaponThread
 { // Don't edit above this line
     partial class Weapons
     {
         /// Possible Events ///
-        
+
         //Reloading,
         //Firing,
         //Tracking,
@@ -26,8 +26,7 @@ namespace WeaponThread
 
         private AnimationDef MXA_MACL_Animation => new AnimationDef
         {
-            
-			Emissives = new[]
+            Emissives = new[]
             {
                 Emissive(
                     EmissiveName: "TurnOn",
@@ -59,7 +58,7 @@ namespace WeaponThread
                     {
                         "Emissive1"
                     }),
-				Emissive(
+                Emissive(
                     EmissiveName: "PreFire",
                     Colors: new []
                     {
@@ -74,7 +73,7 @@ namespace WeaponThread
                     {
                         "Emissive1"
                     }),
-				Emissive(
+                Emissive(
                     EmissiveName: "Firing",
                     Colors: new []
                     {
@@ -89,7 +88,7 @@ namespace WeaponThread
                     {
                         "Emissive1"
                     }),
-				Emissive(
+                Emissive(
                     EmissiveName: "Reloading",
                     Colors: new []
                     {
@@ -104,15 +103,11 @@ namespace WeaponThread
                     {
                         "Emissive1"
                     }),
-
             },
-			
-			
 
             WeaponAnimationSets = new[]
             {
-                
-				new PartAnimationSetDef()
+                new PartAnimationSetDef()
                 {
                     SubpartId = Names("MAC_Charge"),
                     BarrelId = "Any", //only used for firing, use "Any" for all muzzles
@@ -123,9 +118,6 @@ namespace WeaponThread
                     ResetEmissives = Events(),
                     EventMoveSets = new Dictionary<PartAnimationSetDef.EventTriggers, RelMove[]>
                     {
-                        
-
-
                         [PreFire] =
                             new[] //Firing, Reloading, Overheated, Tracking, On, Off, BurstReload, OutOfAmmo, PreFire define a new[] for each
                             {
@@ -141,7 +133,7 @@ namespace WeaponThread
                                     Rotation = Transformation(0, 0, 0), //degrees
                                     RotAroundCenter = Transformation(0, 0, 0), //degrees
                                 },
-								new RelMove
+                                new RelMove
                                 {
                                     CenterEmpty = "",
                                     TicksToMove = 10, //number of ticks to complete motion, 60 = 1 second
@@ -150,7 +142,7 @@ namespace WeaponThread
                                     Rotation = Transformation(0, 0, 0), //degrees
                                     RotAroundCenter = Transformation(0, 0, 0), //degrees
                                 },
-								new RelMove
+                                new RelMove
                                 {
                                     CenterEmpty = "",
                                     TicksToMove = 20, //number of ticks to complete motion, 60 = 1 second
@@ -163,11 +155,10 @@ namespace WeaponThread
                                     RotAroundCenter = Transformation(0, 0, 0), //degrees
                                 },
                             },
-							
-					}
-				},
-				
-				new PartAnimationSetDef()
+                    }
+                },
+
+                new PartAnimationSetDef()
                 {
                     SubpartId = Names("MAC_Emissive"),
                     BarrelId = "Any", //only used for firing, use "Any" for all muzzles
@@ -178,9 +169,6 @@ namespace WeaponThread
                     ResetEmissives = Events(),
                     EventMoveSets = new Dictionary<PartAnimationSetDef.EventTriggers, RelMove[]>
                     {
-                        
-
-
                         [TurnOn] =
                             new[] //Firing, Reloading, Overheated, Tracking, On, Off, BurstReload, OutOfAmmo, PreFire define a new[] for each
                             {
@@ -210,7 +198,7 @@ namespace WeaponThread
                                     RotAroundCenter = Transformation(0, 0, 0), //degrees
                                 },
                             },
-						[PreFire] =
+                        [PreFire] =
                             new[] //Firing, Reloading, Overheated, Tracking, On, Off, BurstReload, OutOfAmmo, PreFire define a new[] for each
                             {
                                 new RelMove
@@ -224,8 +212,8 @@ namespace WeaponThread
                                     RotAroundCenter = Transformation(0, 0, 0), //degrees
                                 },
                             },
-							
-						[Firing] =
+
+                        [Firing] =
                             new[] //Firing, Reloading, Overheated, Tracking, On, Off, BurstReload, OutOfAmmo, PreFire define a new[] for each
                             {
                                 new RelMove
@@ -239,7 +227,7 @@ namespace WeaponThread
                                     RotAroundCenter = Transformation(0, 0, 0), //degrees
                                 },
                             },
-						[Reloading] =
+                        [Reloading] =
                             new[] //Firing, Reloading, Overheated, Tracking, On, Off, BurstReload, OutOfAmmo, PreFire define a new[] for each
                             {
                                 new RelMove
@@ -253,13 +241,9 @@ namespace WeaponThread
                                     RotAroundCenter = Transformation(0, 0, 0), //degrees
                                 },
                             },
-					}
-				},
-				
-				
-			
+                    }
+                },
             }
-            
         };
     }
 }

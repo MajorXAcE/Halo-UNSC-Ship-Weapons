@@ -11,7 +11,7 @@
 			<DurationMin>.975</DurationMin>
 			<DurationMax>0</DurationMax>
 			<Version>0</Version>
-			<ParticleGenerations>				
+			<ParticleGenerations>
 				<ParticleGeneration Name="Smoke" Version="0">
 					<GenerationType>GPU</GenerationType>
 					<Properties>
@@ -158,7 +158,7 @@
 									<Time>1</Time>
 									<ValueFloat>0</ValueFloat>
 									<Value2D />
-								</Key>								
+								</Key>
 							</Keys>
 						</Property>
 						<Property Name="Velocity var" AnimationType="Animated" Type="Float">
@@ -446,8 +446,8 @@
 							<ValueBool>true</ValueBool>
 						</Property>
 					</Properties>
-				</ParticleGeneration>	
-				
+				</ParticleGeneration>
+
 				<ParticleGeneration Name="Flash" Version="2">
 				  <GenerationType>GPU</GenerationType>
 				  <Properties>
@@ -832,7 +832,7 @@
 					</Property>
 				  </Properties>
 				</ParticleGeneration>
-				
+
 				<ParticleGeneration Name="Soft_Flames" Version="0">
 				  <GenerationType>GPU</GenerationType>
 				  <Properties>
@@ -979,7 +979,7 @@
 								<Time>0.5</Time>
 								<ValueFloat>7.5</ValueFloat>
 								<Value2D />
-							</Key>								
+							</Key>
 						</Keys>
 					</Property>
 					<Property Name="Velocity var" AnimationType="Animated" Type="Float">
@@ -1286,7 +1286,7 @@
 					</Property>
 				  </Properties>
 				</ParticleGeneration>
-				
+
 			<ParticleGeneration Name="ShockWave" Version="2">
 			  <GenerationType>GPU</GenerationType>
 			  <Properties>
@@ -1691,7 +1691,6 @@
 				</Property>
 			  </Properties>
 			</ParticleGeneration>
-
 			</ParticleGenerations>
 			<DistanceMax>5000</DistanceMax>
 		</ParticleEffect>

@@ -1,16 +1,16 @@
 ﻿using System.Collections.Generic;
-using static WeaponThread.WeaponStructure;
 using static WeaponThread.WeaponStructure.WeaponDefinition;
 using static WeaponThread.WeaponStructure.WeaponDefinition.AnimationDef;
 using static WeaponThread.WeaponStructure.WeaponDefinition.AnimationDef.PartAnimationSetDef.EventTriggers;
-using static WeaponThread.WeaponStructure.WeaponDefinition.AnimationDef.RelMove.MoveType;
 using static WeaponThread.WeaponStructure.WeaponDefinition.AnimationDef.RelMove;
+using static WeaponThread.WeaponStructure.WeaponDefinition.AnimationDef.RelMove.MoveType;
+
 namespace WeaponThread
 { // Don't edit above this line
     partial class Weapons
     {
         /// Possible Events ///
-        
+
         //Reloading,
         //Firing,
         //Tracking,
@@ -26,7 +26,7 @@ namespace WeaponThread
 
         private AnimationDef MXA_M2MAC_S_Animation => new AnimationDef
         {
-			/*
+            /*
 			HeatingEmissiveParts = new string[]
             {
                 "MissileTurretBase1"
@@ -64,7 +64,6 @@ namespace WeaponThread
                     {
                         "Emissive1"
                     }),
-
             },
             /*
             EventParticles = new Dictionary<PartAnimationSetDef.EventTriggers, EventParticle[]>
@@ -96,8 +95,7 @@ namespace WeaponThread
             */
             WeaponAnimationSets = new[]
             {
-                
-				new PartAnimationSetDef()
+                new PartAnimationSetDef()
                 {
                     SubpartId = Names("Emissive"),
                     BarrelId = "Any", //only used for firing, use "Any" for all muzzles
@@ -108,9 +106,6 @@ namespace WeaponThread
                     ResetEmissives = Events(),
                     EventMoveSets = new Dictionary<PartAnimationSetDef.EventTriggers, RelMove[]>
                     {
-                        
-
-
                         [TurnOn] =
                             new[] //Firing, Reloading, Overheated, Tracking, On, Off, BurstReload, OutOfAmmo, PreFire define a new[] for each
                             {
@@ -140,8 +135,8 @@ namespace WeaponThread
                                     RotAroundCenter = Transformation(0, 0, 0), //degrees
                                 },
                             },
-					}
-				},
+                    }
+                },
 				/*
 				new PartAnimationSetDef()
                 {
@@ -154,9 +149,6 @@ namespace WeaponThread
                     ResetEmissives = Events(),
                     EventMoveSets = new Dictionary<PartAnimationSetDef.EventTriggers, RelMove[]>
                     {
-                        
-
-
                         [TurnOn] =
                             new[] //Firing, Reloading, Overheated, Tracking, On, Off, BurstReload, OutOfAmmo, PreFire define a new[] for each
                             {
@@ -189,7 +181,6 @@ namespace WeaponThread
 					}
 				},*/
             }
-            
         };
     }
 }

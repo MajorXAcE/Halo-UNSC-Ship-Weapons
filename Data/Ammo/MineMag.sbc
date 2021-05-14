@@ -19,6 +19,5 @@
       <Capacity>8</Capacity>
       <AmmoDefinitionId Subtype="Blank" />
    </AmmoMagazine>
-   
   </AmmoMagazines>
 </Definitions>

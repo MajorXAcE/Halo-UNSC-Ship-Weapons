@@ -2,19 +2,20 @@
 using static WeaponThread.WeaponStructure.WeaponDefinition.AmmoDef;
 using static WeaponThread.WeaponStructure.WeaponDefinition.AmmoDef.AmmoEjectionDef;
 using static WeaponThread.WeaponStructure.WeaponDefinition.AmmoDef.AmmoEjectionDef.SpawnType;
-using static WeaponThread.WeaponStructure.WeaponDefinition.AmmoDef.ShapeDef.Shapes;
-using static WeaponThread.WeaponStructure.WeaponDefinition.AmmoDef.GraphicDef;
-using static WeaponThread.WeaponStructure.WeaponDefinition.AmmoDef.TrajectoryDef;
-using static WeaponThread.WeaponStructure.WeaponDefinition.AmmoDef.TrajectoryDef.GuidanceType;
-using static WeaponThread.WeaponStructure.WeaponDefinition.AmmoDef.DamageScaleDef;
-using static WeaponThread.WeaponStructure.WeaponDefinition.AmmoDef.DamageScaleDef.ShieldDef.ShieldType;
 using static WeaponThread.WeaponStructure.WeaponDefinition.AmmoDef.AreaDamageDef;
+using static WeaponThread.WeaponStructure.WeaponDefinition.AmmoDef.AreaDamageDef.AreaEffectType;
 using static WeaponThread.WeaponStructure.WeaponDefinition.AmmoDef.AreaDamageDef.EwarFieldsDef;
 using static WeaponThread.WeaponStructure.WeaponDefinition.AmmoDef.AreaDamageDef.EwarFieldsDef.PushPullDef.Force;
-using static WeaponThread.WeaponStructure.WeaponDefinition.AmmoDef.AreaDamageDef.AreaEffectType;
+using static WeaponThread.WeaponStructure.WeaponDefinition.AmmoDef.DamageScaleDef;
+using static WeaponThread.WeaponStructure.WeaponDefinition.AmmoDef.DamageScaleDef.ShieldDef.ShieldType;
+using static WeaponThread.WeaponStructure.WeaponDefinition.AmmoDef.GraphicDef;
 using static WeaponThread.WeaponStructure.WeaponDefinition.AmmoDef.GraphicDef.LineDef;
 using static WeaponThread.WeaponStructure.WeaponDefinition.AmmoDef.GraphicDef.LineDef.Texture;
 using static WeaponThread.WeaponStructure.WeaponDefinition.AmmoDef.GraphicDef.LineDef.TracerBaseDef;
+using static WeaponThread.WeaponStructure.WeaponDefinition.AmmoDef.ShapeDef.Shapes;
+using static WeaponThread.WeaponStructure.WeaponDefinition.AmmoDef.TrajectoryDef;
+using static WeaponThread.WeaponStructure.WeaponDefinition.AmmoDef.TrajectoryDef.GuidanceType;
+
 namespace WeaponThread
 { // Don't edit above this line
     partial class Weapons
@@ -284,7 +285,7 @@ namespace WeaponThread
                         {
                             Enable = false, // If true Tracer TextureMode is ignored
                             Textures = new[] {
-								"",
+                                "",
                             },
                             SegmentLength = 0f, // Uses the values below.
                             SegmentGap = 0f, // Uses Tracer textures and values
@@ -301,7 +302,7 @@ namespace WeaponThread
                     {
                         Enable = true,
                         Textures = new[] {
-							"WeaponLaser",
+                            "WeaponLaser",
                         },
                         TextureMode = Normal,
                         DecayTime = 6,
@@ -343,8 +344,8 @@ namespace WeaponThread
                 }
             },
         };
-		
-		private AmmoDef MXA_CoilgunL_Shrapnel => new AmmoDef
+
+        private AmmoDef MXA_CoilgunL_Shrapnel => new AmmoDef
         {
             AmmoMagazine = "",
             AmmoRound = "MXA_CoilgunL_Shrapnel",
@@ -626,7 +627,7 @@ namespace WeaponThread
                         {
                             Enable = false, // If true Tracer TextureMode is ignored
                             Textures = new[] {
-								"",
+                                "",
                             },
                             SegmentLength = 0f, // Uses the values below.
                             SegmentGap = 0f, // Uses Tracer textures and values
@@ -643,7 +644,7 @@ namespace WeaponThread
                     {
                         Enable = false,
                         Textures = new[] {
-							"",
+                            "",
                         },
                         TextureMode = Normal,
                         DecayTime = 128,
@@ -685,8 +686,8 @@ namespace WeaponThread
                 }
             },
         };
-		
-		private AmmoDef MXA_CoilgunL_HE => new AmmoDef
+
+        private AmmoDef MXA_CoilgunL_HE => new AmmoDef
         {
             AmmoMagazine = "MXA_Coil155HEAmmo",
             AmmoRound = "HE",
@@ -951,7 +952,7 @@ namespace WeaponThread
                         {
                             Enable = false, // If true Tracer TextureMode is ignored
                             Textures = new[] {
-								"",
+                                "",
                             },
                             SegmentLength = 0f, // Uses the values below.
                             SegmentGap = 0f, // Uses Tracer textures and values
@@ -968,7 +969,7 @@ namespace WeaponThread
                     {
                         Enable = true,
                         Textures = new[] {
-							"WeaponLaser",
+                            "WeaponLaser",
                         },
                         TextureMode = Normal,
                         DecayTime = 2,
@@ -1011,8 +1012,7 @@ namespace WeaponThread
             },
         };
 
-		
-		private AmmoDef MXA_CoilgunL_AMFlak => new AmmoDef
+        private AmmoDef MXA_CoilgunL_AMFlak => new AmmoDef
         {
             AmmoMagazine = "MXA_Coil155HEAmmo",
             AmmoRound = "Flak",
@@ -1207,7 +1207,7 @@ namespace WeaponThread
                     MaxTargets = 0, // Number of targets allowed before ending, 0 = unlimited
                     NoTargetExpire = false, // Expire without ever having a target at TargetLossTime
                     Roam = false, // Roam current area after target loss
-					KeepAliveAfterTargetLoss = true, // Whether to stop early death of projectile on target loss
+                    KeepAliveAfterTargetLoss = true, // Whether to stop early death of projectile on target loss
                 },
                 Mines = new MinesDef
                 {
@@ -1278,7 +1278,7 @@ namespace WeaponThread
                         {
                             Enable = false, // If true Tracer TextureMode is ignored
                             Textures = new[] {
-								"",
+                                "",
                             },
                             SegmentLength = 0f, // Uses the values below.
                             SegmentGap = 0f, // Uses Tracer textures and values
@@ -1295,7 +1295,7 @@ namespace WeaponThread
                     {
                         Enable = true,
                         Textures = new[] {
-							"WeaponLaser",
+                            "WeaponLaser",
                         },
                         TextureMode = Normal,
                         DecayTime = 3,
@@ -1337,7 +1337,8 @@ namespace WeaponThread
                 }
             },
         };
-		private AmmoDef MXA_CoilgunL_Flak => new AmmoDef
+
+        private AmmoDef MXA_CoilgunL_Flak => new AmmoDef
         {
             AmmoMagazine = "",
             AmmoRound = "MXA_CoilgunL_Flak",
@@ -1532,7 +1533,7 @@ namespace WeaponThread
                     MaxTargets = 0, // Number of targets allowed before ending, 0 = unlimited
                     NoTargetExpire = false, // Expire without ever having a target at TargetLossTime
                     Roam = false, // Roam current area after target loss
-					KeepAliveAfterTargetLoss = true, // Whether to stop early death of projectile on target loss
+                    KeepAliveAfterTargetLoss = true, // Whether to stop early death of projectile on target loss
                 },
                 Mines = new MinesDef
                 {
@@ -1603,7 +1604,7 @@ namespace WeaponThread
                         {
                             Enable = false, // If true Tracer TextureMode is ignored
                             Textures = new[] {
-								"",
+                                "",
                             },
                             SegmentLength = 0f, // Uses the values below.
                             SegmentGap = 0f, // Uses Tracer textures and values
@@ -1620,7 +1621,7 @@ namespace WeaponThread
                     {
                         Enable = true,
                         Textures = new[] {
-							"WeaponLaser",
+                            "WeaponLaser",
                         },
                         TextureMode = Normal,
                         DecayTime = 2,
