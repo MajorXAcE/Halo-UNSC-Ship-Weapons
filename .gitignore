@@ -387,6 +387,9 @@ FodyWeavers.xsd
 .idea/
 *.sln.iml
 
+#Links
+*.lnk
+
 # Specific Files
 Upload Experimental to Workshop.bat
 Upload Live to Workshop.bat
