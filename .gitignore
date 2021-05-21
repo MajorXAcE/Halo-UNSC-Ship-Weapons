@@ -386,3 +386,7 @@ FodyWeavers.xsd
 # JetBrains Rider
 .idea/
 *.sln.iml
+
+# Specific Files
+Upload Experimental to Workshop.bat
+Upload Live to Workshop.bat
