@@ -9,7 +9,7 @@
 			<DisplayName>Mark 40 Spitfire</DisplayName>
 			<Description>The Spitfire naval coilgun battery is a ship-to-ship weapon utilised by the UNSC Navy during and after the Human-Covenant War.
 			
-			Engagement Range: 7k 
+			Engagement Range: 4.5k 
 			Ammo: 305mm Coilgun Rounds
 			</Description>
 			<Icon>Textures\GUI\Icons\MXA_CoilGunH.png</Icon>
@@ -65,7 +65,7 @@
 			<DisplayName>M66 Sentry</DisplayName>
 			<Description>The Sentry autocannon is a line of naval coilguns used by the UNSC Navy during and after the Human-Covenant War.
 			
-			Engagement Range: 5k 
+			Engagement Range: 3.5k 
 			Ammo: 155mm Coilgun Ammo Containers
 			</Description>
 			<Icon>Textures\GUI\Icons\MXA_CoilgunL.png</Icon>
@@ -405,7 +405,7 @@
 			<DisplayName>Mark  15 Breakwater</DisplayName>
 			<Description>The Mark 15 Breakwater naval coilgun is a heavy ship-to-ship turret created for the UNSC Navy.
 			
-			Engagement Range: 8k 
+			Engagement Range: 5.5k 
 			Ammo: 520mm Coilgun Rounds
 			</Description>
 			<Icon>Textures\GUI\Icons\MXA_BreakWater.png</Icon>
@@ -460,7 +460,7 @@
 			<DisplayName>11A2R1 Deckgun</DisplayName>
 			<Description>The 11A2R1 naval coilgun battery is a large coilgun mounted on some UNSC warships.
 			
-			Engagement Range: 6k 
+			Engagement Range: 4k 
 			Ammo: 270mm Coilgun Rounds
 			</Description>
 			<Icon>Textures\GUI\Icons\MXA_SoFCoilgun.png</Icon>

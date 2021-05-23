@@ -1,19 +1,18 @@
-﻿using System.Collections.Generic;
-using static WeaponThread.WeaponStructure;
-using static WeaponThread.WeaponStructure.WeaponDefinition;
-using static WeaponThread.WeaponStructure.WeaponDefinition.HardPointDef;
-using static WeaponThread.WeaponStructure.WeaponDefinition.ModelAssignmentsDef;
-using static WeaponThread.WeaponStructure.WeaponDefinition.HardPointDef.HardwareDef.ArmorState;
-using static WeaponThread.WeaponStructure.WeaponDefinition.HardPointDef.Prediction;
-using static WeaponThread.WeaponStructure.WeaponDefinition.TargetingDef.BlockTypes;
-using static WeaponThread.WeaponStructure.WeaponDefinition.TargetingDef.Threat;
+﻿using static Scripts.Structure;
+using static Scripts.Structure.WeaponDefinition;
+using static Scripts.Structure.WeaponDefinition.ModelAssignmentsDef;
+using static Scripts.Structure.WeaponDefinition.HardPointDef;
+using static Scripts.Structure.WeaponDefinition.HardPointDef.Prediction;
+using static Scripts.Structure.WeaponDefinition.TargetingDef.BlockTypes;
+using static Scripts.Structure.WeaponDefinition.TargetingDef.Threat;
+using static Scripts.Structure.WeaponDefinition.HardPointDef.HardwareDef.HardwareType;
 
-namespace WeaponThread
+namespace Scripts
 {
-    partial class Weapons
+    partial class Parts
     {
         // Don't edit above this line
-        WeaponDefinition MXA_BreakWater => new WeaponDefinition
+        WeaponDefinition MXA_BreakWaterB1 => new WeaponDefinition
         {
 
             Assignments = new ModelAssignmentsDef
@@ -21,19 +20,18 @@ namespace WeaponThread
                 MountPoints = new[] {
                     new MountPointDef {
                         SubtypeId = "MXA_BreakWater",
-                        AimPartId = "None",
-                        MuzzlePartId = "Designator",
+                        SpinPartId = "None",
+                        MuzzlePartId = "Elevation1",
                         AzimuthPartId = "Azimuth",
-                        ElevationPartId = "ElevationDeg",
-                        DurabilityMod = 0.25f,
-                        IconName = ""
+                        ElevationPartId = "Elevation1",
+
                     },
                 },
-                Barrels = new[] {
-                    "muzzle_projectile_D",
+                Muzzles = new[] {
+                    "muzzle_projectile_1",
                 },
                 //Ejector = "",
-                Scope = "scopeD", //Where line of sight checks are performed from must be clear of block collision
+                Scope = "scope1", //Where line of sight checks are performed from must be clear of block collision
             },
             Targeting = new TargetingDef
             {
@@ -44,24 +42,22 @@ namespace WeaponThread
                     Thrust, Utility, Offense, Power, Production, Any,
                 },
                 ClosestFirst = false, // tries to pick closest targets first (blocks on grids, projectiles, etc...).
-                IgnoreDumbProjectiles = true, // Don't fire at non-smart projectiles.
-                LockedSmartOnly = false, // Only fire at smart projectiles that are locked on to parent grid.
                 MinimumDiameter = 10, // 0 = unlimited, Minimum radius of threat to engage.
                 MaximumDiameter = 0, // 0 = unlimited, Maximum radius of threat to engage.
                 MaxTargetDistance = 5500, // 0 = unlimited, Maximum target distance that targets will be automatically shot at.
                 MinTargetDistance = 0, // 0 = unlimited, Min target distance that targets will be automatically shot at.
-                TopTargets = 4, // 0 = unlimited, max number of top targets to randomize between.
+                TopTargets = 0, // 0 = unlimited, max number of top targets to randomize between.
                 TopBlocks = 4, // 0 = unlimited, max number of blocks to randomize between
                 StopTrackingSpeed = 1000, // do not track target threats traveling faster than this speed
             },
             HardPoint = new HardPointDef
             {
-                PartName = "Mark 15 Breakwater D", // name of weapon in terminal
+                PartName = "Mark 15 Breakwater B1", // name of weapon in terminal
                 DeviateShotAngle = 0.15f,
                 AimingTolerance = 0.8f, // 0 - 180 firing angle
                 AimLeadingPrediction = Advanced, // Off, Basic, Accurate, Advanced
                 DelayCeaseFire = 0, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
-                AddToleranceToTracking = true,
+                AddToleranceToTracking = false,
                 CanShootSubmerged = false,
 
                 Ui = new UiDef
@@ -76,25 +72,24 @@ namespace WeaponThread
                     TrackTargets = true,
                     TurretAttached = true,
                     TurretController = true,
-                    PrimaryTracking = true,
+                    PrimaryTracking = false,
                     LockOnFocus = true,
                 },
                 HardWare = new HardwareDef
                 {
-                    RotateRate = 0.004f,
+                    RotateRate = 0f,
                     ElevateRate = 0.003f,
-                    MinAzimuth = -180,
-                    MaxAzimuth = 180,
+                    MinAzimuth = 0,
+                    MaxAzimuth = 0,
                     MinElevation = -3,
                     MaxElevation = 100,
                     FixedOffset = false,
                     InventorySize = 2.769f,
                     Offset = Vector(x: 0, y: 0, z: 0),
-                    Armor = IsWeapon, // IsWeapon, Passive, Active
                 },
                 Other = new OtherDef
                 {
-                    GridWeaponCap = 0,
+                    ConstructPartCap = 0,
                     RotateBarrelAxis = 0,
                     EnergyPriority = 0,
                     MuzzleCheck = false,
@@ -137,7 +132,7 @@ namespace WeaponThread
                 Graphics = new HardPointParticleDef
                 {
 
-                    Barrel1 = new ParticleDef
+                    Effect1 = new ParticleDef
                     {
                         Name = "MXA_CoilgunMuzzleFlash", // Smoke_LargeGunShot
                         Color = Color(red: 1f, green: 1f, blue: 1f, alpha: 1),
@@ -152,7 +147,7 @@ namespace WeaponThread
                             Scale = 1f,
                         },
                     },
-                    Barrel2 = new ParticleDef
+                    Effect2 = new ParticleDef
                     {
                         Name = "",//Muzzle_Flash_Large
                         Color = Color(red: 20, green: 20, blue: 20, alpha: 1),
@@ -177,7 +172,7 @@ namespace WeaponThread
                 MXA_BreakWater_GStage,
                 MXA_BreakWater_GAmmo,
             },
-            //Animations = MXA_BreakWater_Animation,
+            Animations = MXA_BreakWater_Animation,
             //Upgrades = UpgradeModules,
             // Don't edit below this line
         };
