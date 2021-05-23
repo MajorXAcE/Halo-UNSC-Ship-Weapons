@@ -56,7 +56,7 @@ namespace WeaponThread
             },
             HardPoint = new HardPointDef
             {
-                PartName = "Mark 15 Breakwater D", // name of weapon in terminal
+                WeaponName = "Mark 15 Breakwater D", // name of weapon in terminal
                 DeviateShotAngle = 0.15f,
                 AimingTolerance = 0.8f, // 0 - 180 firing angle
                 AimLeadingPrediction = Advanced, // Off, Basic, Accurate, Advanced
@@ -88,7 +88,7 @@ namespace WeaponThread
                     MinElevation = -3,
                     MaxElevation = 100,
                     FixedOffset = false,
-                    InventorySize = 2.769f,
+                    InventorySize = 0f,
                     Offset = Vector(x: 0, y: 0, z: 0),
                     Armor = IsWeapon, // IsWeapon, Passive, Active
                 },
