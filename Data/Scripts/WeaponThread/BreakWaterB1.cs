@@ -1,15 +1,16 @@
-﻿using static Scripts.Structure;
-using static Scripts.Structure.WeaponDefinition;
-using static Scripts.Structure.WeaponDefinition.ModelAssignmentsDef;
-using static Scripts.Structure.WeaponDefinition.HardPointDef;
-using static Scripts.Structure.WeaponDefinition.HardPointDef.Prediction;
-using static Scripts.Structure.WeaponDefinition.TargetingDef.BlockTypes;
-using static Scripts.Structure.WeaponDefinition.TargetingDef.Threat;
-using static Scripts.Structure.WeaponDefinition.HardPointDef.HardwareDef.HardwareType;
+﻿using System.Collections.Generic;
+using static WeaponThread.WeaponStructure;
+using static WeaponThread.WeaponStructure.WeaponDefinition;
+using static WeaponThread.WeaponStructure.WeaponDefinition.HardPointDef;
+using static WeaponThread.WeaponStructure.WeaponDefinition.ModelAssignmentsDef;
+using static WeaponThread.WeaponStructure.WeaponDefinition.HardPointDef.HardwareDef.ArmorState;
+using static WeaponThread.WeaponStructure.WeaponDefinition.HardPointDef.Prediction;
+using static WeaponThread.WeaponStructure.WeaponDefinition.TargetingDef.BlockTypes;
+using static WeaponThread.WeaponStructure.WeaponDefinition.TargetingDef.Threat;
 
-namespace Scripts
+namespace WeaponThread
 {
-    partial class Parts
+    partial class Weapons
     {
         // Don't edit above this line
         WeaponDefinition MXA_BreakWaterB1 => new WeaponDefinition
@@ -20,14 +21,14 @@ namespace Scripts
                 MountPoints = new[] {
                     new MountPointDef {
                         SubtypeId = "MXA_BreakWater",
-                        SpinPartId = "None",
+                        AimPartId = "None",
                         MuzzlePartId = "Elevation1",
                         AzimuthPartId = "Azimuth",
                         ElevationPartId = "Elevation1",
 
                     },
                 },
-                Muzzles = new[] {
+                Barrels = new[] {
                     "muzzle_projectile_1",
                 },
                 //Ejector = "",
@@ -52,7 +53,7 @@ namespace Scripts
             },
             HardPoint = new HardPointDef
             {
-                PartName = "Mark 15 Breakwater B1", // name of weapon in terminal
+                WeaponName = "Mark 15 Breakwater B1", // name of weapon in terminal
                 DeviateShotAngle = 0.15f,
                 AimingTolerance = 0.8f, // 0 - 180 firing angle
                 AimLeadingPrediction = Advanced, // Off, Basic, Accurate, Advanced
@@ -84,19 +85,16 @@ namespace Scripts
                     MinElevation = -3,
                     MaxElevation = 100,
                     FixedOffset = false,
-                    InventorySize = 2.769f,
+                    InventorySize = .001f,
                     Offset = Vector(x: 0, y: 0, z: 0),
                 },
                 Other = new OtherDef
                 {
-                    ConstructPartCap = 0,
+                    GridWeaponCap = 0,
                     RotateBarrelAxis = 0,
                     EnergyPriority = 0,
                     MuzzleCheck = false,
                     Debug = false,
-                    RestrictionRadius = 0, // Meters, radius of sphere disable this gun if another is present
-                    CheckInflatedBox = false, // if true, the bounding box of the gun is expanded by the RestrictionRadius
-                    CheckForAnyWeapon = false, // if true, the check will fail if ANY gun is present, false only looks for this subtype
                 },
                 Loading = new LoadingDef
                 {
@@ -132,7 +130,7 @@ namespace Scripts
                 Graphics = new HardPointParticleDef
                 {
 
-                    Effect1 = new ParticleDef
+                    Barrel1 = new ParticleDef
                     {
                         Name = "MXA_CoilgunMuzzleFlash", // Smoke_LargeGunShot
                         Color = Color(red: 1f, green: 1f, blue: 1f, alpha: 1),
@@ -147,7 +145,7 @@ namespace Scripts
                             Scale = 1f,
                         },
                     },
-                    Effect2 = new ParticleDef
+                    Barrel2 = new ParticleDef
                     {
                         Name = "",//Muzzle_Flash_Large
                         Color = Color(red: 20, green: 20, blue: 20, alpha: 1),
