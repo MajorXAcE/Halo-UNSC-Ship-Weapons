@@ -84,7 +84,7 @@ namespace Scripts
                     MinElevation = -3,
                     MaxElevation = 100,
                     FixedOffset = false,
-                    InventorySize = 2.769f,
+                    InventorySize = .1f,
                     Offset = Vector(x: 0, y: 0, z: 0),
                 },
                 Other = new OtherDef
