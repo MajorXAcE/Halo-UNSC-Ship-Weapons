@@ -12,7 +12,7 @@ namespace Scripts
     partial class Parts
     {
         // Don't edit above this line
-        WeaponDefinition MXA_BreakWaterB3 => new WeaponDefinition
+        WeaponDefinition MXA_BreakWaterB1 => new WeaponDefinition
         {
 
             Assignments = new ModelAssignmentsDef
@@ -21,15 +21,17 @@ namespace Scripts
                     new MountPointDef {
                         SubtypeId = "MXA_BreakWater",
                         SpinPartId = "None",
-                        MuzzlePartId = "Elevation3",
+                        MuzzlePartId = "Elevation1",
                         AzimuthPartId = "Azimuth",
-                        ElevationPartId = "Elevation3",
+                        ElevationPartId = "Elevation1",
+
                     },
                 },
                 Muzzles = new[] {
-                    "muzzle_projectile_3",
+                    "muzzle_projectile_1",
                 },
-                Scope = "scope3", //Where line of sight checks are performed from must be clear of block collision
+                //Ejector = "",
+                Scope = "scope1", //Where line of sight checks are performed from must be clear of block collision
             },
             Targeting = new TargetingDef
             {
@@ -40,8 +42,6 @@ namespace Scripts
                     Thrust, Utility, Offense, Power, Production, Any,
                 },
                 ClosestFirst = false, // tries to pick closest targets first (blocks on grids, projectiles, etc...).
-                IgnoreDumbProjectiles = true, // Don't fire at non-smart projectiles.
-                LockedSmartOnly = false, // Only fire at smart projectiles that are locked on to parent grid.
                 MinimumDiameter = 10, // 0 = unlimited, Minimum radius of threat to engage.
                 MaximumDiameter = 0, // 0 = unlimited, Maximum radius of threat to engage.
                 MaxTargetDistance = 5500, // 0 = unlimited, Maximum target distance that targets will be automatically shot at.
@@ -52,7 +52,7 @@ namespace Scripts
             },
             HardPoint = new HardPointDef
             {
-                PartName = "Mark 15 Breakwater B3", // name of weapon in terminal
+                PartName = "Mark 15 Breakwater B1", // name of weapon in terminal
                 DeviateShotAngle = 0.15f,
                 AimingTolerance = 0.8f, // 0 - 180 firing angle
                 AimLeadingPrediction = Advanced, // Off, Basic, Accurate, Advanced
@@ -73,7 +73,7 @@ namespace Scripts
                     TurretAttached = true,
                     TurretController = true,
                     PrimaryTracking = false,
-                    LockOnFocus = false,
+                    LockOnFocus = true,
                 },
                 HardWare = new HardwareDef
                 {
@@ -83,7 +83,8 @@ namespace Scripts
                     MaxAzimuth = 0,
                     MinElevation = -3,
                     MaxElevation = 100,
-                    InventorySize = .001f,
+                    FixedOffset = false,
+                    InventorySize = 2.769f,
                     Offset = Vector(x: 0, y: 0, z: 0),
                 },
                 Other = new OtherDef
@@ -93,6 +94,9 @@ namespace Scripts
                     EnergyPriority = 0,
                     MuzzleCheck = false,
                     Debug = false,
+                    RestrictionRadius = 0, // Meters, radius of sphere disable this gun if another is present
+                    CheckInflatedBox = false, // if true, the bounding box of the gun is expanded by the RestrictionRadius
+                    CheckForAnyWeapon = false, // if true, the check will fail if ANY gun is present, false only looks for this subtype
                 },
                 Loading = new LoadingDef
                 {
@@ -101,7 +105,7 @@ namespace Scripts
                     TrajectilesPerBarrel = 1, // Number of Trajectiles per barrel per fire event.
                     SkipBarrels = 0,
                     ReloadTime = 600, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
-                    DelayUntilFire = 12, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
+                    DelayUntilFire = 6, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                     HeatPerShot = 0, //heat generated per shot
                     MaxHeat = 70000, //max heat before weapon enters cooldown (70% of max heat)
                     Cooldown = .95f, //percent of max heat to be under to start firing again after overheat accepts .2-.95
@@ -167,9 +171,9 @@ namespace Scripts
                 MXA_BreakWater_HEAmmo,
                 MXA_BreakWater_GStage,
                 MXA_BreakWater_GAmmo,
-
             },
-            Animations = MXA_BreakWaterB3_Animation,
+            Animations = MXA_BreakWater_Animation,
+            //Upgrades = UpgradeModules,
             // Don't edit below this line
         };
     }

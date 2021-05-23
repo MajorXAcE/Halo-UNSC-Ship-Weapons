@@ -21,18 +21,18 @@ namespace Scripts
                     new MountPointDef {
                         SubtypeId = "MXA_BreakWater",
                         SpinPartId = "None",
-                        MuzzlePartId = "Elevation1",
+                        MuzzlePartId = "Designator",
                         AzimuthPartId = "Azimuth",
-                        ElevationPartId = "Elevation1",
+                        ElevationPartId = "ElevationDeg",
                         DurabilityMod = 0.25f,
                         IconName = ""
                     },
                 },
                 Muzzles = new[] {
-                    "muzzle_projectile_1",
+                    "muzzle_projectile_D",
                 },
                 //Ejector = "",
-                //Scope = "scope1", //Where line of sight checks are performed from must be clear of block collision
+                Scope = "scopeD", //Where line of sight checks are performed from must be clear of block collision
             },
             Targeting = new TargetingDef
             {
@@ -55,7 +55,7 @@ namespace Scripts
             },
             HardPoint = new HardPointDef
             {
-                PartName = "Mark 15 Breakwater B1", // name of weapon in terminal
+                PartName = "Mark 15 Breakwater D", // name of weapon in terminal
                 DeviateShotAngle = 0.15f,
                 AimingTolerance = 0.8f, // 0 - 180 firing angle
                 AimLeadingPrediction = Advanced, // Off, Basic, Accurate, Advanced
@@ -176,7 +176,7 @@ namespace Scripts
                 MXA_BreakWater_GStage,
                 MXA_BreakWater_GAmmo,
             },
-            Animations = MXA_BreakWater_Animation,
+            //Animations = MXA_BreakWater_Animation,
             //Upgrades = UpgradeModules,
             // Don't edit below this line
         };

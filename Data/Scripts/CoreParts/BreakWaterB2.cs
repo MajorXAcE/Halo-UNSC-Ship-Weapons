@@ -29,7 +29,7 @@ namespace Scripts
                 Muzzles = new[] {
                     "muzzle_projectile_2",
                 },
-                //Scope = "scope2", //Where line of sight checks are performed from must be clear of block collision
+                Scope = "scope2", //Where line of sight checks are performed from must be clear of block collision
             },
             Targeting = new TargetingDef
             {
@@ -39,7 +39,7 @@ namespace Scripts
                 SubSystems = new[] {
                     Thrust, Utility, Offense, Power, Production, Any,
                 },
-                ClosestFirst = true, // tries to pick closest targets first (blocks on grids, projectiles, etc...).
+                ClosestFirst = false, // tries to pick closest targets first (blocks on grids, projectiles, etc...).
                 MinimumDiameter = 10, // 0 = unlimited, Minimum radius of threat to engage.
                 MaximumDiameter = 0, // 0 = unlimited, Maximum radius of threat to engage.
                 MaxTargetDistance = 5500, // 0 = unlimited, Maximum target distance that targets will be automatically shot at.
@@ -71,7 +71,7 @@ namespace Scripts
                     TurretAttached = true,
                     TurretController = true,
                     PrimaryTracking = false,
-                    LockOnFocus = false,
+                    LockOnFocus = true,
                 },
                 HardWare = new HardwareDef
                 {
