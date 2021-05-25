@@ -9,7 +9,7 @@ namespace Scripts
     partial class Parts
     {
         /// Possible Events ///
-        
+
         //Reloading,
         //Firing,
         //Tracking,
@@ -25,7 +25,7 @@ namespace Scripts
 
         private AnimationDef MXA_SoFCoilgun_Animation => new AnimationDef
         {
-			/*
+            /*
 			HeatingEmissiveParts = new string[]
             {
                 "MissileTurretBase1"
@@ -63,7 +63,7 @@ namespace Scripts
                     {
                         "Emissive1"
                     }),
-				Emissive(
+                Emissive(
                     EmissiveName: "YellowOn",
                     Colors: new []
                     {
@@ -93,7 +93,7 @@ namespace Scripts
                     {
                         "Emissive2"
                     }),
-				Emissive(
+                Emissive(
                     EmissiveName: "TurnOn",
                     Colors: new []
                     {
@@ -155,19 +155,19 @@ namespace Scripts
             */
             AnimationSets = new[]
             {
-                
-				new PartAnimationSetDef()
+
+                new PartAnimationSetDef()
                 {
                     SubpartId = Names("Elevation"),
                     BarrelId = "Any", //only used for firing, use "Any" for all muzzles
                     StartupFireDelay = 0,
-                    AnimatiOnDelays = Delays(FiringDelay : 0, ReloadingDelay: 0, OverheatedDelay: 0, TrackingDelay: 0, LockedDelay: 0, OnDelay: 0, OffDelay: 0, BurstReloadDelay: 0, OutOfAmmoDelay: 0, PreFireDelay: 0),//Delay before animation starts
+                    AnimationDelays = Delays(FiringDelay : 0, ReloadingDelay: 0, OverheatedDelay: 0, TrackingDelay: 0, LockedDelay: 0, OnDelay: 0, OffDelay: 0, BurstReloadDelay: 0, OutOfAmmoDelay: 0, PreFireDelay: 0),//Delay before animation starts
                     Reverse = Events(),
                     Loop = Events(),
                     ResetEmissives = Events(),
                     EventMoveSets = new Dictionary<PartAnimationSetDef.EventTriggers, RelMove[]>
                     {
-                        
+
 
 
                         [TurnOn] =
@@ -199,20 +199,20 @@ namespace Scripts
                                     RotAroundCenter = Transformation(0, 0, 0), //degrees
                                 },
                             },
-					}
-				},
-				new PartAnimationSetDef()
+                    }
+                },
+                new PartAnimationSetDef()
                 {
                     SubpartId = Names("Elevation"),
                     BarrelId = "Any", //only used for firing, use "Any" for all muzzles
                     StartupFireDelay = 0,
-                    AnimatiOnDelays = Delays(FiringDelay : 0, ReloadingDelay: 0, OverheatedDelay: 0, TrackingDelay: 0, LockedDelay: 0, OnDelay: 0, OffDelay: 0, BurstReloadDelay: 0, OutOfAmmoDelay: 0, PreFireDelay: 0),//Delay before animation starts
+                    AnimationDelays = Delays(FiringDelay : 0, ReloadingDelay: 0, OverheatedDelay: 0, TrackingDelay: 0, LockedDelay: 0, OnDelay: 0, OffDelay: 0, BurstReloadDelay: 0, OutOfAmmoDelay: 0, PreFireDelay: 0),//Delay before animation starts
                     Reverse = Events(),
                     Loop = Events(),
                     ResetEmissives = Events(),
                     EventMoveSets = new Dictionary<PartAnimationSetDef.EventTriggers, RelMove[]>
-                    {                  
-						[TurnOn] =
+                    {
+                        [TurnOn] =
                             new[] //Firing, Reloading, Overheated, Tracking, On, Off, BurstReload, OutOfAmmo, PreFire define a new[] for each
                             {
                                 new RelMove
@@ -241,20 +241,20 @@ namespace Scripts
                                     RotAroundCenter = Transformation(0, 0, 0), //degrees
                                 },
                             },
-					}
-				},
-				new PartAnimationSetDef()
+                    }
+                },
+                new PartAnimationSetDef()
                 {
                     SubpartId = Names("Elevation"),
                     BarrelId = "Any", //only used for firing, use "Any" for all muzzles
                     StartupFireDelay = 0,
-                    AnimatiOnDelays = Delays(FiringDelay : 0, ReloadingDelay: 0, OverheatedDelay: 0, TrackingDelay: 0, LockedDelay: 0, OnDelay: 0, OffDelay: 0, BurstReloadDelay: 0, OutOfAmmoDelay: 0, PreFireDelay: 0),//Delay before animation starts
+                    AnimationDelays = Delays(FiringDelay : 0, ReloadingDelay: 0, OverheatedDelay: 0, TrackingDelay: 0, LockedDelay: 0, OnDelay: 0, OffDelay: 0, BurstReloadDelay: 0, OutOfAmmoDelay: 0, PreFireDelay: 0),//Delay before animation starts
                     Reverse = Events(),
                     Loop = Events(),
                     ResetEmissives = Events(),
                     EventMoveSets = new Dictionary<PartAnimationSetDef.EventTriggers, RelMove[]>
                     {
-                        
+
 
 
                         [TurnOn] =
@@ -286,20 +286,20 @@ namespace Scripts
                                     RotAroundCenter = Transformation(0, 0, 0), //degrees
                                 },
                             },
-					}
-				},
-				new PartAnimationSetDef()
+                    }
+                },
+                new PartAnimationSetDef()
                 {
                     SubpartId = Names("None"),
                     BarrelId = "Any", //only used for firing, use "Any" for all muzzles
                     StartupFireDelay = 0,
-                    AnimatiOnDelays = Delays(FiringDelay : 0, ReloadingDelay: 0, OverheatedDelay: 0, TrackingDelay: 0, LockedDelay: 0, OnDelay: 0, OffDelay: 0, BurstReloadDelay: 0, OutOfAmmoDelay: 0, PreFireDelay: 0),//Delay before animation starts
+                    AnimationDelays = Delays(FiringDelay : 0, ReloadingDelay: 0, OverheatedDelay: 0, TrackingDelay: 0, LockedDelay: 0, OnDelay: 0, OffDelay: 0, BurstReloadDelay: 0, OutOfAmmoDelay: 0, PreFireDelay: 0),//Delay before animation starts
                     Reverse = Events(),
                     Loop = Events(),
                     ResetEmissives = Events(),
                     EventMoveSets = new Dictionary<PartAnimationSetDef.EventTriggers, RelMove[]>
                     {
-                        
+
 
 
                         [TurnOn] =
@@ -331,8 +331,8 @@ namespace Scripts
                                     RotAroundCenter = Transformation(0, 0, 0), //degrees
                                 },
                             },
-					}
-				},
+                    }
+                },
 				
 				#region Recoil
 				new PartAnimationSetDef()
@@ -340,13 +340,13 @@ namespace Scripts
                     SubpartId = Names("Recoil_1"),
                     BarrelId = "muzzle_projectile_1", //only used for firing, use "Any" for all muzzles
                     StartupFireDelay = 0,
-                    AnimatiOnDelays = Delays(FiringDelay : 0, ReloadingDelay: 0, OverheatedDelay: 0, TrackingDelay: 0, LockedDelay: 0, OnDelay: 0, OffDelay: 0, BurstReloadDelay: 0, OutOfAmmoDelay: 0, PreFireDelay: 0),//Delay before animation starts
+                    AnimationDelays = Delays(FiringDelay : 0, ReloadingDelay: 0, OverheatedDelay: 0, TrackingDelay: 0, LockedDelay: 0, OnDelay: 0, OffDelay: 0, BurstReloadDelay: 0, OutOfAmmoDelay: 0, PreFireDelay: 0),//Delay before animation starts
                     Reverse = Events(),
                     Loop = Events(),
                     ResetEmissives = Events(),
                     EventMoveSets = new Dictionary<PartAnimationSetDef.EventTriggers, RelMove[]>
                     {
-                        
+
 
 
                         [Firing] =
@@ -364,18 +364,18 @@ namespace Scripts
                                     Rotation = Transformation(0, 0, 0), //degrees
                                     RotAroundCenter = Transformation(0, 0, 0), //degrees
                                 },
-								
-								new RelMove
-								{
-									CenterEmpty = "",
-									TicksToMove = 5, //number of ticks to complete motion, 60 = 1 second
+
+                                new RelMove
+                                {
+                                    CenterEmpty = "",
+                                    TicksToMove = 5, //number of ticks to complete motion, 60 = 1 second
 									MovementType = Delay,
-									LinearPoints = new XYZ[0],
-									Rotation = Transformation(0, 0, 0), //degrees
+                                    LinearPoints = new XYZ[0],
+                                    Rotation = Transformation(0, 0, 0), //degrees
 									RotAroundCenter = Transformation(0, 0, 0), //degrees
 								},
-								
-								new RelMove
+
+                                new RelMove
                                 {
                                     CenterEmpty = "",
                                     TicksToMove = 10, //number of ticks to complete motion, 60 = 1 second
@@ -389,20 +389,20 @@ namespace Scripts
                                 },
                             },
 
-					}
-				},
-				new PartAnimationSetDef()
+                    }
+                },
+                new PartAnimationSetDef()
                 {
                     SubpartId = Names("Barrel_1"),
                     BarrelId = "muzzle_projectile_1", //only used for firing, use "Any" for all muzzles
                     StartupFireDelay = 0,
-                    AnimatiOnDelays = Delays(FiringDelay : 0, ReloadingDelay: 0, OverheatedDelay: 0, TrackingDelay: 0, LockedDelay: 0, OnDelay: 0, OffDelay: 0, BurstReloadDelay: 0, OutOfAmmoDelay: 0, PreFireDelay: 0),//Delay before animation starts
+                    AnimationDelays = Delays(FiringDelay : 0, ReloadingDelay: 0, OverheatedDelay: 0, TrackingDelay: 0, LockedDelay: 0, OnDelay: 0, OffDelay: 0, BurstReloadDelay: 0, OutOfAmmoDelay: 0, PreFireDelay: 0),//Delay before animation starts
                     Reverse = Events(),
                     Loop = Events(),
                     ResetEmissives = Events(),
                     EventMoveSets = new Dictionary<PartAnimationSetDef.EventTriggers, RelMove[]>
                     {
-                        
+
 
 
                         [Firing] =
@@ -420,8 +420,8 @@ namespace Scripts
                                     Rotation = Transformation(0, 0, 0), //degrees
                                     RotAroundCenter = Transformation(0, 0, 0), //degrees
                                 },
-								
-								new RelMove
+
+                                new RelMove
                                 {
                                     CenterEmpty = "",
                                     TicksToMove = 10, //number of ticks to complete motion, 60 = 1 second
@@ -435,21 +435,21 @@ namespace Scripts
                                 },
                             },
 
-					}
-				},
-				
-				new PartAnimationSetDef()
+                    }
+                },
+
+                new PartAnimationSetDef()
                 {
                     SubpartId = Names("Recoil_2"),
                     BarrelId = "muzzle_projectile_3", //only used for firing, use "Any" for all muzzles
                     StartupFireDelay = 0,
-                    AnimatiOnDelays = Delays(FiringDelay : 0, ReloadingDelay: 0, OverheatedDelay: 0, TrackingDelay: 0, LockedDelay: 0, OnDelay: 0, OffDelay: 0, BurstReloadDelay: 0, OutOfAmmoDelay: 0, PreFireDelay: 0),//Delay before animation starts
+                    AnimationDelays = Delays(FiringDelay : 0, ReloadingDelay: 0, OverheatedDelay: 0, TrackingDelay: 0, LockedDelay: 0, OnDelay: 0, OffDelay: 0, BurstReloadDelay: 0, OutOfAmmoDelay: 0, PreFireDelay: 0),//Delay before animation starts
                     Reverse = Events(),
                     Loop = Events(),
                     ResetEmissives = Events(),
                     EventMoveSets = new Dictionary<PartAnimationSetDef.EventTriggers, RelMove[]>
                     {
-                        
+
 
 
                         [Firing] =
@@ -467,18 +467,18 @@ namespace Scripts
                                     Rotation = Transformation(0, 0, 0), //degrees
                                     RotAroundCenter = Transformation(0, 0, 0), //degrees
                                 },
-								
-								new RelMove
-								{
-									CenterEmpty = "",
-									TicksToMove = 5, //number of ticks to complete motion, 60 = 1 second
+
+                                new RelMove
+                                {
+                                    CenterEmpty = "",
+                                    TicksToMove = 5, //number of ticks to complete motion, 60 = 1 second
 									MovementType = Delay,
-									LinearPoints = new XYZ[0],
-									Rotation = Transformation(0, 0, 0), //degrees
+                                    LinearPoints = new XYZ[0],
+                                    Rotation = Transformation(0, 0, 0), //degrees
 									RotAroundCenter = Transformation(0, 0, 0), //degrees
 								},
-								
-								new RelMove
+
+                                new RelMove
                                 {
                                     CenterEmpty = "",
                                     TicksToMove = 10, //number of ticks to complete motion, 60 = 1 second
@@ -492,20 +492,20 @@ namespace Scripts
                                 },
                             },
 
-					}
-				},
-				new PartAnimationSetDef()
+                    }
+                },
+                new PartAnimationSetDef()
                 {
                     SubpartId = Names("Barrel_2"),
                     BarrelId = "muzzle_projectile_3", //only used for firing, use "Any" for all muzzles
                     StartupFireDelay = 0,
-                    AnimatiOnDelays = Delays(FiringDelay : 0, ReloadingDelay: 0, OverheatedDelay: 0, TrackingDelay: 0, LockedDelay: 0, OnDelay: 0, OffDelay: 0, BurstReloadDelay: 0, OutOfAmmoDelay: 0, PreFireDelay: 0),//Delay before animation starts
+                    AnimationDelays = Delays(FiringDelay : 0, ReloadingDelay: 0, OverheatedDelay: 0, TrackingDelay: 0, LockedDelay: 0, OnDelay: 0, OffDelay: 0, BurstReloadDelay: 0, OutOfAmmoDelay: 0, PreFireDelay: 0),//Delay before animation starts
                     Reverse = Events(),
                     Loop = Events(),
                     ResetEmissives = Events(),
                     EventMoveSets = new Dictionary<PartAnimationSetDef.EventTriggers, RelMove[]>
                     {
-                        
+
 
 
                         [Firing] =
@@ -523,8 +523,8 @@ namespace Scripts
                                     Rotation = Transformation(0, 0, 0), //degrees
                                     RotAroundCenter = Transformation(0, 0, 0), //degrees
                                 },
-								
-								new RelMove
+
+                                new RelMove
                                 {
                                     CenterEmpty = "",
                                     TicksToMove = 10, //number of ticks to complete motion, 60 = 1 second
@@ -538,8 +538,8 @@ namespace Scripts
                                 },
                             },
 
-					}
-				},
+                    }
+                },
 				
 				#endregion
 				#region Retract
@@ -548,13 +548,13 @@ namespace Scripts
                     SubpartId = Names("Barrel_1","Barrel_2","Recoil_1","Recoil_2"),
                     BarrelId = "Any", //only used for firing, use "Any" for all muzzles
                     StartupFireDelay = 0,
-                    AnimatiOnDelays = Delays(FiringDelay : 0, ReloadingDelay: 0, OverheatedDelay: 0, TrackingDelay: 0, LockedDelay: 0, OnDelay: 0, OffDelay: 0, BurstReloadDelay: 0, OutOfAmmoDelay: 0, PreFireDelay: 0),//Delay before animation starts
+                    AnimationDelays = Delays(FiringDelay : 0, ReloadingDelay: 0, OverheatedDelay: 0, TrackingDelay: 0, LockedDelay: 0, OnDelay: 0, OffDelay: 0, BurstReloadDelay: 0, OutOfAmmoDelay: 0, PreFireDelay: 0),//Delay before animation starts
                     Reverse = Events(),
                     Loop = Events(),
                     ResetEmissives = Events(),
                     EventMoveSets = new Dictionary<PartAnimationSetDef.EventTriggers, RelMove[]>
                     {
-                        
+
 
 
                         [TurnOff] =
@@ -572,21 +572,21 @@ namespace Scripts
                                     Rotation = Transformation(0, 0, 0), //degrees
                                     RotAroundCenter = Transformation(0, 0, 0), //degrees
                                 },
-								
+
                             },
-						[TurnOn] =
+                        [TurnOn] =
                             new[] //Firing, Reloading, Overheated, Tracking, On, Off, BurstReload, OutOfAmmo, PreFire define a new[] for each
                             {
                                 new RelMove
-								{
-									CenterEmpty = "",
-									TicksToMove = 360, //number of ticks to complete motion, 60 = 1 second
+                                {
+                                    CenterEmpty = "",
+                                    TicksToMove = 360, //number of ticks to complete motion, 60 = 1 second
 									MovementType = Delay,
-									LinearPoints = new XYZ[0],
-									Rotation = Transformation(0, 0, 0), //degrees
+                                    LinearPoints = new XYZ[0],
+                                    Rotation = Transformation(0, 0, 0), //degrees
 									RotAroundCenter = Transformation(0, 0, 0), //degrees
 								},
-								new RelMove
+                                new RelMove
                                 {
                                     CenterEmpty = "",
                                     TicksToMove = 6, //number of ticks to complete motion, 60 = 1 second
@@ -598,38 +598,38 @@ namespace Scripts
                                     Rotation = Transformation(0, 0, 0), //degrees
                                     RotAroundCenter = Transformation(0, 0, 0), //degrees
                                 },
-								
+
                             },
 
-					}
-				},
-				new PartAnimationSetDef()
+                    }
+                },
+                new PartAnimationSetDef()
                 {
                     SubpartId = Names("Piston"),
                     BarrelId = "Any", //only used for firing, use "Any" for all muzzles
                     StartupFireDelay = 0,
-                    AnimatiOnDelays = Delays(FiringDelay : 0, ReloadingDelay: 0, OverheatedDelay: 0, TrackingDelay: 0, LockedDelay: 0, OnDelay: 0, OffDelay: 0, BurstReloadDelay: 0, OutOfAmmoDelay: 0, PreFireDelay: 0),//Delay before animation starts
+                    AnimationDelays = Delays(FiringDelay : 0, ReloadingDelay: 0, OverheatedDelay: 0, TrackingDelay: 0, LockedDelay: 0, OnDelay: 0, OffDelay: 0, BurstReloadDelay: 0, OutOfAmmoDelay: 0, PreFireDelay: 0),//Delay before animation starts
                     Reverse = Events(),
                     Loop = Events(),
                     ResetEmissives = Events(),
                     EventMoveSets = new Dictionary<PartAnimationSetDef.EventTriggers, RelMove[]>
                     {
-                        
+
 
 
                         [TurnOff] =
                             new[] //Firing, Reloading, Overheated, Tracking, On, Off, BurstReload, OutOfAmmo, PreFire define a new[] for each
                             {
                                 new RelMove
-								{
-									CenterEmpty = "",
-									TicksToMove = 60, //number of ticks to complete motion, 60 = 1 second
+                                {
+                                    CenterEmpty = "",
+                                    TicksToMove = 60, //number of ticks to complete motion, 60 = 1 second
 									MovementType = Delay,
-									LinearPoints = new XYZ[0],
-									Rotation = Transformation(0, 0, 0), //degrees
+                                    LinearPoints = new XYZ[0],
+                                    Rotation = Transformation(0, 0, 0), //degrees
 									RotAroundCenter = Transformation(0, 0, 0), //degrees
 								},
-								new RelMove
+                                new RelMove
                                 {
                                     CenterEmpty = "",
                                     TicksToMove = 180, //number of ticks to complete motion, 60 = 1 second
@@ -641,21 +641,21 @@ namespace Scripts
                                     Rotation = Transformation(0, 0, 0), //degrees
                                     RotAroundCenter = Transformation(0, 0, 0), //degrees
                                 },
-								
+
                             },
-						[TurnOn] =
+                        [TurnOn] =
                             new[] //Firing, Reloading, Overheated, Tracking, On, Off, BurstReload, OutOfAmmo, PreFire define a new[] for each
                             {
                                 new RelMove
-								{
-									CenterEmpty = "",
-									TicksToMove = 180, //number of ticks to complete motion, 60 = 1 second
+                                {
+                                    CenterEmpty = "",
+                                    TicksToMove = 180, //number of ticks to complete motion, 60 = 1 second
 									MovementType = Delay,
-									LinearPoints = new XYZ[0],
-									Rotation = Transformation(0, 0, 0), //degrees
+                                    LinearPoints = new XYZ[0],
+                                    Rotation = Transformation(0, 0, 0), //degrees
 									RotAroundCenter = Transformation(0, 0, 0), //degrees
 								},
-								new RelMove
+                                new RelMove
                                 {
                                     CenterEmpty = "",
                                     TicksToMove = 180, //number of ticks to complete motion, 60 = 1 second
@@ -667,38 +667,38 @@ namespace Scripts
                                     Rotation = Transformation(0, 0, 0), //degrees
                                     RotAroundCenter = Transformation(0, 0, 0), //degrees
                                 },
-								
+
                             },
 
-					}
-				},
-				new PartAnimationSetDef()
+                    }
+                },
+                new PartAnimationSetDef()
                 {
                     SubpartId = Names("RightDoor","RightSubDoor"),
                     BarrelId = "Any", //only used for firing, use "Any" for all muzzles
                     StartupFireDelay = 0,
-                    AnimatiOnDelays = Delays(FiringDelay : 0, ReloadingDelay: 0, OverheatedDelay: 0, TrackingDelay: 0, LockedDelay: 0, OnDelay: 0, OffDelay: 0, BurstReloadDelay: 0, OutOfAmmoDelay: 0, PreFireDelay: 0),//Delay before animation starts
+                    AnimationDelays = Delays(FiringDelay : 0, ReloadingDelay: 0, OverheatedDelay: 0, TrackingDelay: 0, LockedDelay: 0, OnDelay: 0, OffDelay: 0, BurstReloadDelay: 0, OutOfAmmoDelay: 0, PreFireDelay: 0),//Delay before animation starts
                     Reverse = Events(),
                     Loop = Events(),
                     ResetEmissives = Events(),
                     EventMoveSets = new Dictionary<PartAnimationSetDef.EventTriggers, RelMove[]>
                     {
-                        
+
 
 
                         [TurnOff] =
                             new[] //Firing, Reloading, Overheated, Tracking, On, Off, BurstReload, OutOfAmmo, PreFire define a new[] for each
                             {
                                 new RelMove
-								{
-									CenterEmpty = "",
-									TicksToMove = 240, //number of ticks to complete motion, 60 = 1 second
+                                {
+                                    CenterEmpty = "",
+                                    TicksToMove = 240, //number of ticks to complete motion, 60 = 1 second
 									MovementType = Delay,
-									LinearPoints = new XYZ[0],
-									Rotation = Transformation(0, 0, 0), //degrees
+                                    LinearPoints = new XYZ[0],
+                                    Rotation = Transformation(0, 0, 0), //degrees
 									RotAroundCenter = Transformation(0, 0, 0), //degrees
 								},
-								new RelMove
+                                new RelMove
                                 {
                                     CenterEmpty = "",
                                     TicksToMove = 120, //number of ticks to complete motion, 60 = 1 second
@@ -710,21 +710,21 @@ namespace Scripts
                                     Rotation = Transformation(0, 0, 0), //degrees
                                     RotAroundCenter = Transformation(0, 0, 0), //degrees
                                 },
-								
+
                             },
-						[TurnOn] =
+                        [TurnOn] =
                             new[] //Firing, Reloading, Overheated, Tracking, On, Off, BurstReload, OutOfAmmo, PreFire define a new[] for each
                             {
                                 new RelMove
-								{
-									CenterEmpty = "",
-									TicksToMove = 60, //number of ticks to complete motion, 60 = 1 second
+                                {
+                                    CenterEmpty = "",
+                                    TicksToMove = 60, //number of ticks to complete motion, 60 = 1 second
 									MovementType = Delay,
-									LinearPoints = new XYZ[0],
-									Rotation = Transformation(0, 0, 0), //degrees
+                                    LinearPoints = new XYZ[0],
+                                    Rotation = Transformation(0, 0, 0), //degrees
 									RotAroundCenter = Transformation(0, 0, 0), //degrees
 								},
-								new RelMove
+                                new RelMove
                                 {
                                     CenterEmpty = "",
                                     TicksToMove = 120, //number of ticks to complete motion, 60 = 1 second
@@ -736,38 +736,38 @@ namespace Scripts
                                     Rotation = Transformation(0, 0, 0), //degrees
                                     RotAroundCenter = Transformation(0, 0, 0), //degrees
                                 },
-								
+
                             },
 
-					}
-				},
-				new PartAnimationSetDef()
+                    }
+                },
+                new PartAnimationSetDef()
                 {
                     SubpartId = Names("RightSubDoor"),
                     BarrelId = "Any", //only used for firing, use "Any" for all muzzles
                     StartupFireDelay = 0,
-                    AnimatiOnDelays = Delays(FiringDelay : 0, ReloadingDelay: 0, OverheatedDelay: 0, TrackingDelay: 0, LockedDelay: 0, OnDelay: 0, OffDelay: 0, BurstReloadDelay: 0, OutOfAmmoDelay: 0, PreFireDelay: 0),//Delay before animation starts
+                    AnimationDelays = Delays(FiringDelay : 0, ReloadingDelay: 0, OverheatedDelay: 0, TrackingDelay: 0, LockedDelay: 0, OnDelay: 0, OffDelay: 0, BurstReloadDelay: 0, OutOfAmmoDelay: 0, PreFireDelay: 0),//Delay before animation starts
                     Reverse = Events(),
                     Loop = Events(),
                     ResetEmissives = Events(),
                     EventMoveSets = new Dictionary<PartAnimationSetDef.EventTriggers, RelMove[]>
                     {
-                        
+
 
 
                         [TurnOff] =
                             new[] //Firing, Reloading, Overheated, Tracking, On, Off, BurstReload, OutOfAmmo, PreFire define a new[] for each
                             {
                                 new RelMove
-								{
-									CenterEmpty = "",
-									TicksToMove = 360, //number of ticks to complete motion, 60 = 1 second
+                                {
+                                    CenterEmpty = "",
+                                    TicksToMove = 360, //number of ticks to complete motion, 60 = 1 second
 									MovementType = Delay,
-									LinearPoints = new XYZ[0],
-									Rotation = Transformation(0, 0, 0), //degrees
+                                    LinearPoints = new XYZ[0],
+                                    Rotation = Transformation(0, 0, 0), //degrees
 									RotAroundCenter = Transformation(0, 0, 0), //degrees
 								},
-								new RelMove
+                                new RelMove
                                 {
                                     CenterEmpty = "",
                                     TicksToMove = 60, //number of ticks to complete motion, 60 = 1 second
@@ -779,12 +779,12 @@ namespace Scripts
                                     Rotation = Transformation(0, 0, 0), //degrees
                                     RotAroundCenter = Transformation(0, 0, 0), //degrees
                                 },
-								
+
                             },
-						[TurnOn] =
+                        [TurnOn] =
                             new[] //Firing, Reloading, Overheated, Tracking, On, Off, BurstReload, OutOfAmmo, PreFire define a new[] for each
                             {
-								new RelMove
+                                new RelMove
                                 {
                                     CenterEmpty = "",
                                     TicksToMove = 60, //number of ticks to complete motion, 60 = 1 second
@@ -796,39 +796,39 @@ namespace Scripts
                                     Rotation = Transformation(0, 0, 0), //degrees
                                     RotAroundCenter = Transformation(0, 0, 0), //degrees
                                 },
-								
+
                             },
 
-					}
-				},
-				
-				new PartAnimationSetDef()
+                    }
+                },
+
+                new PartAnimationSetDef()
                 {
                     SubpartId = Names("LeftDoor","LeftSubDoor"),
                     BarrelId = "Any", //only used for firing, use "Any" for all muzzles
                     StartupFireDelay = 0,
-                    AnimatiOnDelays = Delays(FiringDelay : 0, ReloadingDelay: 0, OverheatedDelay: 0, TrackingDelay: 0, LockedDelay: 0, OnDelay: 0, OffDelay: 0, BurstReloadDelay: 0, OutOfAmmoDelay: 0, PreFireDelay: 0),//Delay before animation starts
+                    AnimationDelays = Delays(FiringDelay : 0, ReloadingDelay: 0, OverheatedDelay: 0, TrackingDelay: 0, LockedDelay: 0, OnDelay: 0, OffDelay: 0, BurstReloadDelay: 0, OutOfAmmoDelay: 0, PreFireDelay: 0),//Delay before animation starts
                     Reverse = Events(),
                     Loop = Events(),
                     ResetEmissives = Events(),
                     EventMoveSets = new Dictionary<PartAnimationSetDef.EventTriggers, RelMove[]>
                     {
-                        
+
 
 
                         [TurnOff] =
                             new[] //Firing, Reloading, Overheated, Tracking, On, Off, BurstReload, OutOfAmmo, PreFire define a new[] for each
                             {
                                 new RelMove
-								{
-									CenterEmpty = "",
-									TicksToMove = 240, //number of ticks to complete motion, 60 = 1 second
+                                {
+                                    CenterEmpty = "",
+                                    TicksToMove = 240, //number of ticks to complete motion, 60 = 1 second
 									MovementType = Delay,
-									LinearPoints = new XYZ[0],
-									Rotation = Transformation(0, 0, 0), //degrees
+                                    LinearPoints = new XYZ[0],
+                                    Rotation = Transformation(0, 0, 0), //degrees
 									RotAroundCenter = Transformation(0, 0, 0), //degrees
 								},
-								new RelMove
+                                new RelMove
                                 {
                                     CenterEmpty = "",
                                     TicksToMove = 120, //number of ticks to complete motion, 60 = 1 second
@@ -840,21 +840,21 @@ namespace Scripts
                                     Rotation = Transformation(0, 0, 0), //degrees
                                     RotAroundCenter = Transformation(0, 0, 0), //degrees
                                 },
-								
+
                             },
-						[TurnOn] =
+                        [TurnOn] =
                             new[] //Firing, Reloading, Overheated, Tracking, On, Off, BurstReload, OutOfAmmo, PreFire define a new[] for each
                             {
                                 new RelMove
-								{
-									CenterEmpty = "",
-									TicksToMove = 60, //number of ticks to complete motion, 60 = 1 second
+                                {
+                                    CenterEmpty = "",
+                                    TicksToMove = 60, //number of ticks to complete motion, 60 = 1 second
 									MovementType = Delay,
-									LinearPoints = new XYZ[0],
-									Rotation = Transformation(0, 0, 0), //degrees
+                                    LinearPoints = new XYZ[0],
+                                    Rotation = Transformation(0, 0, 0), //degrees
 									RotAroundCenter = Transformation(0, 0, 0), //degrees
 								},
-								new RelMove
+                                new RelMove
                                 {
                                     CenterEmpty = "",
                                     TicksToMove = 120, //number of ticks to complete motion, 60 = 1 second
@@ -866,38 +866,38 @@ namespace Scripts
                                     Rotation = Transformation(0, 0, 0), //degrees
                                     RotAroundCenter = Transformation(0, 0, 0), //degrees
                                 },
-								
+
                             },
 
-					}
-				},
-				new PartAnimationSetDef()
+                    }
+                },
+                new PartAnimationSetDef()
                 {
                     SubpartId = Names("LeftSubDoor"),
                     BarrelId = "Any", //only used for firing, use "Any" for all muzzles
                     StartupFireDelay = 0,
-                    AnimatiOnDelays = Delays(FiringDelay : 0, ReloadingDelay: 0, OverheatedDelay: 0, TrackingDelay: 0, LockedDelay: 0, OnDelay: 0, OffDelay: 0, BurstReloadDelay: 0, OutOfAmmoDelay: 0, PreFireDelay: 0),//Delay before animation starts
+                    AnimationDelays = Delays(FiringDelay : 0, ReloadingDelay: 0, OverheatedDelay: 0, TrackingDelay: 0, LockedDelay: 0, OnDelay: 0, OffDelay: 0, BurstReloadDelay: 0, OutOfAmmoDelay: 0, PreFireDelay: 0),//Delay before animation starts
                     Reverse = Events(),
                     Loop = Events(),
                     ResetEmissives = Events(),
                     EventMoveSets = new Dictionary<PartAnimationSetDef.EventTriggers, RelMove[]>
                     {
-                        
+
 
 
                         [TurnOff] =
                             new[] //Firing, Reloading, Overheated, Tracking, On, Off, BurstReload, OutOfAmmo, PreFire define a new[] for each
                             {
                                 new RelMove
-								{
-									CenterEmpty = "",
-									TicksToMove = 360, //number of ticks to complete motion, 60 = 1 second
+                                {
+                                    CenterEmpty = "",
+                                    TicksToMove = 360, //number of ticks to complete motion, 60 = 1 second
 									MovementType = Delay,
-									LinearPoints = new XYZ[0],
-									Rotation = Transformation(0, 0, 0), //degrees
+                                    LinearPoints = new XYZ[0],
+                                    Rotation = Transformation(0, 0, 0), //degrees
 									RotAroundCenter = Transformation(0, 0, 0), //degrees
 								},
-								new RelMove
+                                new RelMove
                                 {
                                     CenterEmpty = "",
                                     TicksToMove = 60, //number of ticks to complete motion, 60 = 1 second
@@ -909,12 +909,12 @@ namespace Scripts
                                     Rotation = Transformation(0, 0, 0), //degrees
                                     RotAroundCenter = Transformation(0, 0, 0), //degrees
                                 },
-								
+
                             },
-						[TurnOn] =
+                        [TurnOn] =
                             new[] //Firing, Reloading, Overheated, Tracking, On, Off, BurstReload, OutOfAmmo, PreFire define a new[] for each
                             {
-								new RelMove
+                                new RelMove
                                 {
                                     CenterEmpty = "",
                                     TicksToMove = 60, //number of ticks to complete motion, 60 = 1 second
@@ -926,16 +926,16 @@ namespace Scripts
                                     Rotation = Transformation(0, 0, 0), //degrees
                                     RotAroundCenter = Transformation(0, 0, 0), //degrees
                                 },
-								
+
                             },
 
-					}
-				},
+                    }
+                },
 				#endregion
 				
 
             }
-            
+
         };
     }
 }

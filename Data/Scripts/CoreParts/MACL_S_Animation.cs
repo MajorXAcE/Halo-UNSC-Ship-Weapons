@@ -9,7 +9,7 @@ namespace Scripts
     partial class Parts
     {
         /// Possible Events ///
-        
+
         //Reloading,
         //Firing,
         //Tracking,
@@ -25,8 +25,8 @@ namespace Scripts
 
         private AnimationDef MXA_MACL_S_Animation => new AnimationDef
         {
-            
-			Emissives = new[]
+
+            Emissives = new[]
             {
                 Emissive(
                     EmissiveName: "TurnOn",
@@ -58,7 +58,7 @@ namespace Scripts
                     {
                         "Emissive1"
                     }),
-				Emissive(
+                Emissive(
                     EmissiveName: "PreFire",
                     Colors: new []
                     {
@@ -73,7 +73,7 @@ namespace Scripts
                     {
                         "Emissive1"
                     }),
-				Emissive(
+                Emissive(
                     EmissiveName: "Firing",
                     Colors: new []
                     {
@@ -88,7 +88,7 @@ namespace Scripts
                     {
                         "Emissive1"
                     }),
-				Emissive(
+                Emissive(
                     EmissiveName: "Reloading",
                     Colors: new []
                     {
@@ -105,24 +105,24 @@ namespace Scripts
                     }),
 
             },
-			
-			
+
+
 
             AnimationSets = new[]
             {
-                
-				new PartAnimationSetDef()
+
+                new PartAnimationSetDef()
                 {
                     SubpartId = Names("MAC_Charge"),
                     BarrelId = "Any", //only used for firing, use "Any" for all muzzles
                     StartupFireDelay = 0,
-                    AnimatiOnDelays = Delays(FiringDelay : 0, ReloadingDelay: 0, OverheatedDelay: 0, TrackingDelay: 0, LockedDelay: 0, OnDelay: 0, OffDelay: 0, BurstReloadDelay: 0, OutOfAmmoDelay: 0, PreFireDelay: 0),//Delay before animation starts
+                    AnimationDelays = Delays(FiringDelay : 0, ReloadingDelay: 0, OverheatedDelay: 0, TrackingDelay: 0, LockedDelay: 0, OnDelay: 0, OffDelay: 0, BurstReloadDelay: 0, OutOfAmmoDelay: 0, PreFireDelay: 0),//Delay before animation starts
                     Reverse = Events(),
                     Loop = Events(),
                     ResetEmissives = Events(),
                     EventMoveSets = new Dictionary<PartAnimationSetDef.EventTriggers, RelMove[]>
                     {
-                        
+
 
 
                         [PreFire] =
@@ -140,7 +140,7 @@ namespace Scripts
                                     Rotation = Transformation(0, 0, 0), //degrees
                                     RotAroundCenter = Transformation(0, 0, 0), //degrees
                                 },
-								new RelMove
+                                new RelMove
                                 {
                                     CenterEmpty = "",
                                     TicksToMove = 10, //number of ticks to complete motion, 60 = 1 second
@@ -149,7 +149,7 @@ namespace Scripts
                                     Rotation = Transformation(0, 0, 0), //degrees
                                     RotAroundCenter = Transformation(0, 0, 0), //degrees
                                 },
-								new RelMove
+                                new RelMove
                                 {
                                     CenterEmpty = "",
                                     TicksToMove = 20, //number of ticks to complete motion, 60 = 1 second
@@ -162,22 +162,22 @@ namespace Scripts
                                     RotAroundCenter = Transformation(0, 0, 0), //degrees
                                 },
                             },
-							
-					}
-				},
-				
-				new PartAnimationSetDef()
+
+                    }
+                },
+
+                new PartAnimationSetDef()
                 {
                     SubpartId = Names("MAC_Emissive"),
                     BarrelId = "Any", //only used for firing, use "Any" for all muzzles
                     StartupFireDelay = 0,
-                    AnimatiOnDelays = Delays(FiringDelay : 0, ReloadingDelay: 0, OverheatedDelay: 0, TrackingDelay: 0, LockedDelay: 0, OnDelay: 0, OffDelay: 0, BurstReloadDelay: 0, OutOfAmmoDelay: 0, PreFireDelay: 0),//Delay before animation starts
+                    AnimationDelays = Delays(FiringDelay : 0, ReloadingDelay: 0, OverheatedDelay: 0, TrackingDelay: 0, LockedDelay: 0, OnDelay: 0, OffDelay: 0, BurstReloadDelay: 0, OutOfAmmoDelay: 0, PreFireDelay: 0),//Delay before animation starts
                     Reverse = Events(),
                     Loop = Events(),
                     ResetEmissives = Events(),
                     EventMoveSets = new Dictionary<PartAnimationSetDef.EventTriggers, RelMove[]>
                     {
-                        
+
 
 
                         [TurnOn] =
@@ -209,7 +209,7 @@ namespace Scripts
                                     RotAroundCenter = Transformation(0, 0, 0), //degrees
                                 },
                             },
-						[PreFire] =
+                        [PreFire] =
                             new[] //Firing, Reloading, Overheated, Tracking, On, Off, BurstReload, OutOfAmmo, PreFire define a new[] for each
                             {
                                 new RelMove
@@ -223,8 +223,8 @@ namespace Scripts
                                     RotAroundCenter = Transformation(0, 0, 0), //degrees
                                 },
                             },
-							
-						[Firing] =
+
+                        [Firing] =
                             new[] //Firing, Reloading, Overheated, Tracking, On, Off, BurstReload, OutOfAmmo, PreFire define a new[] for each
                             {
                                 new RelMove
@@ -238,7 +238,7 @@ namespace Scripts
                                     RotAroundCenter = Transformation(0, 0, 0), //degrees
                                 },
                             },
-						[Reloading] =
+                        [Reloading] =
                             new[] //Firing, Reloading, Overheated, Tracking, On, Off, BurstReload, OutOfAmmo, PreFire define a new[] for each
                             {
                                 new RelMove
@@ -252,13 +252,13 @@ namespace Scripts
                                     RotAroundCenter = Transformation(0, 0, 0), //degrees
                                 },
                             },
-					}
-				},
-				
-				
-			
+                    }
+                },
+
+
+
             }
-            
+
         };
     }
 }

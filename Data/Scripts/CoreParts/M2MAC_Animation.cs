@@ -10,7 +10,7 @@ namespace Scripts
     partial class Parts
     {
         /// Possible Events ///
-        
+
         //Reloading,
         //Firing,
         //Tracking,
@@ -26,7 +26,7 @@ namespace Scripts
 
         private AnimationDef MXA_M2MAC_Animation => new AnimationDef
         {
-			/*
+            /*
 			HeatingEmissiveParts = new string[]
             {
                 "MissileTurretBase1"
@@ -96,19 +96,19 @@ namespace Scripts
             */
             AnimationSets = new[]
             {
-                
-				new PartAnimationSetDef()
+
+                new PartAnimationSetDef()
                 {
                     SubpartId = Names("Emissive"),
                     BarrelId = "Any", //only used for firing, use "Any" for all muzzles
                     StartupFireDelay = 0,
-                    AnimatiOnDelays = Delays(FiringDelay : 0, ReloadingDelay: 0, OverheatedDelay: 0, TrackingDelay: 0, LockedDelay: 0, OnDelay: 0, OffDelay: 0, BurstReloadDelay: 0, OutOfAmmoDelay: 0, PreFireDelay: 0),//Delay before animation starts
+                    AnimationDelays = Delays(FiringDelay : 0, ReloadingDelay: 0, OverheatedDelay: 0, TrackingDelay: 0, LockedDelay: 0, OnDelay: 0, OffDelay: 0, BurstReloadDelay: 0, OutOfAmmoDelay: 0, PreFireDelay: 0),//Delay before animation starts
                     Reverse = Events(),
                     Loop = Events(),
                     ResetEmissives = Events(),
                     EventMoveSets = new Dictionary<PartAnimationSetDef.EventTriggers, RelMove[]>
                     {
-                        
+
 
 
                         [TurnOn] =
@@ -140,15 +140,15 @@ namespace Scripts
                                     RotAroundCenter = Transformation(0, 0, 0), //degrees
                                 },
                             },
-					}
-				},
+                    }
+                },
 				/*
 				new PartAnimationSetDef()
                 {
                     SubpartId = Names("subpart_MissileTurretBarrels"),
                     BarrelId = "Any", //only used for firing, use "Any" for all muzzles
                     StartupFireDelay = 0,
-                    AnimatiOnDelays = Delays(FiringDelay : 0, ReloadingDelay: 0, OverheatedDelay: 0, TrackingDelay: 0, LockedDelay: 0, OnDelay: 0, OffDelay: 0, BurstReloadDelay: 0, OutOfAmmoDelay: 0, PreFireDelay: 0),//Delay before animation starts
+                    AnimationDelays = Delays(FiringDelay : 0, ReloadingDelay: 0, OverheatedDelay: 0, TrackingDelay: 0, LockedDelay: 0, OnDelay: 0, OffDelay: 0, BurstReloadDelay: 0, OutOfAmmoDelay: 0, PreFireDelay: 0),//Delay before animation starts
                     Reverse = Events(),
                     Loop = Events(),
                     ResetEmissives = Events(),
@@ -189,7 +189,7 @@ namespace Scripts
 					}
 				},*/
             }
-            
+
         };
     }
 }
