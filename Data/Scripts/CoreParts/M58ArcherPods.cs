@@ -104,8 +104,9 @@ namespace Scripts
                     TurretAttached = false,
                     TurretController = false,
                     PrimaryTracking = false,
-                    LockOnFocus = true, // System targets your Grid's locked-on target, Used  by both Turrets & other weapons.
-                    SuppressFire = false, // Disables automatic fire of Turrets, useful for Gimbals.
+                    LockOnFocus = true,
+                    SuppressFire = false,
+                    OverrideLeads = false, // Override default behavior for target leads // System targets your Grid's locked-on target, Used  by both Turrets & other weapons.
                 },
                 HardWare = new HardwareDef
                 {

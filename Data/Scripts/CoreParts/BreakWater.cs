@@ -77,6 +77,8 @@ namespace Scripts
                     TurretController = true,
                     PrimaryTracking = true,
                     LockOnFocus = true,
+                    SuppressFire = false,
+                    OverrideLeads = false, // Override default behavior for target leads
                 },
                 HardWare = new HardwareDef
                 {

@@ -286,7 +286,7 @@ namespace Scripts
                 public struct MountPointDef
                 {
                     [ProtoMember(1)] internal string SubtypeId;
-                    [ProtoMember(2)] internal string SpinPartId; 
+                    [ProtoMember(2)] internal string SpinPartId;
                     [ProtoMember(3)] internal string MuzzlePartId;
                     [ProtoMember(4)] internal string AzimuthPartId;
                     [ProtoMember(5)] internal string ElevationPartId;
@@ -520,7 +520,7 @@ namespace Scripts
                     [ProtoMember(4)] internal bool PrimaryTracking;
                     [ProtoMember(5)] internal bool LockOnFocus;
                     [ProtoMember(6)] internal bool SuppressFire;
-                    [ProtoMember(7)] internal bool ForceTargetLead;
+                    [ProtoMember(7)] internal bool OverrideLeads;
                 }
 
                 [ProtoContract]
@@ -547,8 +547,8 @@ namespace Scripts
                     [ProtoMember(8)] internal int MinElevation;
                     [ProtoMember(9)] internal float InventorySize;
                     [ProtoMember(10)] internal HardwareType Type;
-					[ProtoMember(11)] internal int HomeAzimuth;
-					[ProtoMember(12)] internal int HomeElevation;
+                    [ProtoMember(11)] internal int HomeAzimuth;
+                    [ProtoMember(12)] internal int HomeElevation;
                 }
 
                 [ProtoContract]
