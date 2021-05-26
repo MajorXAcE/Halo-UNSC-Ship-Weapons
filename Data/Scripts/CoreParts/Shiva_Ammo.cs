@@ -116,12 +116,12 @@ namespace Scripts
                         },
                     },
                 },
-				DamageType = new DamageTypes
+                DamageType = new DamageTypes
                 {
                     Base = Kinetic,
                     AreaEffect = Kinetic,
-					Detonation = Energy,
-					Shield = ShieldDefault,
+                    Detonation = Energy,
+                    Shield = ShieldDefault,
                 }
             },
             AreaEffect = new AreaDamageDef
@@ -292,7 +292,7 @@ namespace Scripts
                         {
                             Enable = false, // If true Tracer TextureMode is ignored
                             Textures = new[] {
-								"",
+                                "",
                             },
                             SegmentLength = 0f, // Uses the values below.
                             SegmentGap = 0f, // Uses Tracer textures and values
@@ -309,7 +309,7 @@ namespace Scripts
                     {
                         Enable = false,
                         Textures = new[] {
-							"WeaponLaser",
+                            "WeaponLaser",
                         },
                         TextureMode = Normal,
                         DecayTime = 1,
@@ -347,8 +347,8 @@ namespace Scripts
                 }
             },
         };
-		
-		private AmmoDef MXA_Shiva_EMPStage => new AmmoDef
+
+        private AmmoDef MXA_Shiva_EMPStage => new AmmoDef
         {
             AmmoMagazine = "",
             AmmoRound = "MXA_Shiva_EMPStage",
@@ -444,12 +444,12 @@ namespace Scripts
                         },
                     },
                 },
-				DamageType = new DamageTypes
+                DamageType = new DamageTypes
                 {
                     Base = Kinetic,
                     AreaEffect = Energy,
-					Detonation = Energy,
-					Shield = ShieldDefault,
+                    Detonation = Energy,
+                    Shield = ShieldDefault,
                 }
             },
             AreaEffect = new AreaDamageDef
@@ -606,10 +606,10 @@ namespace Scripts
                     WidthVariance = Random(start: 0f, end: 0f), // adds random value to default width (negatives shrinks width)
                     Tracer = new TracerBaseDef
                     {
-                        Enable = true,
+                        Enable = false,
                         Length = 1f,
                         Width = 1f,
-                        Color = Color(red: 0.2f, green: 0.6f, blue: 1.4f, alpha: 50f),
+                        Color = Color(red: 0.2f, green: 0.6f, blue: 1.4f, alpha: 1f),
                         VisualFadeStart = 0, // Number of ticks the weapon has been firing before projectiles begin to fade their color
                         VisualFadeEnd = 0, // How many ticks after fade began before it will be invisible.
                         Textures = new[] {// WeaponLaser, ProjectileTrailLine, WarpBubble, etc..
@@ -620,7 +620,7 @@ namespace Scripts
                         {
                             Enable = false, // If true Tracer TextureMode is ignored
                             Textures = new[] {
-								"",
+                                "",
                             },
                             SegmentLength = 0f, // Uses the values below.
                             SegmentGap = 0f, // Uses Tracer textures and values
@@ -637,7 +637,7 @@ namespace Scripts
                     {
                         Enable = false,
                         Textures = new[] {
-							"WeaponLaser",
+                            "WeaponLaser",
                         },
                         TextureMode = Normal,
                         DecayTime = 1,
@@ -776,12 +776,12 @@ namespace Scripts
                         },
                     },
                 },
-				DamageType = new DamageTypes
+                DamageType = new DamageTypes
                 {
                     Base = Kinetic,
                     AreaEffect = Kinetic,
-					Detonation = Energy,
-					Shield = Energy,
+                    Detonation = Energy,
+                    Shield = Energy,
                 }
             },
             AreaEffect = new AreaDamageDef
@@ -952,7 +952,7 @@ namespace Scripts
                         {
                             Enable = false, // If true Tracer TextureMode is ignored
                             Textures = new[] {
-								"",
+                                "",
                             },
                             SegmentLength = 0f, // Uses the values below.
                             SegmentGap = 0f, // Uses Tracer textures and values
@@ -969,7 +969,7 @@ namespace Scripts
                     {
                         Enable = false,
                         Textures = new[] {
-							"WeaponLaser",
+                            "WeaponLaser",
                         },
                         TextureMode = Normal,
                         DecayTime = 1,
@@ -1011,6 +1011,6 @@ namespace Scripts
                 }
             },
         };
-		
+
     }
 }

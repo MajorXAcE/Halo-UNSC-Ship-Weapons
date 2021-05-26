@@ -303,7 +303,7 @@ namespace Scripts
                                 new RelMove
                                 {
                                     CenterEmpty = "",
-                                    TicksToMove = 15, //number of ticks to complete motion, 60 = 1 second
+                                    TicksToMove = 18, //number of ticks to complete motion, 60 = 1 second
                                     MovementType = ExpoDecay, //Linear,ExpoDecay,ExpoGrowth,Delay,Show, //instant or fade Hide, //instant or fade
                                     LinearPoints = new[]
                                     {
@@ -316,7 +316,7 @@ namespace Scripts
                                 new RelMove
                                 {
                                     CenterEmpty = "",
-                                    TicksToMove = 6, //number of ticks to complete motion, 60 = 1 second
+                                    TicksToMove = 3, //number of ticks to complete motion, 60 = 1 second
                                     MovementType = Delay, //Linear,ExpoDecay,ExpoGrowth,Delay,Show, //instant or fade Hide, //instant or fade
                                     LinearPoints = new XYZ[0],
                                     Rotation = Transformation(0, 0, 0), //degrees
@@ -326,7 +326,7 @@ namespace Scripts
                                 new RelMove
                                 {
                                     CenterEmpty = "",
-                                    TicksToMove = 5, //number of ticks to complete motion, 60 = 1 second
+                                    TicksToMove = 6, //number of ticks to complete motion, 60 = 1 second
                                     MovementType = Linear, //Linear,ExpoDecay,ExpoGrowth,Delay,Show, //instant or fade Hide, //instant or fade
                                     LinearPoints = new[]
                                     {
