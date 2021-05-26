@@ -84,7 +84,7 @@ namespace WeaponThread
                     MaxAzimuth = 0,
                     MinElevation = -3,
                     MaxElevation = 100,
-                    InventorySize = .1f,
+                    InventorySize = .5f,
                     Offset = Vector(x: 0, y: 0, z: 0),
                 },
                 Other = new OtherDef
