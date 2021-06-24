@@ -284,7 +284,7 @@ namespace WeaponThread
                         {
                             Enable = false, // If true Tracer TextureMode is ignored
                             Textures = new[] {
-								"",
+                                "",
                             },
                             SegmentLength = 0f, // Uses the values below.
                             SegmentGap = 0f, // Uses Tracer textures and values
@@ -301,7 +301,7 @@ namespace WeaponThread
                     {
                         Enable = false,
                         Textures = new[] {
-							"WeaponLaser",
+                            "WeaponLaser",
                         },
                         TextureMode = Normal,
                         DecayTime = 1,
@@ -339,8 +339,8 @@ namespace WeaponThread
                 }
             },
         };
-		
-		private AmmoDef MXA_Shiva_EMPStage => new AmmoDef
+
+        private AmmoDef MXA_Shiva_EMPStage => new AmmoDef
         {
             AmmoMagazine = "",
             AmmoRound = "MXA_Shiva_EMPStage",
@@ -605,7 +605,7 @@ namespace WeaponThread
                         {
                             Enable = false, // If true Tracer TextureMode is ignored
                             Textures = new[] {
-								"",
+                                "",
                             },
                             SegmentLength = 0f, // Uses the values below.
                             SegmentGap = 0f, // Uses Tracer textures and values
@@ -622,7 +622,7 @@ namespace WeaponThread
                     {
                         Enable = false,
                         Textures = new[] {
-							"WeaponLaser",
+                            "WeaponLaser",
                         },
                         TextureMode = Normal,
                         DecayTime = 1,
@@ -930,7 +930,7 @@ namespace WeaponThread
                         {
                             Enable = false, // If true Tracer TextureMode is ignored
                             Textures = new[] {
-								"",
+                                "",
                             },
                             SegmentLength = 0f, // Uses the values below.
                             SegmentGap = 0f, // Uses Tracer textures and values
@@ -947,7 +947,7 @@ namespace WeaponThread
                     {
                         Enable = false,
                         Textures = new[] {
-							"WeaponLaser",
+                            "WeaponLaser",
                         },
                         TextureMode = Normal,
                         DecayTime = 1,
@@ -989,6 +989,6 @@ namespace WeaponThread
                 }
             },
         };
-		
+
     }
 }
