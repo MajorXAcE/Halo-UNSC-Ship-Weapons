@@ -594,7 +594,7 @@ namespace WeaponThread
                         Enable = true,
                         Length = 1f,
                         Width = 1f,
-                        Color = Color(red: 0.2f, green: 0.6f, blue: 1.4f, alpha: 50f),
+                        Color = Color(red: 0.2f, green: 0.6f, blue: 1.4f, alpha: 1f),
                         VisualFadeStart = 0, // Number of ticks the weapon has been firing before projectiles begin to fade their color
                         VisualFadeEnd = 0, // How many ticks after fade began before it will be invisible.
                         Textures = new[] {// WeaponLaser, ProjectileTrailLine, WarpBubble, etc..
