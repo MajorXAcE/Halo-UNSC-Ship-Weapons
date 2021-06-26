@@ -20,7 +20,7 @@ namespace WeaponThread
     partial class Weapons
     {
         #region Low Power Ammo
-		private AmmoDef MXA_MACL_Ammo => new AmmoDef
+        private AmmoDef MXA_MACL_Ammo => new AmmoDef
         {
             AmmoMagazine = "MXA_MACL_Ammo",
             AmmoRound = "Low Power",
@@ -285,7 +285,7 @@ namespace WeaponThread
                         {
                             Enable = false, // If true Tracer TextureMode is ignored
                             Textures = new[] {
-								"",
+                                "",
                             },
                             SegmentLength = 0f, // Uses the values below.
                             SegmentGap = 0f, // Uses Tracer textures and values
@@ -302,7 +302,7 @@ namespace WeaponThread
                     {
                         Enable = true,
                         Textures = new[] {
-							"WeaponLaser",
+                            "WeaponLaser",
                         },
                         TextureMode = Normal,
                         DecayTime = 45,
@@ -344,9 +344,9 @@ namespace WeaponThread
                 }
             },
         };
-		
-		
-		private AmmoDef MXA_MACL_Shrapnel => new AmmoDef
+
+
+        private AmmoDef MXA_MACL_Shrapnel => new AmmoDef
         {
             AmmoMagazine = "Energy",
             AmmoRound = "MXA_MACL_Shrapnel",
@@ -628,7 +628,7 @@ namespace WeaponThread
                         {
                             Enable = false, // If true Tracer TextureMode is ignored
                             Textures = new[] {
-								"",
+                                "",
                             },
                             SegmentLength = 0f, // Uses the values below.
                             SegmentGap = 0f, // Uses Tracer textures and values
@@ -645,7 +645,7 @@ namespace WeaponThread
                     {
                         Enable = false,
                         Textures = new[] {
-							"",
+                            "",
                         },
                         TextureMode = Normal,
                         DecayTime = 128,
@@ -687,11 +687,11 @@ namespace WeaponThread
                 }
             },
         };
-		
-		#endregion
-		
-		#region High Power Ammo
-		private AmmoDef MXA_MACL_HPAmmo => new AmmoDef
+
+        #endregion
+
+        #region High Power Ammo
+        private AmmoDef MXA_MACL_HPAmmo => new AmmoDef
         {
             AmmoMagazine = "MXA_MACL_Ammo",
             AmmoRound = "High Power",
@@ -874,7 +874,7 @@ namespace WeaponThread
                 GravityMultiplier = 0f, // Gravity multiplier, influences the trajectory of the projectile, value greater than 0 to enable.
                 SpeedVariance = Random(start: 0, end: 0), // subtracts value from DesiredSpeed
                 RangeVariance = Random(start: 0, end: 0), // subtracts value from MaxTrajectory
-                MaxTrajectoryTime = 90, // How long the weapon must fire before it reaches MaxTrajectory.
+                MaxTrajectoryTime = 0, // How long the weapon must fire before it reaches MaxTrajectory.
                 Smarts = new SmartsDef
                 {
                     Inaccuracy = 0f, // 0 is perfect, hit accuracy will be a random num of meters between 0 and this value.
@@ -956,7 +956,7 @@ namespace WeaponThread
                         {
                             Enable = false, // If true Tracer TextureMode is ignored
                             Textures = new[] {
-								"",
+                                "",
                             },
                             SegmentLength = 0f, // Uses the values below.
                             SegmentGap = 0f, // Uses Tracer textures and values
@@ -973,7 +973,7 @@ namespace WeaponThread
                     {
                         Enable = true,
                         Textures = new[] {
-							"WeaponLaser",
+                            "WeaponLaser",
                         },
                         TextureMode = Normal,
                         DecayTime = 30,
@@ -1015,8 +1015,8 @@ namespace WeaponThread
                 }
             },
         };
-		
-		private AmmoDef MXA_MACL_Impact => new AmmoDef
+
+        private AmmoDef MXA_MACL_Impact => new AmmoDef
         {
             AmmoMagazine = "Energy",
             AmmoRound = "MXA_MACL_Impact",
@@ -1281,7 +1281,7 @@ namespace WeaponThread
                         {
                             Enable = false, // If true Tracer TextureMode is ignored
                             Textures = new[] {
-								"",
+                                "",
                             },
                             SegmentLength = 0f, // Uses the values below.
                             SegmentGap = 0f, // Uses Tracer textures and values
@@ -1298,7 +1298,7 @@ namespace WeaponThread
                     {
                         Enable = true,
                         Textures = new[] {
-							"WeaponLaser",
+                            "WeaponLaser",
                         },
                         TextureMode = Normal,
                         DecayTime = 30,
@@ -1340,7 +1340,7 @@ namespace WeaponThread
                 }
             },
         };
-				
-		#endregion
+
+        #endregion
     }
 }
