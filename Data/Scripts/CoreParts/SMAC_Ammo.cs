@@ -21,7 +21,7 @@ namespace Scripts
     partial class Parts
     {
         #region Regular Ammo
-		private AmmoDef MXA_SMAC_Ammo => new AmmoDef
+        private AmmoDef MXA_SMAC_Ammo => new AmmoDef
         {
             AmmoMagazine = "MXA_SMAC_Ammo",
             AmmoRound = "Low P",
@@ -117,12 +117,12 @@ namespace Scripts
                         },
                     },
                 },
-				DamageType = new DamageTypes
+                DamageType = new DamageTypes
                 {
                     Base = Kinetic,
                     AreaEffect = Kinetic,
-					Detonation = Energy,
-					Shield = ShieldDefault,
+                    Detonation = Energy,
+                    Shield = ShieldDefault,
                 }
             },
             AreaEffect = new AreaDamageDef
@@ -293,7 +293,7 @@ namespace Scripts
                         {
                             Enable = false, // If true Tracer TextureMode is ignored
                             Textures = new[] {
-								"",
+                                "",
                             },
                             SegmentLength = 0f, // Uses the values below.
                             SegmentGap = 0f, // Uses Tracer textures and values
@@ -310,7 +310,7 @@ namespace Scripts
                     {
                         Enable = true,
                         Textures = new[] {
-							"WeaponLaser",
+                            "WeaponLaser",
                         },
                         TextureMode = Normal,
                         DecayTime = 45,
@@ -352,9 +352,9 @@ namespace Scripts
                 }
             },
         };
-		
-		
-		private AmmoDef MXA_SMAC_Shrapnel => new AmmoDef
+
+
+        private AmmoDef MXA_SMAC_Shrapnel => new AmmoDef
         {
             AmmoMagazine = "",
             AmmoRound = "MXA_SMAC_Shrapnel",
@@ -450,12 +450,12 @@ namespace Scripts
                         },
                     },
                 },
-				DamageType = new DamageTypes
+                DamageType = new DamageTypes
                 {
                     Base = Kinetic,
                     AreaEffect = Kinetic,
-					Detonation = Energy,
-					Shield = ShieldDefault,
+                    Detonation = Energy,
+                    Shield = ShieldDefault,
                 }
             },
             AreaEffect = new AreaDamageDef
@@ -643,7 +643,7 @@ namespace Scripts
                         {
                             Enable = false, // If true Tracer TextureMode is ignored
                             Textures = new[] {
-								"",
+                                "",
                             },
                             SegmentLength = 0f, // Uses the values below.
                             SegmentGap = 0f, // Uses Tracer textures and values
@@ -660,7 +660,7 @@ namespace Scripts
                     {
                         Enable = false,
                         Textures = new[] {
-							"",
+                            "",
                         },
                         TextureMode = Normal,
                         DecayTime = 128,
@@ -702,11 +702,11 @@ namespace Scripts
                 }
             },
         };
-		
-		#endregion
-		
-		#region Dense Ammo
-		private AmmoDef MXA_SMAC_HPImpact => new AmmoDef
+
+        #endregion
+
+        #region Dense Ammo
+        private AmmoDef MXA_SMAC_HPImpact => new AmmoDef
         {
             AmmoMagazine = "MXA_SMAC_Ammo",
             AmmoRound = "High Power",
@@ -802,12 +802,12 @@ namespace Scripts
                         },
                     },
                 },
-				DamageType = new DamageTypes
+                DamageType = new DamageTypes
                 {
                     Base = Kinetic,
                     AreaEffect = Kinetic,
-					Detonation = Energy,
-					Shield = ShieldDefault,
+                    Detonation = Energy,
+                    Shield = ShieldDefault,
                 }
             },
             AreaEffect = new AreaDamageDef
@@ -896,7 +896,7 @@ namespace Scripts
                 GravityMultiplier = 0f, // Gravity multiplier, influences the trajectory of the projectile, value greater than 0 to enable.
                 SpeedVariance = Random(start: 0, end: 0), // subtracts value from DesiredSpeed
                 RangeVariance = Random(start: 0, end: 0), // subtracts value from MaxTrajectory
-                MaxTrajectoryTime = 60, // How long the weapon must fire before it reaches MaxTrajectory.
+                MaxTrajectoryTime = 0, // How long the weapon must fire before it reaches MaxTrajectory.
                 Smarts = new SmartsDef
                 {
                     Inaccuracy = 0f, // 0 is perfect, hit accuracy will be a random num of meters between 0 and this value.
@@ -978,7 +978,7 @@ namespace Scripts
                         {
                             Enable = false, // If true Tracer TextureMode is ignored
                             Textures = new[] {
-								"",
+                                "",
                             },
                             SegmentLength = 0f, // Uses the values below.
                             SegmentGap = 0f, // Uses Tracer textures and values
@@ -995,7 +995,7 @@ namespace Scripts
                     {
                         Enable = true,
                         Textures = new[] {
-							"WeaponLaser",
+                            "WeaponLaser",
                         },
                         TextureMode = Normal,
                         DecayTime = 45,
@@ -1037,8 +1037,8 @@ namespace Scripts
                 }
             },
         };
-		
-		private AmmoDef MXA_SMAC_HPAmmo => new AmmoDef
+
+        private AmmoDef MXA_SMAC_HPAmmo => new AmmoDef
         {
             AmmoMagazine = "",
             AmmoRound = "MXA_SMAC_HPAmmo",
@@ -1134,12 +1134,12 @@ namespace Scripts
                         },
                     },
                 },
-				DamageType = new DamageTypes
+                DamageType = new DamageTypes
                 {
                     Base = Kinetic,
                     AreaEffect = Kinetic,
-					Detonation = Energy,
-					Shield = ShieldDefault,
+                    Detonation = Energy,
+                    Shield = ShieldDefault,
                 }
             },
             AreaEffect = new AreaDamageDef
@@ -1310,7 +1310,7 @@ namespace Scripts
                         {
                             Enable = false, // If true Tracer TextureMode is ignored
                             Textures = new[] {
-								"",
+                                "",
                             },
                             SegmentLength = 0f, // Uses the values below.
                             SegmentGap = 0f, // Uses Tracer textures and values
@@ -1327,7 +1327,7 @@ namespace Scripts
                     {
                         Enable = true,
                         Textures = new[] {
-							"WeaponLaser",
+                            "WeaponLaser",
                         },
                         TextureMode = Normal,
                         DecayTime = 30,
@@ -1369,7 +1369,7 @@ namespace Scripts
                 }
             },
         };
-				
-		#endregion
+
+        #endregion
     }
 }
