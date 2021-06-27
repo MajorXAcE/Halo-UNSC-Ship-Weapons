@@ -10,7 +10,7 @@
 			<Description>The Archer missile is a ship-to-ship missile used by the UNSC Navy.
 			This variant is larger than the M58 and carries 30 per pod.
 			
-			Engagement Range: 5k 
+			Engagement Range: 10k 
 			Ammo: M42 Archer Missiles
 			</Description>
 			<Icon>Textures\GUI\Icons\MXA_ArcherPods.png</Icon>
@@ -69,7 +69,7 @@
 			<Description>The Archer missile is a ship-to-ship missile used by the UNSC Navy.
 			This variant is the standard and carries 30 per pod.
 			
-			Engagement Range: 5k 
+			Engagement Range: 10k 
 			Ammo: M58 Archer Missiles</Description>
 			<Icon>Textures\GUI\Icons\MXA_M58ArcherPods.png</Icon>
 			<CubeSize>Large</CubeSize>
@@ -129,7 +129,7 @@
 			<Description>The Archer missile is a ship-to-ship missile used by the UNSC Navy.
 			This variant is the standard and carries 30 per pod.
 			
-			Engagement Range: 5k 
+			Engagement Range: 7.5k 
 			Ammo: M58 Archer Missiles</Description>
 			<Icon>Textures\GUI\Icons\MXA_M58ArcherPods_S.png</Icon>
 			<CubeSize>Small</CubeSize>
