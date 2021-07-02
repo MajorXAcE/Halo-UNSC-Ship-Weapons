@@ -16,7 +16,7 @@
 		  <NoAmmoSoundName>WepShipGatlingNoAmmo</NoAmmoSoundName>
 		  <SecondarySoundName>WepShipGatlingRotation</SecondarySoundName>
 		  <AmmoMagazines>
-			<AmmoMagazine Subtype="Blank" />
+			<AmmoMagazine Subtype="Energy" />
 		  </AmmoMagazines>
 		  <ReloadTime>0</ReloadTime>
 		</Weapon>
@@ -33,7 +33,7 @@
 		  <NoAmmoSoundName>WepShipGatlingNoAmmo</NoAmmoSoundName>
 		  <SecondarySoundName>WepShipGatlingRotation</SecondarySoundName>
 		  <AmmoMagazines>
-			<AmmoMagazine Subtype="Blank" />
+			<AmmoMagazine Subtype="Energy" />
 		  </AmmoMagazines>
 		  <ReloadTime>0</ReloadTime>
 		</Weapon>
@@ -50,7 +50,7 @@
 		  <NoAmmoSoundName>WepShipGatlingNoAmmo</NoAmmoSoundName>
 		  <SecondarySoundName>WepShipGatlingRotation</SecondarySoundName>
 		  <AmmoMagazines>
-			<AmmoMagazine Subtype="Blank" />
+			<AmmoMagazine Subtype="Energy" />
 		  </AmmoMagazines>
 		  <ReloadTime>0</ReloadTime>
 		</Weapon>
@@ -67,7 +67,7 @@
 		  <NoAmmoSoundName>WepShipGatlingNoAmmo</NoAmmoSoundName>
 		  <SecondarySoundName>WepShipGatlingRotation</SecondarySoundName>
 		  <AmmoMagazines>
-			<AmmoMagazine Subtype="Blank" />
+			<AmmoMagazine Subtype="Energy" />
 		  </AmmoMagazines>
 		  <ReloadTime>0</ReloadTime>
 		</Weapon>
@@ -84,7 +84,7 @@
 		  <NoAmmoSoundName>WepShipGatlingNoAmmo</NoAmmoSoundName>
 		  <SecondarySoundName>WepShipGatlingRotation</SecondarySoundName>
 		  <AmmoMagazines>
-			<AmmoMagazine Subtype="Blank" />
+			<AmmoMagazine Subtype="Energy" />
 		  </AmmoMagazines>
 		  <ReloadTime>0</ReloadTime>
 		</Weapon>
@@ -103,7 +103,7 @@
 		  <NoAmmoSoundName>WepShipGatlingNoAmmo</NoAmmoSoundName>
 		  <SecondarySoundName>WepShipGatlingRotation</SecondarySoundName>
 		  <AmmoMagazines>
-			<AmmoMagazine Subtype="Blank" />
+			<AmmoMagazine Subtype="Energy" />
 		  </AmmoMagazines>
 		  <ReloadTime>0</ReloadTime>
 		</Weapon>
@@ -120,7 +120,7 @@
 		  <NoAmmoSoundName>WepShipGatlingNoAmmo</NoAmmoSoundName>
 		  <SecondarySoundName>WepShipGatlingRotation</SecondarySoundName>
 		  <AmmoMagazines>
-			<AmmoMagazine Subtype="Blank" />
+			<AmmoMagazine Subtype="Energy" />
 		  </AmmoMagazines>
 		  <ReloadTime>0</ReloadTime>
 		</Weapon>
@@ -137,7 +137,7 @@
 		  <NoAmmoSoundName>WepShipGatlingNoAmmo</NoAmmoSoundName>
 		  <SecondarySoundName>WepShipGatlingRotation</SecondarySoundName>
 		  <AmmoMagazines>
-			<AmmoMagazine Subtype="Blank" />
+			<AmmoMagazine Subtype="Energy" />
 		  </AmmoMagazines>
 		  <ReloadTime>0</ReloadTime>
 		</Weapon>
@@ -156,7 +156,7 @@
 		  <NoAmmoSoundName>WepShipGatlingNoAmmo</NoAmmoSoundName>
 		  <SecondarySoundName>WepShipGatlingRotation</SecondarySoundName>
 		  <AmmoMagazines>
-			<AmmoMagazine Subtype="Blank" />
+			<AmmoMagazine Subtype="Energy" />
 		  </AmmoMagazines>
 		  <ReloadTime>0</ReloadTime>
 		</Weapon>
@@ -173,7 +173,7 @@
 		  <NoAmmoSoundName>WepShipGatlingNoAmmo</NoAmmoSoundName>
 		  <SecondarySoundName>WepShipGatlingRotation</SecondarySoundName>
 		  <AmmoMagazines>
-			<AmmoMagazine Subtype="Blank" />
+			<AmmoMagazine Subtype="Energy" />
 		  </AmmoMagazines>
 		  <ReloadTime>0</ReloadTime>
 		</Weapon>
@@ -190,7 +190,7 @@
 		  <NoAmmoSoundName>WepShipGatlingNoAmmo</NoAmmoSoundName>
 		  <SecondarySoundName>WepShipGatlingRotation</SecondarySoundName>
 		  <AmmoMagazines>
-			<AmmoMagazine Subtype="Blank" />
+			<AmmoMagazine Subtype="Energy" />
 		  </AmmoMagazines>
 		  <ReloadTime>0</ReloadTime>
 		</Weapon>
@@ -207,7 +207,7 @@
 		  <NoAmmoSoundName>WepShipGatlingNoAmmo</NoAmmoSoundName>
 		  <SecondarySoundName>WepShipGatlingRotation</SecondarySoundName>
 		  <AmmoMagazines>
-			<AmmoMagazine Subtype="Blank" />
+			<AmmoMagazine Subtype="Energy" />
 		  </AmmoMagazines>
 		  <ReloadTime>0</ReloadTime>
 		</Weapon>
@@ -224,7 +224,7 @@
 		  <NoAmmoSoundName>WepShipGatlingNoAmmo</NoAmmoSoundName>
 		  <SecondarySoundName>WepShipGatlingRotation</SecondarySoundName>
 		  <AmmoMagazines>
-			<AmmoMagazine Subtype="Blank" />
+			<AmmoMagazine Subtype="Energy" />
 		  </AmmoMagazines>
 		  <ReloadTime>0</ReloadTime>
 		</Weapon>
