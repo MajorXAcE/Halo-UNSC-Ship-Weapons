@@ -46,8 +46,10 @@
 			<Description></Description>
 			<Blocks>
 				<Block Type="MyObjectBuilder_ConveyorSorter" Subtype="MXA_MACL" />
-				<Block Type="MyObjectBuilder_ConveyorSorter" Subtype="MXA_SMAC" />
 				<Block Type="MyObjectBuilder_ConveyorSorter" Subtype="MXA_MACL_S" />
+				<Block Type="MyObjectBuilder_ConveyorSorter" Subtype="MXA_SMAC" />
+				<Block Type="MyObjectBuilder_ConveyorSorter" Subtype="MXA_M2MAC" />
+				<Block Type="MyObjectBuilder_ConveyorSorter" Subtype="MXA_M2MAC_S" />
 			</Blocks>
 		</BlockVariantGroup>
 
