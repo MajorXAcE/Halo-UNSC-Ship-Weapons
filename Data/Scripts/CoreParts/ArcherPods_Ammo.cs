@@ -704,7 +704,7 @@ namespace Scripts
             Fragment = new FragmentDef
             {
                 AmmoRound = "MXA_ArcherPods_Shrapnel",
-                Fragments = 25,
+                Fragments = 0,
                 Degrees = 270,
                 Reverse = false,
                 RandomizeDir = false, // randomzie between forward and backward directions
