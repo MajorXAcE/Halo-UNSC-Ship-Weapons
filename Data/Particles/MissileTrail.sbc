@@ -251,11 +251,11 @@
               <Keys>
                 <Key>
                   <Time>0</Time>
-                  <ValueFloat>300</ValueFloat>
+                  <ValueFloat>150</ValueFloat>
                 </Key>
                 <Key>
                   <Time>1</Time>
-                  <ValueFloat>300</ValueFloat>
+                  <ValueFloat>150</ValueFloat>
                 </Key>
               </Keys>
             </Property>
