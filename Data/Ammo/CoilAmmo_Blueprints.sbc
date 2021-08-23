@@ -58,7 +58,7 @@
       <BaseProductionTimeInSeconds>30</BaseProductionTimeInSeconds>
 	  
     </Blueprint>
-	
+	<!--
 	<Blueprint>
       <Id>
         <TypeId>BlueprintDefinition</TypeId>
@@ -74,7 +74,7 @@
       <BaseProductionTimeInSeconds>15</BaseProductionTimeInSeconds>  
     </Blueprint>
 	
-	<!--
+	
 	<Blueprint>
       <Id>
         <TypeId>BlueprintDefinition</TypeId>
@@ -145,7 +145,7 @@
       <Result Amount="1" TypeId="AmmoMagazine" SubtypeId="MXA_Coil305GAmmo" />
       <BaseProductionTimeInSeconds>15</BaseProductionTimeInSeconds>  
     </Blueprint>
-	
+	<!--
 	<Blueprint>
       <Id>
         <TypeId>BlueprintDefinition</TypeId>
@@ -160,7 +160,7 @@
       <Result Amount="3" TypeId="AmmoMagazine" SubtypeId="MXA_Coil305Ammo" />
       <BaseProductionTimeInSeconds>15</BaseProductionTimeInSeconds>  
     </Blueprint>
-	
+	-->
 	<Blueprint>
       <Id>
         <TypeId>BlueprintDefinition</TypeId>
