@@ -689,7 +689,7 @@ namespace WeaponThread
             Shrapnel = new ShrapnelDef
             {
                 AmmoRound = "MXA_ArcherPods_Shrapnel",
-                Fragments = 25,
+                Fragments = 0,
                 Degrees = 270,
                 Reverse = false,
                 RandomizeDir = false, // randomzie between forward and backward directions
