@@ -696,7 +696,7 @@ namespace WeaponThread
             AmmoMagazine = "MXA_MACL_Ammo",
             AmmoRound = "High Power",
             HybridRound = true, //AmmoMagazine based weapon with energy cost
-            EnergyCost = 160f, //(((EnergyCost * DefaultDamage) * ShotsPerSecond) * BarrelsPerShot) * ShotsPerBarrel
+            EnergyCost = 320f, //(((EnergyCost * DefaultDamage) * ShotsPerSecond) * BarrelsPerShot) * ShotsPerBarrel
             BaseDamage = 315f,
             Mass = 0f, // in kilograms
             Health = 0, // 0 = disabled, otherwise how much damage it can take from other trajectiles before dying.
