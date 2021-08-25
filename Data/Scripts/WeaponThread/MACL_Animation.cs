@@ -245,7 +245,7 @@ namespace WeaponThread
                                 new RelMove
                                 {
                                     CenterEmpty = "",
-                                    TicksToMove = 2700,//5400 //number of ticks to complete motion, 60 = 1 second
+                                    TicksToMove = 3600,//5400 //number of ticks to complete motion, 60 = 1 second
                                     MovementType = Delay,
                                      EmissiveName = "Reloading",//name of defined emissive
                                     LinearPoints = new XYZ[0],
