@@ -711,7 +711,7 @@ namespace Scripts
             AmmoMagazine = "MXA_SMAC_Ammo",
             AmmoRound = "High Power",
             HybridRound = true, //AmmoMagazine based weapon with energy cost
-            EnergyCost = 80f, //(((EnergyCost * DefaultDamage) * ShotsPerSecond) * BarrelsPerShot) * ShotsPerBarrel
+            EnergyCost = 160f, //(((EnergyCost * DefaultDamage) * ShotsPerSecond) * BarrelsPerShot) * ShotsPerBarrel
             BaseDamage = 2800f,
             Mass = 0f, // in kilograms
             Health = 0, // 0 = disabled, otherwise how much damage it can take from other trajectiles before dying.
