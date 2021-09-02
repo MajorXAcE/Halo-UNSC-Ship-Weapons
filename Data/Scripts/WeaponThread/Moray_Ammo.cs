@@ -437,7 +437,7 @@ namespace WeaponThread
                 Shields = new ShieldDef
                 {
                     Modifier = -1f,
-                    Type = Energy,
+                    Type = Kinetic,
                     BypassModifier = -1f,
                 },
                 // first true/false (ignoreOthers) will cause projectiles to pass through all blocks that do not match the custom subtypeIds.
