@@ -759,7 +759,7 @@ namespace Scripts
                 {
                     Modifier = 0.1f,
                     Type = Default,
-                    BypassModifier = 0.0000001f,
+                    BypassModifier = -1f,
                 },
                 // first true/false (ignoreOthers) will cause projectiles to pass through all blocks that do not match the custom subtypeIds.
                 Custom = new CustomScalesDef
@@ -1957,7 +1957,7 @@ namespace Scripts
                         Enable = true,
                         Length = 22.5f,
                         Width = 0.1f,
-                        Color = Color(red: 35.5f, green: 30.25f, blue: 25.75f, alpha: 1f),
+                        Color = Color(red: 17.75f, green: 15.125f, blue: 12.875f, alpha: 1f),
                         VisualFadeStart = 0, // Number of ticks the weapon has been firing before projectiles begin to fade their color
                         VisualFadeEnd = 0, // How many ticks after fade began before it will be invisible.
                         Textures = new[] {// WeaponLaser, ProjectileTrailLine, WarpBubble, etc..

@@ -428,7 +428,7 @@ namespace Scripts
                 {
                     Modifier = 0.2f,
                     Type = Default,
-                    BypassModifier = 0.0000001f,
+                    BypassModifier = -1f,
                 },
                 // first true/false (ignoreOthers) will cause projectiles to pass through all blocks that do not match the custom subtypeIds.
                 Custom = new CustomScalesDef
