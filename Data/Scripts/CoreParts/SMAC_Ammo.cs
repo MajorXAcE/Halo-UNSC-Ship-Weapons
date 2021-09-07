@@ -168,9 +168,9 @@ namespace Scripts
                 },
                 Detonation = new DetonateDef
                 {
-                    DetonateOnEnd = false,
-                    ArmOnlyOnHit = false,
-                    DetonationDamage = 1650000f,
+                    DetonateOnEnd = true,
+                    ArmOnlyOnHit = true,
+                    DetonationDamage = 40000f,
                     DetonationRadius = 15,
                     MinArmingTime = 0, //Min time in ticks before projectile will arm for detonation (will also affect shrapnel spawning)
                 },
@@ -1185,10 +1185,10 @@ namespace Scripts
                 },
                 Detonation = new DetonateDef
                 {
-                    DetonateOnEnd = false,
-                    ArmOnlyOnHit = false,
-                    DetonationDamage = 1650000f,
-                    DetonationRadius = 15,
+                    DetonateOnEnd = true,
+                    ArmOnlyOnHit = true,
+                    DetonationDamage = 49500f,
+                    DetonationRadius = 20f,
                     MinArmingTime = 0, //Min time in ticks before projectile will arm for detonation (will also affect shrapnel spawning)
                 },
                 EwarFields = new EwarFieldsDef
