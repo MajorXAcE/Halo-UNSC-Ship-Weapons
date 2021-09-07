@@ -89,7 +89,7 @@ namespace Scripts
                     MinElevation = -3,
                     MaxElevation = 100,
                     FixedOffset = false,
-                    InventorySize = 2.769f,
+                    InventorySize = 0f,
                     Offset = Vector(x: 0, y: 0, z: 0),
                     Type = BlockWeapon, // IsWeapon, Passive, Active
                 },

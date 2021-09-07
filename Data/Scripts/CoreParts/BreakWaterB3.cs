@@ -85,7 +85,7 @@ namespace Scripts
                     MaxAzimuth = 0,
                     MinElevation = -3,
                     MaxElevation = 100,
-                    InventorySize = .5f,
+                    InventorySize = 0.5f,
                     Offset = Vector(x: 0, y: 0, z: 0),
                 },
                 Other = new OtherDef
