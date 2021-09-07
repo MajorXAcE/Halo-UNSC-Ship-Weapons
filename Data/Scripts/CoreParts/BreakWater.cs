@@ -172,11 +172,13 @@ namespace Scripts
             },
             Ammos = new[] {
                 MXA_BreakWater_Ammo,
+                /*
                 MXA_BreakWater_APFuse,
                 MXA_BreakWater_Shrapnel,
                 MXA_BreakWater_HEAmmo,
                 MXA_BreakWater_GStage,
                 MXA_BreakWater_GAmmo,
+                */
             },
             //Animations = MXA_BreakWater_Animation,
             //Upgrades = UpgradeModules,
