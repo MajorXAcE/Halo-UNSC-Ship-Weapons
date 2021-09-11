@@ -428,7 +428,7 @@ namespace Scripts
                 },
                 Shields = new ShieldDef
                 {
-                    Modifier = 1f,
+                    Modifier = 0.1f,
                     Type = Default,
                     BypassModifier = -1f,
                 },
@@ -454,7 +454,7 @@ namespace Scripts
                 {
                     Base = Kinetic,
                     AreaEffect = Kinetic,
-                    Detonation = Energy,
+                    Detonation = Kinetic,
                     Shield = ShieldDefault,
                 }
             },
