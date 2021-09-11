@@ -121,7 +121,7 @@ namespace Scripts
                     Base = Kinetic,
                     AreaEffect = Kinetic,
 					Detonation = Energy,
-					Shield = ShieldDefault,
+					Shield = Kinetic,
                 }
             },
             AreaEffect = new AreaDamageDef
@@ -452,7 +452,7 @@ namespace Scripts
                     Base = Kinetic,
                     AreaEffect = Kinetic,
 					Detonation = Energy,
-					Shield = ShieldDefault,
+					Shield = Kinetic,
                 }
             },
             AreaEffect = new AreaDamageDef
@@ -784,7 +784,7 @@ namespace Scripts
                     Base = Kinetic,
                     AreaEffect = Kinetic,
 					Detonation = Energy,
-					Shield = ShieldDefault,
+					Shield = Kinetic,
                 }
             },
             AreaEffect = new AreaDamageDef
@@ -1796,7 +1796,7 @@ namespace Scripts
                     Base = Kinetic,
                     AreaEffect = Kinetic,
 					Detonation = Energy,
-					Shield = ShieldDefault,
+					Shield = Kinetic,
                 }
             },
             AreaEffect = new AreaDamageDef
