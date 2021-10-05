@@ -1,4 +1,4 @@
-using static Scripts.Structure.WeaponDefinition;
+﻿using static Scripts.Structure.WeaponDefinition;
 using static Scripts.Structure.WeaponDefinition.AmmoDef;
 using static Scripts.Structure.WeaponDefinition.AmmoDef.EjectionDef;
 using static Scripts.Structure.WeaponDefinition.AmmoDef.EjectionDef.SpawnType;
@@ -333,7 +333,7 @@ namespace Scripts
             AmmoAudio = new AmmoAudioDef
             {
                 TravelSound = "",
-                HitSound = "MXA_ImpactExplosion",
+                HitSound = "",//MXA_ImpactExplosion
                 ShieldHitSound = "",
                 PlayerHitSound = "",
                 VoxelHitSound = "",
@@ -1018,7 +1018,7 @@ namespace Scripts
             AmmoAudio = new AmmoAudioDef
             {
                 TravelSound = "",
-                HitSound = "MXA_ImpactExplosion",
+                HitSound = "",//MXA_ImpactExplosion
                 ShieldHitSound = "",
                 PlayerHitSound = "",
                 VoxelHitSound = "",
@@ -1350,7 +1350,7 @@ namespace Scripts
             AmmoAudio = new AmmoAudioDef
             {
                 TravelSound = "",
-                HitSound = "MXA_ImpactExplosion",
+                HitSound = "",//MXA_ImpactExplosion
                 ShieldHitSound = "",
                 PlayerHitSound = "",
                 VoxelHitSound = "",

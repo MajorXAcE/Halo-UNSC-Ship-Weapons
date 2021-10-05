@@ -161,7 +161,7 @@ namespace Scripts
                 Explosions = new ExplosionDef
                 {
                     NoVisuals = false,
-                    NoSound = false,
+                    NoSound = true,
                     NoShrapnel = false,
                     NoDeformation = false,
                     Scale = 1,
@@ -333,7 +333,7 @@ namespace Scripts
             AmmoAudio = new AmmoAudioDef
             {
                 TravelSound = "",
-                HitSound = "MXA_ImpactExplosion",
+                HitSound = "",//MXA_ImpactExplosion
                 ShieldHitSound = "",
                 PlayerHitSound = "",
                 VoxelHitSound = "",
@@ -1018,7 +1018,7 @@ namespace Scripts
             AmmoAudio = new AmmoAudioDef
             {
                 TravelSound = "",
-                HitSound = "MXA_ImpactExplosion",
+                HitSound = "",//MXA_ImpactExplosion
                 ShieldHitSound = "",
                 PlayerHitSound = "",
                 VoxelHitSound = "",

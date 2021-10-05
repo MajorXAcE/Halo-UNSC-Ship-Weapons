@@ -333,7 +333,7 @@ namespace Scripts
             AmmoAudio = new AmmoAudioDef
             {
                 TravelSound = "",
-                HitSound = "MXA_ImpactExplosion",
+                HitSound = "",//MXA_ImpactExplosion
                 ShieldHitSound = "",
                 PlayerHitSound = "",
                 VoxelHitSound = "",
@@ -1017,7 +1017,7 @@ namespace Scripts
             AmmoAudio = new AmmoAudioDef
             {
                 TravelSound = "",
-                HitSound = "MXA_ImpactExplosion",
+                HitSound = "",//MXA_ImpactExplosion
                 ShieldHitSound = "",
                 PlayerHitSound = "",
                 VoxelHitSound = "",
