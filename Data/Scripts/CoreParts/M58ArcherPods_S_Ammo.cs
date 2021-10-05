@@ -24,7 +24,7 @@ namespace Scripts
         private AmmoDef MXA_M58ArcherPods_S_Ammo => new AmmoDef
         {
             AmmoMagazine = "MXA_M58ArcherPods_Ammo",
-            AmmoRound = "MXA_M58ArcherPods_S_Ammo",
+            AmmoRound = "Explosive",
             HybridRound = false, //AmmoMagazine based weapon with energy cost
             EnergyCost = 0.16f, //(((EnergyCost * DefaultDamage) * ShotsPerSecond) * BarrelsPerShot) * ShotsPerBarrel
             BaseDamage = 1f,
@@ -789,7 +789,7 @@ namespace Scripts
                 },
                 Shields = new ShieldDef
                 {
-                    Modifier = -1f,
+                    Modifier = 2f,
                     Type = Default,
                     BypassModifier = -1f,
                 },

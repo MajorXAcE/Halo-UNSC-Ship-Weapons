@@ -205,10 +205,16 @@ namespace Scripts
                 },
             },
             Ammos = new[] {
+                //Explosive
                 MXA_M58ArcherPods_Ammo,
                 MXA_M58ArcherPods_AccelStage,
                 MXA_M58ArcherPods_Stage,
                 MXA_M58ArcherPods_Shrapnel,
+                //Kinetic
+                MXA_M58ArcherPods_KineticAmmo,
+                MXA_M58ArcherPods_KineticAccelStage,
+                MXA_M58ArcherPods_KineticStage,
+                MXA_M58ArcherPods_KineticShrapnel,
             },
             Animations = MXA_M58ArcherPods_Animation,
             //Upgrades = UpgradeModules,

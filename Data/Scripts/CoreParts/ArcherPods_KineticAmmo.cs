@@ -20,10 +20,10 @@ namespace Scripts
 { // Don't edit above this line
     partial class Parts
     {
-        private AmmoDef MXA_ArcherPods_Ammo => new AmmoDef
+        private AmmoDef MXA_ArcherPods_KineticAmmo => new AmmoDef
         {
-            AmmoMagazine = "MXA_ArcherPods_Ammo",
-            AmmoRound = "Explosive",
+            AmmoMagazine = "MXA_ArcherPods_Ammo", //MXA_ArcherPods_KineticAmmo // Need to make this later
+            AmmoRound = "Kinetic",
             HybridRound = false, //AmmoMagazine based weapon with energy cost
             EnergyCost = 0.16f, //(((EnergyCost * DefaultDamage) * ShotsPerSecond) * BarrelsPerShot) * ShotsPerBarrel
             BaseDamage = 1f,
@@ -47,7 +47,7 @@ namespace Scripts
             },
             Fragment = new FragmentDef
             {
-                AmmoRound = "MXA_ArcherPods_AccelStage",
+                AmmoRound = "MXA_ArcherPods_KineticAccelStage",
                 Fragments = 1,
                 Degrees = 0,
                 Reverse = false,
@@ -348,10 +348,10 @@ namespace Scripts
             },
         };
 		
-		private AmmoDef MXA_ArcherPods_AccelStage => new AmmoDef
+		private AmmoDef MXA_ArcherPods_KineticAccelStage => new AmmoDef
         {
             AmmoMagazine = "",
-            AmmoRound = "MXA_ArcherPods_AccelStage",
+            AmmoRound = "MXA_ArcherPods_KineticAccelStage",
             HybridRound = false, //AmmoMagazine based weapon with energy cost
             EnergyCost = 0.16f, //(((EnergyCost * DefaultDamage) * ShotsPerSecond) * BarrelsPerShot) * ShotsPerBarrel
             BaseDamage = 1f,
@@ -375,7 +375,7 @@ namespace Scripts
             },
             Fragment = new FragmentDef
             {
-                AmmoRound = "MXA_ArcherPods_Stage",
+                AmmoRound = "MXA_ArcherPods_KineticStage",
                 Fragments = 1,
                 Degrees = 0,
                 Reverse = false,
@@ -569,7 +569,7 @@ namespace Scripts
                 {
                     Ammo = new ParticleDef
                     {
-                        Name = "Archer_MissileSmokeTrail", //Archer_MissileSmokeTrail
+                        Name = "Archer_KineticMissileSmokeTrail", //Archer_MissileSmokeTrail
                         ShrinkByDistance = false,
                         Color = Color(red: 1, green: 1, blue: 1, alpha: 1),
                         Offset = Vector(x: 0, y: 0, z: -1.8f),
@@ -676,13 +676,13 @@ namespace Scripts
             },
         };
 
-		private AmmoDef MXA_ArcherPods_Stage => new AmmoDef
+		private AmmoDef MXA_ArcherPods_KineticStage => new AmmoDef
         {
             AmmoMagazine = "",
-            AmmoRound = "MXA_ArcherPods_Stage",
+            AmmoRound = "MXA_ArcherPods_KineticStage",
             HybridRound = false, //AmmoMagazine based weapon with energy cost
             EnergyCost = 0f, //(((EnergyCost * DefaultDamage) * ShotsPerSecond) * BarrelsPerShot) * ShotsPerBarrel
-            BaseDamage = 1f,
+            BaseDamage = 4200f,
             Mass = 75f, // in kilograms
             Health = 2f, // 0 = disabled, otherwise how much damage it can take from other trajectiles before dying.
             BackKickForce = 5f,
@@ -703,8 +703,8 @@ namespace Scripts
             },
             Fragment = new FragmentDef
             {
-                AmmoRound = "MXA_ArcherPods_Shrapnel",
-                Fragments = 0,
+                AmmoRound = "MXA_ArcherPods_KineticShrapnel",
+                Fragments = 20,
                 Degrees = 270,
                 Reverse = false,
                 RandomizeDir = false, // randomzie between forward and backward directions
@@ -746,11 +746,11 @@ namespace Scripts
                     Armor = -1f,
                     Light = 0.5f,
                     Heavy = -1f,
-                    NonArmor = 0.5f,
+                    NonArmor = -1f,
                 },
                 Shields = new ShieldDef
                 {
-                    Modifier = 2f,
+                    Modifier = 1.5f,
                     Type = Default,
                     BypassModifier = -1f,
                 },
@@ -777,7 +777,7 @@ namespace Scripts
                     Base = Kinetic,
                     AreaEffect = Kinetic,
 					Detonation = Energy,
-					Shield = ShieldDefault,
+					Shield = Kinetic,
                 }
             },
             AreaEffect = new AreaDamageDef
@@ -817,7 +817,7 @@ namespace Scripts
                     NoSound = false,
                     NoShrapnel = false,
                     NoDeformation = false,
-                    Scale = 1.5f,
+                    Scale = 0.5f,
                     CustomParticle = "MXA_MissileExplosion",
                     CustomSound = "ArcWepLrgWarheadExpl",
                 },
@@ -825,8 +825,8 @@ namespace Scripts
                 {
                     DetonateOnEnd = true,
                     ArmOnlyOnHit = false,
-                    DetonationDamage = 3200f,
-                    DetonationRadius = 8f,
+                    DetonationDamage = 200f, //4500f Pre-Rebalance
+                    DetonationRadius = 4f,
                     MinArmingTime = 0, //Min time in ticks before projectile will arm for detonation (will also affect shrapnel spawning)
                 },
                 EwarFields = new EwarFieldsDef
@@ -900,7 +900,7 @@ namespace Scripts
                 {
                     Ammo = new ParticleDef
                     {
-                        Name = "Archer_MissileSmokeTrail", //ShipWelderArc
+                        Name = "Archer_KineticMissileSmokeTrail", //ShipWelderArc
                         ShrinkByDistance = false,
                         Color = Color(red: 1, green: 1, blue: 1, alpha: 1),
                         Offset = Vector(x: 0, y: 0, z: -1.8f),
@@ -1010,13 +1010,13 @@ namespace Scripts
                 }
             },
         };
-		private AmmoDef MXA_ArcherPods_Shrapnel => new AmmoDef
+		private AmmoDef MXA_ArcherPods_KineticShrapnel => new AmmoDef
         {
             AmmoMagazine = "",
-            AmmoRound = "MXA_ArcherPods_Shrapnel",
+            AmmoRound = "MXA_ArcherPods_KineticShrapnel",
             HybridRound = false, //AmmoMagazine based weapon with energy cost
             EnergyCost = 0f, //(((EnergyCost * DefaultDamage) * ShotsPerSecond) * BarrelsPerShot) * ShotsPerBarrel
-            BaseDamage = 10f,
+            BaseDamage = 300f,
             Mass = 0f, // in kilograms
             Health = 0, // 0 = disabled, otherwise how much damage it can take from other trajectiles before dying.
             BackKickForce = 0f,
@@ -1077,10 +1077,10 @@ namespace Scripts
                 },
                 Armor = new ArmorDef
                 {
-                    Armor = -1f,
-                    Light = -1f,
-                    Heavy = 1.5f,
-                    NonArmor = -1f,
+                    Armor = .5f,
+                    Light = .5f,
+                    Heavy = -1f,
+                    NonArmor = 1.5f,
                 },
                 Shields = new ShieldDef
                 {

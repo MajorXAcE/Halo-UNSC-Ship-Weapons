@@ -24,7 +24,7 @@ namespace Scripts
         private AmmoDef MXA_M58ArcherPods_Ammo => new AmmoDef
         {
             AmmoMagazine = "MXA_M58ArcherPods_Ammo",
-            AmmoRound = "MXA_M58ArcherPods_Ammo",
+            AmmoRound = "Explosive",
             HybridRound = false, //AmmoMagazine based weapon with energy cost
             EnergyCost = 0.16f, //(((EnergyCost * DefaultDamage) * ShotsPerSecond) * BarrelsPerShot) * ShotsPerBarrel
             BaseDamage = 1f,
@@ -938,7 +938,7 @@ namespace Scripts
                 {
                     Ammo = new ParticleDef
                     {
-                        Name = "Archer_MissileSmokeTrail", //ShipWelderArc
+                        Name = "Archer_MissileSmokeTrail", //Archer_MissileSmokeTrail
                         ShrinkByDistance = false,
                         Color = Color(red: 1, green: 1, blue: 1, alpha: 1),
                         Offset = Vector(x: 0, y: 0, z: -0.55f),
