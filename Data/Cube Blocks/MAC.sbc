@@ -11,7 +11,7 @@
 			MACs serve as the primary armament of UNSC Navy warships and weapon platforms.
 			The Mark IX is a MAC version that uses heavy coils, a specialized upgrade from the Mark IV. It's enhanced with booster capacitors which allow it to be fired three times per charge
 			
-			Engagement Range: 45k
+			Engagement Range: Sync Range
 			Ammo: 1000mm MAC Slugs
 			</Description>
 			<Icon>Textures\GUI\Icons\MXA_MACL.png</Icon>
@@ -78,7 +78,7 @@
 			MACs serve as the primary armament of UNSC Navy warships and weapon platforms.
 			The Mark IV is a MAC version that uses heavy coils, an upgrade from the Mark II.
 			
-			Engagement Range: 45k
+			Engagement Range: Sync Range
 			Ammo: 600mm MAC Slugs
 			</Description>
 			<Icon>Textures\GUI\Icons\MXA_MACL_S.png</Icon>
@@ -145,7 +145,7 @@
 			Larger and more powerful versions of the standard MAC, nicknamed the "Super" MAC or the "big stick".
 			The Series 8 is a MAC version on Infinity-class Super Carriers and new Orbital Defense Platforms.
 			
-			Engagement Range: 135k
+			Engagement Range: Sync Range
 			Ammo: 1500mm MAC Slugs
 			</Description>
 			<Icon>Textures\GUI\Icons\MXA_SMAC.png</Icon>
@@ -211,7 +211,7 @@
 			MACs serve as the primary armament of UNSC Navy warships and weapon platforms.
 			The Mark II is a MAC version that uses light coils, the old standard.
 			
-			Engagement Range: 45k
+			Engagement Range: Sync Range
 			Ammo: 600mm MAC Slugs
 			</Description>
 			<Icon>Textures\GUI\Icons\MXA_M2MAC.png</Icon>
@@ -277,7 +277,7 @@
 			MACs serve as the primary armament of UNSC Navy warships and weapon platforms.
 			The Mark II is a MAC version that uses light coils, the old standard.
 			
-			Engagement Range: 45k
+			Engagement Range: Sync Range
 			Ammo: 600mm MAC Slugs
 			</Description>
 			<Icon>Textures\GUI\Icons\MXA_M2MAC.png</Icon>
