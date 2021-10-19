@@ -22,7 +22,7 @@
 			<MirroringY>Z</MirroringY>
 			<MirroringZ>Y</MirroringZ>
 			<Components>
-				<Component Subtype="SteelPlate" Count="200" />
+				<Component Subtype="SteelPlate" Count="100" />
 				<Component Subtype="Construction" Count="50" />
 				<Component Subtype="MetalGrid" Count="30" />
 				<Component Subtype="LargeTube" Count="2" />
@@ -418,7 +418,7 @@
 			<MirroringY>Z</MirroringY>
 			<MirroringZ>Y</MirroringZ>
 			<Components>
-				<Component Subtype="SteelPlate" Count="400" />
+				<Component Subtype="SteelPlate" Count="250" />
 				<Component Subtype="Construction" Count="100" />
 				<Component Subtype="MetalGrid" Count="75" />
 				<Component Subtype="LargeTube" Count="6" />
@@ -426,7 +426,7 @@
 				<Component Subtype="Superconductor" Count="120" />
 				<Component Subtype="PowerCell" Count="450" />
 				<Component Subtype="Computer" Count="60" />
-				<Component Subtype="SteelPlate" Count="500" />
+				<Component Subtype="SteelPlate" Count="600" />
 			</Components>
 			<CriticalComponent Subtype="Computer" Index="0" />
 			<EdgeType>Light</EdgeType>
