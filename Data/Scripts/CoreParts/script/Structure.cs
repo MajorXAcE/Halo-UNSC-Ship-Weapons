@@ -75,6 +75,7 @@ namespace Scripts
                     [ProtoMember(1)] internal float InventorySize;
                     [ProtoMember(2)] internal HardwareType Type;
                     [ProtoMember(3)] internal int BlockDistance;
+                    [ProtoMember(4)] internal float IdlePower;
                 }
 
                 [ProtoContract]
@@ -133,6 +134,7 @@ namespace Scripts
                 public struct HardwareDef
                 {
                     [ProtoMember(1)] internal float InventorySize;
+                    [ProtoMember(2)] internal float IdlePower;
                 }
 
                 [ProtoContract]
@@ -192,7 +194,7 @@ namespace Scripts
                 NonArmor,
             }
 
-            [ProtoMember(1)] internal string SubtypeId;
+            [ProtoMember(1)] internal string[] SubtypeIds;
             [ProtoMember(2)] internal ArmorType Kind;
             [ProtoMember(3)] internal double KineticResistance;
             [ProtoMember(4)] internal double EnergeticResistance;
@@ -221,7 +223,7 @@ namespace Scripts
                 public struct MountPointDef
                 {
                     [ProtoMember(1)] internal string SubtypeId;
-                    [ProtoMember(2)] internal string SpinPartId;
+                    [ProtoMember(2)] internal string SpinPartId; 
                     [ProtoMember(3)] internal string MuzzlePartId;
                     [ProtoMember(4)] internal string AzimuthPartId;
                     [ProtoMember(5)] internal string ElevationPartId;
@@ -297,6 +299,7 @@ namespace Scripts
                         StopFiring,
                         StopTracking,
                         LockDelay,
+                        Init,
                     }
 
 
@@ -434,6 +437,7 @@ namespace Scripts
                     [ProtoMember(17)] internal bool DeterministicSpin;
                     [ProtoMember(18)] internal bool SpinFree;
                     [ProtoMember(19)] internal bool StayCharged;
+                    [ProtoMember(20)] internal int MagsToLoad;
                 }
 
 
@@ -466,10 +470,6 @@ namespace Scripts
                     {
                         BlockWeapon,
                         HandWeapon,
-                        PassiveArmor,
-                        ActiveArmor,
-                        RegenArmor,
-                        Upgrade,
                         Phantom,
                     }
 
@@ -483,9 +483,10 @@ namespace Scripts
                     [ProtoMember(8)] internal int MinElevation;
                     [ProtoMember(9)] internal float InventorySize;
                     [ProtoMember(10)] internal HardwareType Type;
-                    [ProtoMember(11)] internal int HomeAzimuth;
-                    [ProtoMember(12)] internal int HomeElevation;
+					[ProtoMember(11)] internal int HomeAzimuth;
+					[ProtoMember(12)] internal int HomeElevation;
                     [ProtoMember(13)] internal CriticalDef CriticalReaction;
+                    [ProtoMember(14)] internal float IdlePower;
 
                     [ProtoContract]
                     public struct CriticalDef

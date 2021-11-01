@@ -4,11 +4,12 @@
     {
         internal Parts()
         {
-            // file convention: Name.cs - See Example.cs file for PART property details.
+            // naming convention: WeaponDefinition Name
             //
-            // Enable your config files using the follow syntax, don't include the ".cs" extension:
-            // PartFiles(Your1stConfigFile, Your2ndConfigFile, Your3rdConfigFile);
-            PartFiles
+            // Enable your definitions using the follow syntax:
+            // PartDefinitions(Your1stDefinition, Your2ndDefinition, Your3rdDefinition);
+            // PartDefinitions includes both weapons and phantoms
+            PartDefinitions
             (
                 //Coilguns
                 MXA_CoilgunH, MXA_CoilgunL, MXA_CoilgunPD, MXA_Rampart2, MXA_BreakWater, MXA_BreakWaterB1, MXA_BreakWaterB2, MXA_BreakWaterB3,
@@ -20,9 +21,9 @@
                 //Mines
                 MXA_Moray
             );
-            //ArmorFiles(Armor1, Armor2);
-            //SupportFiles(ArmorEnhancer1A);
-            //UpgradeFiles(Upgrade75a, Upgrade75b);
+            //ArmorDefinitions(Armor1, Armor2);
+            //SupportDefinitions(ArmorEnhancer1A);
+            //UpgradeDefinitions(Upgrade75a, Upgrade75b);
         }
     }
 }

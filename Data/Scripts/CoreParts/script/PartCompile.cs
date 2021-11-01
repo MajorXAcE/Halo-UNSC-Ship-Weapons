@@ -14,22 +14,22 @@ namespace Scripts
     partial class Parts
     {
         internal ContainerDefinition Container = new ContainerDefinition();
-        internal void PartFiles(params WeaponDefinition[] defs)
+        internal void PartDefinitions(params WeaponDefinition[] defs)
         {
             Container.WeaponDefs = defs;
         }
 
-        internal void ArmorFiles(params ArmorDefinition[] defs)
+        internal void ArmorDefinitions(params ArmorDefinition[] defs)
         {
             Container.ArmorDefs = defs;
         }
 
-        internal void SupportFiles(params SupportDefinition[] defs)
+        internal void SupportDefinitions(params SupportDefinition[] defs)
         {
             Container.SupportDefs = defs;
         }
 
-        internal void UpgradeFiles(params UpgradeDefinition[] defs)
+        internal void UpgradeDefinitions(params UpgradeDefinition[] defs)
         {
             Container.UpgradeDefs = defs;
         }
@@ -38,7 +38,7 @@ namespace Scripts
         {
             baseDefs = new Parts().Container;
         }
-
+        
         internal static void SetModPath(ContainerDefinition baseDefs, string modContext)
         {
             if (baseDefs.WeaponDefs != null)
@@ -74,23 +74,24 @@ namespace Scripts
             return new XYZ { x = X, y = Y, z = Z };
         }
 
-        internal Dictionary<EventTriggers, uint> Delays(uint FiringDelay = 0, uint ReloadingDelay = 0, uint OverheatedDelay = 0, uint TrackingDelay = 0, uint LockedDelay = 0, uint OnDelay = 0, uint OffDelay = 0, uint BurstReloadDelay = 0, uint OutOfAmmoDelay = 0, uint PreFireDelay = 0, uint StopFiringDelay = 0, uint StopTrackingDelay = 0)
+        internal Dictionary<EventTriggers, uint> Delays(uint firingDelay = 0, uint reloadingDelay = 0, uint overheatedDelay = 0, uint trackingDelay = 0, uint lockedDelay = 0, uint onDelay = 0, uint offDelay = 0, uint burstReloadDelay = 0, uint outOfAmmoDelay = 0, uint preFireDelay = 0, uint stopFiringDelay = 0, uint stopTrackingDelay = 0, uint initDelay = 0)
         {
             return new Dictionary<EventTriggers, uint>
             {
-                [Firing] = FiringDelay,
-                [Reloading] = ReloadingDelay,
-                [Overheated] = OverheatedDelay,
-                [Tracking] = TrackingDelay,
-                [TurnOn] = OnDelay,
-                [TurnOff] = OffDelay,
-                [BurstReload] = BurstReloadDelay,
-                [NoMagsToLoad] = OutOfAmmoDelay,
-                [PreFire] = PreFireDelay,
+                [Firing] = firingDelay,
+                [Reloading] = reloadingDelay,
+                [Overheated] = overheatedDelay,
+                [Tracking] = trackingDelay,
+                [TurnOn] = onDelay,
+                [TurnOff] = offDelay,
+                [BurstReload] = burstReloadDelay,
+                [NoMagsToLoad] = outOfAmmoDelay,
+                [PreFire] = preFireDelay,
                 [EmptyOnGameLoad] = 0,
-                [StopFiring] = StopFiringDelay,
-                [StopTracking] = StopTrackingDelay,
-                [LockDelay] = LockedDelay,
+                [StopFiring] = stopFiringDelay,
+                [StopTracking] = stopTrackingDelay,
+                [LockDelay] = lockedDelay,
+                [Init] = initDelay,
             };
         }
 
@@ -103,7 +104,7 @@ namespace Scripts
                 CycleEmissivesParts = CycleEmissiveParts,
                 LeavePreviousOn = LeavePreviousOn,
                 EmissivePartNames = EmissivePartNames,
-                IntensityRange = new[] { IntensityFrom, IntensityTo }
+                IntensityRange = new[]{ IntensityFrom, IntensityTo }
             };
         }
 
