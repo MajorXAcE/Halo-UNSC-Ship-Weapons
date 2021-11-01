@@ -104,7 +104,7 @@ namespace Scripts
                     TurretAttached = false,
                     TurretController = false,
                     PrimaryTracking = false,
-                    LockOnFocus = true,
+                    LockOnFocus = false,
                     SuppressFire = false,
                     OverrideLeads = false, // Override default behavior for target leads // System targets your Grid's locked-on target, Used  by both Turrets & other weapons.
                 },

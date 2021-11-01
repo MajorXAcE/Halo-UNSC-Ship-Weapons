@@ -23,7 +23,7 @@ namespace Scripts
     {
         private AmmoDef MXA_M58ArcherPods_S_KineticAmmo => new AmmoDef
         {
-            AmmoMagazine = "MXA_M58ArcherPods_Ammo",
+            AmmoMagazine = "MXA_M58ArcherPods_KineticAmmo",
             AmmoRound = "Kinetic",
             HybridRound = false, //AmmoMagazine based weapon with energy cost
             EnergyCost = 0.16f, //(((EnergyCost * DefaultDamage) * ShotsPerSecond) * BarrelsPerShot) * ShotsPerBarrel

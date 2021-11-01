@@ -7,7 +7,7 @@
         <TypeId>BlueprintDefinition</TypeId>
         <SubtypeId>MXA_ArcherPods_Ammo</SubtypeId>
       </Id>
-      <DisplayName>M42 Archer Missile x 150</DisplayName>
+      <DisplayName>M42 Archer Explosive Missile x 150</DisplayName>
       <Icon>Textures\GUI\Icons\MXA_Archer_Missile_Ammo.png</Icon>
 	  
       <Prerequisites>
@@ -22,13 +22,34 @@
       <BaseProductionTimeInSeconds>180.0</BaseProductionTimeInSeconds>
 	  
     </Blueprint>
+
+    <Blueprint>
+      <Id>
+        <TypeId>BlueprintDefinition</TypeId>
+        <SubtypeId>MXA_ArcherPods_KineticAmmo</SubtypeId>
+      </Id>
+      <DisplayName>M42 Archer Kinetic Missile x 150</DisplayName>
+      <Icon>Textures\GUI\Icons\MXA_Archer_Missile_Ammo.png</Icon>
+	  
+      <Prerequisites>
+        <Item Amount="8000" TypeId="Ingot" SubtypeId="Iron" />
+        <Item Amount="800" TypeId="Ingot" SubtypeId="Nickel" />
+        <Item Amount="250" TypeId="Ingot" SubtypeId="Silicon" />
+        <Item Amount="200" TypeId="Ingot" SubtypeId="Cobalt" />
+        <Item Amount="400" TypeId="Ingot" SubtypeId="Magnesium" />
+        
+      </Prerequisites>
+      <Result Amount="1" TypeId="AmmoMagazine" SubtypeId="MXA_ArcherPods_KineticAmmo" />
+      <BaseProductionTimeInSeconds>180.0</BaseProductionTimeInSeconds>
+	  
+    </Blueprint>
 	
 	<Blueprint>
       <Id>
         <TypeId>BlueprintDefinition</TypeId>
         <SubtypeId>MXA_M58ArcherPods_Ammo</SubtypeId>
       </Id>
-      <DisplayName>M58 Archer Missile x 150</DisplayName>
+      <DisplayName>M58 Archer Explosive Missile x 150</DisplayName>
       <Icon>Textures\GUI\Icons\MXA_Archer_Missile_Ammo.png</Icon>
 	  
       <Prerequisites>
@@ -40,6 +61,27 @@
         
       </Prerequisites>
       <Result Amount="1" TypeId="AmmoMagazine" SubtypeId="MXA_M58ArcherPods_Ammo" />
+      <BaseProductionTimeInSeconds>90.0</BaseProductionTimeInSeconds>
+	  
+    </Blueprint>
+
+    <Blueprint>
+      <Id>
+        <TypeId>BlueprintDefinition</TypeId>
+        <SubtypeId>MXA_M58ArcherPods_KineticAmmo</SubtypeId>
+      </Id>
+      <DisplayName>M58 Archer Kinetic Missile x 150</DisplayName>
+      <Icon>Textures\GUI\Icons\MXA_Archer_Missile_Ammo.png</Icon>
+	  
+      <Prerequisites>
+        <Item Amount="5000" TypeId="Ingot" SubtypeId="Iron" />
+        <Item Amount="500" TypeId="Ingot" SubtypeId="Nickel" />
+        <Item Amount="125" TypeId="Ingot" SubtypeId="Silicon" />
+        <Item Amount="75" TypeId="Ingot" SubtypeId="Cobalt" />
+        <Item Amount="100" TypeId="Ingot" SubtypeId="Magnesium" />
+        
+      </Prerequisites>
+      <Result Amount="1" TypeId="AmmoMagazine" SubtypeId="MXA_M58ArcherPods_KineticAmmo" />
       <BaseProductionTimeInSeconds>90.0</BaseProductionTimeInSeconds>
 	  
     </Blueprint>
