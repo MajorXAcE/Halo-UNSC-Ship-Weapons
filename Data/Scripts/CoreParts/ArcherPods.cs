@@ -95,8 +95,8 @@ namespace Scripts
                 {
                     RateOfFire = false,
                     DamageModifier = false,
-                    ToggleGuidance = false,
-                    EnableOverload = true,
+                    ToggleGuidance = true,
+                    EnableOverload = false,
                 },
                 Ai = new AiDef
                 {

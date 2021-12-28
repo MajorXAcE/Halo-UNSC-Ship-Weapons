@@ -606,7 +606,7 @@ namespace Scripts
                     WidthVariance = Random(start: 0f, end: 0f), // adds random value to default width (negatives shrinks width)
                     Tracer = new TracerBaseDef
                     {
-                        Enable = true,
+                        Enable = false,
                         Length = .5f,
                         Width = 0.1f,
                         Color = Color(red: 5f, green: 1f, blue: 1f, alpha: 1f),
@@ -635,7 +635,7 @@ namespace Scripts
                     },
                     Trail = new TrailDef
                     {
-                        Enable = true,
+                        Enable = false,
                         Textures = new[] {
 							"WeaponLaser",
                         },
@@ -937,7 +937,7 @@ namespace Scripts
                     WidthVariance = Random(start: 0f, end: 0f), // adds random value to default width (negatives shrinks width)
                     Tracer = new TracerBaseDef
                     {
-                        Enable = true,
+                        Enable = false,
                         Length = 1f,
                         Width = 0.1f,
                         Color = Color(red: 1f, green: 1f, blue: 1f, alpha: 1f),
