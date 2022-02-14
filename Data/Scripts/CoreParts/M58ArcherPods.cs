@@ -5,6 +5,7 @@ using static Scripts.Structure.WeaponDefinition.HardPointDef;
 using static Scripts.Structure.WeaponDefinition.HardPointDef.Prediction;
 using static Scripts.Structure.WeaponDefinition.TargetingDef.BlockTypes;
 using static Scripts.Structure.WeaponDefinition.TargetingDef.Threat;
+using static Scripts.Structure.WeaponDefinition.HardPointDef.HardwareDef;
 using static Scripts.Structure.WeaponDefinition.HardPointDef.HardwareDef.HardwareType;
 namespace Scripts
 {
@@ -153,8 +154,8 @@ namespace Scripts
                     DegradeRof = false, // progressively lower rate of fire after 80% heat threshold (80% of max heat)
                     ShotsInBurst = 10, // Shots before Burst Delay is triggered - BarrelsPerShot Values above 1 still only cost 1 shot from BurstCount. Independent from Magazine Size.
                     DelayAfterBurst = 480, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
-                    FireFullBurst = false, // If Weapon is forced to fire the entire Burst count.
-                    GiveUpAfterBurst = false, //  If Turret disengages Target after firing full Burst.
+                    FireFull = false, // If Weapon is forced to fire the entire Burst count.
+                    GiveUpAfter = false, //  If Turret disengages Target after firing full Burst.
                     BarrelSpinRate = 0, // visual only, 0 disables and uses RateOfFire. Use to set a fixed rate of spin, indepdendent of ROF, to allow more flexible RPM without losing visual.
                     DeterministicSpin = false, // Spin barrel position will always be relative to initial / starting positions (spin will not be as smooth).
                     SpinFree = false, // Spin while not firing
