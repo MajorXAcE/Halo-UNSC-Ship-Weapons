@@ -64,9 +64,9 @@ namespace Scripts
             {
                 AmmoRound = "MXA_SMAC_Shrapnel",
                 Fragments = 75,
-                Degrees = 270,
+                Degrees = 180,
                 Reverse = false,
-                DropVelocity = false, // fragments will not inherit velocity from parent.
+                DropVelocity = true, // fragments will not inherit velocity from parent.
                 Offset = 0f, // Offsets the fragment spawn by this amount, in meters (positive forward, negative for backwards), value is read from parent ammo type.
                 Radial = 0f, // Determines starting angle for Degrees of spread above.  IE, 0 degrees and 90 radial goes perpendicular to travel path
                 MaxChildren = 0, // number of maximum branches for fragments from the roots point of view, 0 is unlimited
@@ -506,10 +506,10 @@ namespace Scripts
             Fragment = new FragmentDef
             {
                 AmmoRound = "",
-                Fragments = 100,
-                Degrees = 15,
+                Fragments = 0,
+                Degrees = 0,
                 Reverse = false,
-                DropVelocity = false, // fragments will not inherit velocity from parent.
+                DropVelocity = true, // fragments will not inherit velocity from parent.
                 Offset = 0f, // Offsets the fragment spawn by this amount, in meters (positive forward, negative for backwards), value is read from parent ammo type.
                 Radial = 0f, // Determines starting angle for Degrees of spread above.  IE, 0 degrees and 90 radial goes perpendicular to travel path
                 MaxChildren = 0, // number of maximum branches for fragments from the roots point of view, 0 is unlimited
@@ -565,8 +565,8 @@ namespace Scripts
                 Armor = new ArmorDef
                 {
                     Armor = -1f,
-                    Light = -1f,
-                    Heavy = -1f,
+                    Light = 0.5f,
+                    Heavy = 2.0f,
                     NonArmor = -1f,
                 },
                 Shields = new ShieldDef
@@ -1026,8 +1026,8 @@ namespace Scripts
                 },
                 Armor = new ArmorDef
                 {
-                    Armor = .01f,
-                    Light = -1f,
+                    Armor = -1f,
+                    Light = .3f,
                     Heavy = -1f,
                     NonArmor = -1f,
                 },
@@ -1152,10 +1152,10 @@ namespace Scripts
                 {
                     Enable = true,
                     Radius = 7.5f, // Radius of AOE effect, in meters.
-                    Damage = 16500f,
+                    Damage = 35000f,
                     Depth = 5f, // Max depth of AOE effect, in meters. 0=disabled, and AOE effect will reach to a depth of the radius value
                     MaxAbsorb = 0f, // Soft cutoff for damage, except for pooled falloff.  If pooled falloff, limits max damage per block.
-                    Falloff = Curve, //.NoFalloff applies the same damage to all blocks in radius
+                    Falloff = Exponential, //.NoFalloff applies the same damage to all blocks in radius
                     // Linear drops evenly by distance from center out to max radius
                     // Curve drops off damage sharply as it approaches the max radius
                     // InvCurve drops off sharply from the middle and tapers to max radius
@@ -1169,7 +1169,7 @@ namespace Scripts
                     ParticleScale = 1.25f,
                     CustomParticle = "MXA_LightExplosion", // Particle SubtypeID, from your Particle SBC
                     CustomSound = "", // SubtypeID from your Audio SBC, not a filename
-                    Shape = Diamond, // Round or Diamond shape.  Diamond is more performance friendly.
+                    Shape = Round, // Round or Diamond shape.  Diamond is more performance friendly.
                 }, 
             },
             Ewar = new EwarDef
@@ -1411,9 +1411,9 @@ namespace Scripts
             {
                 AmmoRound = "MXA_SMAC_Shrapnel",
                 Fragments = 100,
-                Degrees = 270,
+                Degrees = 180,
                 Reverse = false,
-                DropVelocity = false, // fragments will not inherit velocity from parent.
+                DropVelocity = true, // fragments will not inherit velocity from parent.
                 Offset = 0f, // Offsets the fragment spawn by this amount, in meters (positive forward, negative for backwards), value is read from parent ammo type.
                 Radial = 0f, // Determines starting angle for Degrees of spread above.  IE, 0 degrees and 90 radial goes perpendicular to travel path
                 MaxChildren = 0, // number of maximum branches for fragments from the roots point of view, 0 is unlimited

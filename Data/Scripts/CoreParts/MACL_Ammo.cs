@@ -1026,8 +1026,8 @@ namespace Scripts
                 },
                 Armor = new ArmorDef
                 {
-                    Armor = .01f,
-                    Light = -1f,
+                    Armor = -1f,
+                    Light = 0.5f,
                     Heavy = -1f,
                     NonArmor = -1f,
                 },
@@ -1411,9 +1411,9 @@ namespace Scripts
             {
                 AmmoRound = "MXA_MACL_Shrapnel",
                 Fragments = 100,
-                Degrees = 270,
+                Degrees = 150,
                 Reverse = false,
-                DropVelocity = false, // fragments will not inherit velocity from parent.
+                DropVelocity = true, // fragments will not inherit velocity from parent.
                 Offset = 0f, // Offsets the fragment spawn by this amount, in meters (positive forward, negative for backwards), value is read from parent ammo type.
                 Radial = 0f, // Determines starting angle for Degrees of spread above.  IE, 0 degrees and 90 radial goes perpendicular to travel path
                 MaxChildren = 0, // number of maximum branches for fragments from the roots point of view, 0 is unlimited
@@ -1468,8 +1468,8 @@ namespace Scripts
                 },
                 Armor = new ArmorDef
                 {
-                    Armor = .5f,
-                    Light = -1f,
+                    Armor = -1f,
+                    Light = 0.5f,
                     Heavy = -1f,
                     NonArmor = -1f,
                 },
@@ -1588,7 +1588,7 @@ namespace Scripts
                     // Squeeze does little damage to the middle, but rapidly increases damage toward max radius
                     // Pooled damage behaves in a pooled manner that once exhausted damage ceases.
                     // Exponential drops off exponentially.  Does not scale to max radius
-                    Shape = Diamond, // Round or Diamond shape.  Diamond is more performance friendly.
+                    Shape = Round, // Round or Diamond shape.  Diamond is more performance friendly.
                 },
                 EndOfLife = new EndOfLifeDef
                 {

@@ -433,7 +433,7 @@ namespace Scripts
                 Fragments = 50,
                 Degrees = 120,
                 Reverse = false,
-                DropVelocity = false, // fragments will not inherit velocity from parent.
+                DropVelocity = true, // fragments will not inherit velocity from parent.
                 Offset = 0f, // Offsets the fragment spawn by this amount, in meters (positive forward, negative for backwards), value is read from parent ammo type.
                 Radial = 0f, // Determines starting angle for Degrees of spread above.  IE, 0 degrees and 90 radial goes perpendicular to travel path
                 MaxChildren = 0, // number of maximum branches for fragments from the roots point of view, 0 is unlimited
@@ -984,11 +984,11 @@ namespace Scripts
             },
             Beams = new BeamDef
             {
-                Enable = true,
+                Enable = false,
                 VirtualBeams = false, // Only one hot beam, but with the effectiveness of the virtual beams combined (better performace)
-                ConvergeBeams = true, // When using virtual beams this option visually converges the beams to the location of the real beam.
+                ConvergeBeams = false, // When using virtual beams this option visually converges the beams to the location of the real beam.
                 RotateRealBeam = false, // The real (hot beam) is rotated between all virtual beams, instead of centered between them.
-                OneParticle = true, // Only spawn one particle hit per beam weapon.
+                OneParticle = false, // Only spawn one particle hit per beam weapon.
             },
             Trajectory = new TrajectoryDef
             {
@@ -997,7 +997,7 @@ namespace Scripts
                 TargetLossTime = 0, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                 MaxLifeTime = 0, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                 AccelPerSec = 0f,
-                DesiredSpeed = 0f,
+                DesiredSpeed = 400f,
                 MaxTrajectory = 30f,
                 DeaccelTime = 0, // 0 is disabled, a value causes the projectile to come to rest overtime, (Measured in game ticks, 60 = 1 second)
                 GravityMultiplier = 0f, // Gravity multiplier, influences the trajectory of the projectile, value greater than 0 to enable.
@@ -1751,7 +1751,7 @@ namespace Scripts
             },
             Trajectory = new TrajectoryDef
             {
-                Guidance = None,
+                Guidance = Smart,
                 TargetLossDegree = 80f,
                 TargetLossTime = 0, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                 MaxLifeTime = 6, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).

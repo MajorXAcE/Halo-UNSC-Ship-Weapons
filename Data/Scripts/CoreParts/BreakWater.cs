@@ -22,18 +22,17 @@ namespace Scripts
                     new MountPointDef {
                         SubtypeId = "MXA_BreakWater",
                         SpinPartId = "None",
-                        MuzzlePartId = "Designator",
+                        MuzzlePartId = "Elevation",
                         AzimuthPartId = "Azimuth",
-                        ElevationPartId = "ElevationDeg",
-                        DurabilityMod = 0.25f,
-                        IconName = ""
+                        ElevationPartId = "Elevation",
+
                     },
                 },
                 Muzzles = new[] {
-                    "muzzle_projectile_D",
+                    "muzzle_projectile_1", "muzzle_projectile_2", "muzzle_projectile_3",
                 },
                 //Ejector = "",
-                Scope = "scopeD", //Where line of sight checks are performed from must be clear of block collision
+                Scope = "scope", //Where line of sight checks are performed from must be clear of block collision
             },
             Targeting = new TargetingDef
             {
@@ -44,24 +43,22 @@ namespace Scripts
                     Thrust, Utility, Offense, Power, Production, Any,
                 },
                 ClosestFirst = false, // tries to pick closest targets first (blocks on grids, projectiles, etc...).
-                IgnoreDumbProjectiles = true, // Don't fire at non-smart projectiles.
-                LockedSmartOnly = false, // Only fire at smart projectiles that are locked on to parent grid.
                 MinimumDiameter = 10, // 0 = unlimited, Minimum radius of threat to engage.
                 MaximumDiameter = 0, // 0 = unlimited, Maximum radius of threat to engage.
                 MaxTargetDistance = 5500, // 0 = unlimited, Maximum target distance that targets will be automatically shot at.
                 MinTargetDistance = 0, // 0 = unlimited, Min target distance that targets will be automatically shot at.
-                TopTargets = 4, // 0 = unlimited, max number of top targets to randomize between.
+                TopTargets = 0, // 0 = unlimited, max number of top targets to randomize between.
                 TopBlocks = 4, // 0 = unlimited, max number of blocks to randomize between
                 StopTrackingSpeed = 1000, // do not track target threats traveling faster than this speed
             },
             HardPoint = new HardPointDef
             {
-                PartName = "Mark 15 Breakwater D", // name of weapon in terminal
+                PartName = "Mark 15 Breakwater", // name of weapon in terminal
                 DeviateShotAngle = 0.15f,
                 AimingTolerance = 0.8f, // 0 - 180 firing angle
                 AimLeadingPrediction = Advanced, // Off, Basic, Accurate, Advanced
                 DelayCeaseFire = 0, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
-                AddToleranceToTracking = true,
+                AddToleranceToTracking = false,
                 CanShootSubmerged = false,
 
                 Ui = new UiDef
@@ -90,9 +87,8 @@ namespace Scripts
                     MinElevation = -3,
                     MaxElevation = 100,
                     FixedOffset = false,
-                    InventorySize = 0f,
+                    InventorySize = 3.0f,
                     Offset = Vector(x: 0, y: 0, z: 0),
-                    Type = BlockWeapon, // IsWeapon, Passive, Active
                 },
                 Other = new OtherDef
                 {
@@ -107,12 +103,13 @@ namespace Scripts
                 },
                 Loading = new LoadingDef
                 {
-                    RateOfFire = 30, // visual only, 0 disables and uses RateOfFire
+                    RateOfFire = 405, // visual only, 0 disables and uses RateOfFire
                     BarrelsPerShot = 1,
                     TrajectilesPerBarrel = 1, // Number of Trajectiles per barrel per fire event.
                     SkipBarrels = 0,
                     ReloadTime = 600, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
-                    DelayUntilFire = 6, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
+                    MagsToLoad = 3, // Number of physical magazines to consume on reload.
+                    DelayUntilFire = 0, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                     HeatPerShot = 0, //heat generated per shot
                     MaxHeat = 70000, //max heat before weapon enters cooldown (70% of max heat)
                     Cooldown = .95f, //percent of max heat to be under to start firing again after overheat accepts .2-.95
@@ -173,15 +170,13 @@ namespace Scripts
             },
             Ammos = new[] {
                 MXA_BreakWater_Ammo,
-                /*
                 MXA_BreakWater_APFuse,
                 MXA_BreakWater_Shrapnel,
                 MXA_BreakWater_HEAmmo,
                 MXA_BreakWater_GStage,
                 MXA_BreakWater_GAmmo,
-                */
             },
-            //Animations = MXA_BreakWater_Animation,
+            Animations = MXA_BreakWater_Animation,
             //Upgrades = UpgradeModules,
             // Don't edit below this line
         };
